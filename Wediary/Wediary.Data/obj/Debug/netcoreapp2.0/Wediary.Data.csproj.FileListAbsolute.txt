@@ -1,0 +1,4 @@
+C:\Users\Grzegorz\Desktop\Pulpit\Studia\ZPI\Wediary\Wediary.Data\bin\Debug\netcoreapp2.0\Wediary.Data.deps.json
+C:\Users\Grzegorz\Desktop\Pulpit\Studia\ZPI\Wediary\Wediary.Data\bin\Debug\netcoreapp2.0\Wediary.Data.dll
+C:\Users\Grzegorz\Desktop\Pulpit\Studia\ZPI\Wediary\Wediary.Data\obj\Debug\netcoreapp2.0\Wediary.Data.AssemblyInfoInputs.cache
+C:\Users\Grzegorz\Desktop\Pulpit\Studia\ZPI\Wediary\Wediary.Data\obj\Debug\netcoreapp2.0\Wediary.Data.AssemblyInfo.cs
