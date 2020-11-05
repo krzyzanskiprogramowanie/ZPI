@@ -11,5 +11,8 @@ namespace Wediary.Data.Models
         public int IdCategory { get; set; }
         [Required]
         public string Name { get; set; }
+
+        public virtual Task Task{ get; set; }
+        public virtual int IdTask { get; set; }
     }
 }

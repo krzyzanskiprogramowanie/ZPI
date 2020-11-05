@@ -15,5 +15,6 @@ namespace Wediary.Models
 
         public DateTime WeddingDate { get; set; }
 
+        public virtual List<Task> Tasks { get; set; }
     }
 }

@@ -1,12 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using Wediary.Models;
 
 namespace Wediary.Data.Models
 {
-  public class Tasks
-    {
-        public int IdTasks { get; set; }
+  public class Task
+  {
+        public int IdTask { get; set; }
         public string Name{ get; set; }
 
         public decimal Budget { get; set; }
@@ -22,13 +23,12 @@ namespace Wediary.Data.Models
 
         public DateTime Date { get; set; }
 
-
         public int TaskStatus { get; set; }
-
         public string Contractor{ get; set; }
 
-
-        //Obce
+        public virtual Category Category { get; set; }
+        public virtual ApplicationUser User { get; set; }
+        public virtual string IdUser { get; set; }
 
     }
 }

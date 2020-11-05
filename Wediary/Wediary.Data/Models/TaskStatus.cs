@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Wediary.Data.Models
 {
-   public class TasksStatus
+   public class TaskStatus
     {
         public int IdTasksStatus { get; set; }
 
