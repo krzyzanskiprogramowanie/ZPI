@@ -12,7 +12,7 @@ namespace Wediary.Data.Models
         [Required]
         public string Name { get; set; }
 
-        public virtual Task Task{ get; set; }
+        public virtual TaskUser Task{ get; set; }
         public virtual int IdTask { get; set; }
     }
 }

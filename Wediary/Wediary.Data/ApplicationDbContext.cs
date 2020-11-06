@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using Wediary.Data.Models;
 using Wediary.Models;
 
 namespace Wediary.Data
@@ -16,5 +17,18 @@ namespace Wediary.Data
         }
 
         DbSet<ApplicationUser> applicationUsers { get; set; }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<ApplicationUserGuests>()
+                .HasKey(ag => new { ag.IdUser, ag.IdGuest });
+            modelBuilder.Entity<ApplicationUserGuests>()
+                .HasOne(ag => ag.User)
+                .WithMany(u => (IEnumerable<ApplicationUserGuests>)u.Guests)
+                .HasForeignKey(ag => ag.IdGuest);
+            modelBuilder.Entity<ApplicationUserGuests>()
+                .HasOne(ag => ag.Guest)
+                .WithMany(g => (IEnumerable<ApplicationUserGuests>)g.ApplicationUsers);
+        }
     }
 }

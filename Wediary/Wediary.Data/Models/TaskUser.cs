@@ -5,7 +5,7 @@ using Wediary.Models;
 
 namespace Wediary.Data.Models
 {
-  public class Task
+  public class TaskUser
   {
         public int IdTask { get; set; }
         public string Name{ get; set; }

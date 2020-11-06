@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity;
+using Wediary.Data.Models;
 
 namespace Wediary.Models
 {
@@ -15,6 +15,8 @@ namespace Wediary.Models
 
         public DateTime WeddingDate { get; set; }
 
-        public virtual List<Task> Tasks { get; set; }
+        public virtual List<TaskUser> Tasks { get; set; }
+        public virtual List<Project> Projects { get; set; }
+        public virtual ICollection<Guest> Guests { get; set; }
     }
 }
