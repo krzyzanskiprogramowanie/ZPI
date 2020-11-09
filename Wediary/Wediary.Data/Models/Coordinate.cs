@@ -1,12 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Text;
 
 namespace Wediary.Data.Models
 {
     public class Coordinate
     {
+
+        [Key]
         public int IdCoordinates { get; set; }
+
+
+        
         public string Name { get; set; }
         public string Type { get; set; }
         public int A { get; set; }

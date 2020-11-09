@@ -17,18 +17,14 @@ namespace Wediary.Data
         }
 
         DbSet<ApplicationUser> applicationUsers { get; set; }
+        DbSet<Category> Categories{ get; set; }
+        DbSet<Coordinate> Coordinates{ get; set; }
+        DbSet<Guest> Guests{ get; set; }
+        DbSet<InvitationStatus> InvitationStatuses{ get; set; }
+        DbSet<Project> Projects{ get; set; }
+        DbSet<Models.TaskStatus> TaskStatuses{ get; set; }
+        DbSet<TaskUser> TaskUsers{ get; set; }
 
-        protected override void OnModelCreating(ModelBuilder modelBuilder)
-        {
-            modelBuilder.Entity<ApplicationUserGuests>()
-                .HasKey(ag => new { ag.IdUser, ag.IdGuest });
-            modelBuilder.Entity<ApplicationUserGuests>()
-                .HasOne(ag => ag.User)
-                .WithMany(u => (IEnumerable<ApplicationUserGuests>)u.Guests)
-                .HasForeignKey(ag => ag.IdGuest);
-            modelBuilder.Entity<ApplicationUserGuests>()
-                .HasOne(ag => ag.Guest)
-                .WithMany(g => (IEnumerable<ApplicationUserGuests>)g.ApplicationUsers);
-        }
+     
     }
 }

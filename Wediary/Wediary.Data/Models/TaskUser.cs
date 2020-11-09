@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Text;
 using Wediary.Models;
 
@@ -7,6 +8,7 @@ namespace Wediary.Data.Models
 {
   public class TaskUser
   {
+        [Key]
         public int IdTask { get; set; }
         public string Name{ get; set; }
 

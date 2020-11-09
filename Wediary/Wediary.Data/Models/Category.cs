@@ -9,7 +9,12 @@ namespace Wediary.Data.Models
     {
         [Key]
         public int IdCategory { get; set; }
+
         [Required]
+        [StringLength(30, MinimumLength = 2)]
+        [DataType(DataType.Text)]
+        [Display(Name = "Nazwa Kategorii")]
+        [RegularExpression(@"^[A-Za-z0-9]+$")]
         public string Name { get; set; }
 
         public virtual TaskUser Task{ get; set; }
