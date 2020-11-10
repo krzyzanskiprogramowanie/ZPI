@@ -10,6 +10,9 @@ namespace Wediary.Data.Models
         [Key]
         public int IdTasksStatus { get; set; }
 
+        [Display(Name = "Stan zadania")]
         public string Name { get; set; }
+
+        public virtual List<TaskUser> TaskUsers { get; set; }
     }
 }

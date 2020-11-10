@@ -17,19 +17,24 @@ namespace Wediary.Models
         [Display(Name = "Imię")]
         [RegularExpression(@"^[A-Za-z]+$")]
         public string Name { get; set; }
+
+
         [Required]
         [StringLength(50, MinimumLength = 2)]
         [DataType(DataType.Text)]
         [Display(Name = "Nazwisko")]
         [RegularExpression(@"^[A-Za-z]+$")]
         public string Surname { get; set; }
+
+
         [Range(1, 10000000)]
         [DataType(DataType.Currency)]
+        [Display(Name = "Budżet")]
         [Column(TypeName = "decimal(18, 2)")]
         public decimal Budget { get; set; }
        
         
-        [Display(Name = "Release Date")]
+        [Display(Name = "Data ślubu")]
         [DataType(DataType.Date)]
         public DateTime WeddingDate { get; set; }
 

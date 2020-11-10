@@ -12,12 +12,30 @@ namespace Wediary.Data.Models
         public int IdCoordinates { get; set; }
 
 
-        
+        [Display(Name = "Nazwa koordynatu")]
         public string Name { get; set; }
+
+
+
+        [Display(Name = "Typ koordynatu")]
         public string Type { get; set; }
+
+
+
+        [Display(Name = "Współrzędna A")]
         public int A { get; set; }
+
+
+        [Display(Name = "Współrzędna B")]
         public int B { get; set; }
+
+
+
+        [Display(Name = "Współrzędna C")]
         public int C { get; set; }
+
+
+        [Display(Name = "Współrzędna D")]
         public int D { get; set; }
 
         public virtual int IdProject { get; set; }

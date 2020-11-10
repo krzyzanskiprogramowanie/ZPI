@@ -33,20 +33,29 @@ namespace Wediary.Data.Models
         [RegularExpression(@"^[A-Za-z0-9]+$")]
         public string Role { get; set; }
 
+
         [Display(Name = "Czy zostaje na poprawinach ?")]
         public bool IfAftermath { get; set; }
 
+
+
         [Display(Name = "Czy specjalna dieta?")]
         public bool IfSpecialDiet { get; set; }
+
+
+
+        [StringLength(1000, MinimumLength = 2)]
+        [DataType(DataType.MultilineText)]
         [RegularExpression(@"^[A-Za-z0-9]+$")]
         [Display(Name = "Opis diety")]
-
         public string DescriptionDiet { get; set; }
 
         public virtual string IdApplicationUser { get; set; }
 
         
         public virtual ApplicationUser ApplicationUser { get; set; }
+
+        public virtual InvitationStatus InvitationStatus { get; set; }
 
 
 

@@ -17,6 +17,8 @@ namespace Wediary.Data.Models
         [Display(Name = "Nazwa projektu")]
         [RegularExpression(@"^[A-Za-z0-9]+$")]
         public string Name { get; set; }
+
+        [Display(Name = "Data utworzenia")]
         public DateTime CreationDate { get; set; } //automatycznie
 
         public virtual string IdUser { get; set; }
