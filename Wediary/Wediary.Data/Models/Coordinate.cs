@@ -38,7 +38,6 @@ namespace Wediary.Data.Models
         [Display(Name = "Współrzędna D")]
         public int D { get; set; }
 
-        public virtual int IdProject { get; set; }
         public virtual Project Project { get; set; }
     }
 }

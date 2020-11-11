@@ -18,6 +18,5 @@ namespace Wediary.Data.Models
         public string Name { get; set; }
 
         public virtual List<TaskUser> Task{ get; set; }
-        public virtual int IdTask { get; set; }
     }
 }

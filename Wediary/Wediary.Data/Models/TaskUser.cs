@@ -86,10 +86,8 @@ namespace Wediary.Data.Models
 
 
         public virtual TaskStatus TaskStatus{ get; set; }
-
         public virtual Category Category { get; set; }
         public virtual ApplicationUser User { get; set; }
-        public virtual string IdUser { get; set; }
 
     }
 }

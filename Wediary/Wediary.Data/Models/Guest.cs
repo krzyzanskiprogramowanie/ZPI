@@ -54,7 +54,6 @@ namespace Wediary.Data.Models
 
         
         public virtual ApplicationUser ApplicationUser { get; set; }
-
         public virtual InvitationStatus InvitationStatus { get; set; }
 
 
