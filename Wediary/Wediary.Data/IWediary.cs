@@ -2,7 +2,8 @@
 
 namespace Wediary.Data
 {
-    public class Class1
+    public interface IWediary //zmien nazwe 
     {
+
     }
 }

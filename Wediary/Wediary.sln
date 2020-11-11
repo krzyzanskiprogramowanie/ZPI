@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30621.155
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Wediary", "Wediary\Wediary.csproj", "{60EE1660-CB3C-4DAB-AF7F-F132D0B9DFF8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Wediary", "Wediary\Wediary.csproj", "{60EE1660-CB3C-4DAB-AF7F-F132D0B9DFF8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Wediary.Data", "Wediary.Data\Wediary.Data.csproj", "{EC877EF4-E279-4D21-8E87-8B61A8EC65C4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Wediary.Data", "Wediary.Data\Wediary.Data.csproj", "{EC877EF4-E279-4D21-8E87-8B61A8EC65C4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Wediary.Service", "Wediary.Service\Wediary.Service.csproj", "{541CCED3-5473-4FAF-B710-EA5551A8039B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{EC877EF4-E279-4D21-8E87-8B61A8EC65C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EC877EF4-E279-4D21-8E87-8B61A8EC65C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EC877EF4-E279-4D21-8E87-8B61A8EC65C4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{541CCED3-5473-4FAF-B710-EA5551A8039B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{541CCED3-5473-4FAF-B710-EA5551A8039B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{541CCED3-5473-4FAF-B710-EA5551A8039B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{541CCED3-5473-4FAF-B710-EA5551A8039B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
