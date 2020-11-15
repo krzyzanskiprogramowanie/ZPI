@@ -7,3 +7,12 @@ C:\Users\Grzegorz\Desktop\Pulpit\Studia\ZPI\Wediary\Wediary.Data\obj\Debug\netco
 C:\Users\Grzegorz\Desktop\Pulpit\Studia\ZPI\Wediary\Wediary.Data\obj\Debug\netcoreapp2.0\Wediary.Data.csproj.CoreCompileInputs.cache
 C:\Users\Grzegorz\Desktop\Pulpit\Studia\ZPI\Wediary\Wediary.Data\obj\Debug\netcoreapp2.0\Wediary.Data.dll
 C:\Users\Grzegorz\Desktop\Pulpit\Studia\ZPI\Wediary\Wediary.Data\obj\Debug\netcoreapp2.0\Wediary.Data.pdb
+C:\Users\pawel\OneDrive\Desktop\ZPI\ZPI\Wediary\Wediary.Data\bin\Debug\netcoreapp2.0\Wediary.Data.deps.json
+C:\Users\pawel\OneDrive\Desktop\ZPI\ZPI\Wediary\Wediary.Data\bin\Debug\netcoreapp2.0\Wediary.Data.dll
+C:\Users\pawel\OneDrive\Desktop\ZPI\ZPI\Wediary\Wediary.Data\bin\Debug\netcoreapp2.0\Wediary.Data.pdb
+C:\Users\pawel\OneDrive\Desktop\ZPI\ZPI\Wediary\Wediary.Data\obj\Debug\netcoreapp2.0\Wediary.Data.csprojAssemblyReference.cache
+C:\Users\pawel\OneDrive\Desktop\ZPI\ZPI\Wediary\Wediary.Data\obj\Debug\netcoreapp2.0\Wediary.Data.AssemblyInfoInputs.cache
+C:\Users\pawel\OneDrive\Desktop\ZPI\ZPI\Wediary\Wediary.Data\obj\Debug\netcoreapp2.0\Wediary.Data.AssemblyInfo.cs
+C:\Users\pawel\OneDrive\Desktop\ZPI\ZPI\Wediary\Wediary.Data\obj\Debug\netcoreapp2.0\Wediary.Data.csproj.CoreCompileInputs.cache
+C:\Users\pawel\OneDrive\Desktop\ZPI\ZPI\Wediary\Wediary.Data\obj\Debug\netcoreapp2.0\Wediary.Data.dll
+C:\Users\pawel\OneDrive\Desktop\ZPI\ZPI\Wediary\Wediary.Data\obj\Debug\netcoreapp2.0\Wediary.Data.pdb

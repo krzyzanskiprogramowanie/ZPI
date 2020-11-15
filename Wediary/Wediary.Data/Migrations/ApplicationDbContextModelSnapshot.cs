@@ -157,13 +157,13 @@ namespace Wediary.Data.Migrations
 
                     b.Property<string>("Name");
 
-                    b.Property<int?>("ProjectIdProject");
+                    b.Property<int>("ProjectId");
 
                     b.Property<string>("Type");
 
                     b.HasKey("IdCoordinates");
 
-                    b.HasIndex("ProjectIdProject");
+                    b.HasIndex("ProjectId");
 
                     b.ToTable("Coordinates");
                 });
@@ -178,11 +178,11 @@ namespace Wediary.Data.Migrations
                     b.Property<string>("DescriptionDiet")
                         .HasMaxLength(1000);
 
-                    b.Property<string>("IdApplicationUser");
-
                     b.Property<bool>("IfAftermath");
 
                     b.Property<bool>("IfSpecialDiet");
+
+                    b.Property<int>("InvitationId");
 
                     b.Property<int?>("InvitationStatusIdInvitationStatus");
 
@@ -197,6 +197,8 @@ namespace Wediary.Data.Migrations
                     b.Property<string>("Surname")
                         .IsRequired()
                         .HasMaxLength(50);
+
+                    b.Property<string>("UserId");
 
                     b.HasKey("IdGuest");
 
@@ -259,7 +261,7 @@ namespace Wediary.Data.Migrations
                     b.Property<decimal>("Budget")
                         .HasColumnType("decimal(18, 2)");
 
-                    b.Property<int?>("CategoryIdCategory");
+                    b.Property<int>("CategoryId");
 
                     b.Property<string>("Contractor")
                         .IsRequired()
@@ -281,6 +283,8 @@ namespace Wediary.Data.Migrations
 
                     b.Property<int?>("TaskStatusIdTasksStatus");
 
+                    b.Property<int>("TastStatusId");
+
                     b.Property<decimal>("TotalPrice")
                         .HasColumnType("decimal(18, 2)");
 
@@ -293,7 +297,7 @@ namespace Wediary.Data.Migrations
 
                     b.HasKey("IdTask");
 
-                    b.HasIndex("CategoryIdCategory");
+                    b.HasIndex("CategoryId");
 
                     b.HasIndex("TaskStatusIdTasksStatus");
 
@@ -415,7 +419,8 @@ namespace Wediary.Data.Migrations
                 {
                     b.HasOne("Wediary.Data.Models.Project", "Project")
                         .WithMany("Coordinates")
-                        .HasForeignKey("ProjectIdProject");
+                        .HasForeignKey("ProjectId")
+                        .OnDelete(DeleteBehavior.Cascade);
                 });
 
             modelBuilder.Entity("Wediary.Data.Models.Guest", b =>
@@ -440,7 +445,8 @@ namespace Wediary.Data.Migrations
                 {
                     b.HasOne("Wediary.Data.Models.Category", "Category")
                         .WithMany("Task")
-                        .HasForeignKey("CategoryIdCategory");
+                        .HasForeignKey("CategoryId")
+                        .OnDelete(DeleteBehavior.Cascade);
 
                     b.HasOne("Wediary.Data.Models.TaskStatus", "TaskStatus")
                         .WithMany("TaskUsers")

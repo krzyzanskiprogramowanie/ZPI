@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 namespace Wediary.Data.Migrations
 {
-    public partial class DodanieModeluBazyDanych : Migration
+    public partial class CorrectDB : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -226,13 +226,14 @@ namespace Wediary.Data.Migrations
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     ApplicationUserId = table.Column<string>(type: "nvarchar(450)", nullable: true),
                     DescriptionDiet = table.Column<string>(type: "nvarchar(1000)", maxLength: 1000, nullable: true),
-                    IdApplicationUser = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     IfAftermath = table.Column<bool>(type: "bit", nullable: false),
                     IfSpecialDiet = table.Column<bool>(type: "bit", nullable: false),
+                    InvitationId = table.Column<int>(type: "int", nullable: false),
                     InvitationStatusIdInvitationStatus = table.Column<int>(type: "int", nullable: true),
                     Name = table.Column<string>(type: "nvarchar(30)", maxLength: 30, nullable: false),
                     Role = table.Column<string>(type: "nvarchar(1000)", maxLength: 1000, nullable: false),
-                    Surname = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false)
+                    Surname = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
+                    UserId = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -258,7 +259,7 @@ namespace Wediary.Data.Migrations
                     IdTask = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     Budget = table.Column<decimal>(type: "decimal(18, 2)", nullable: false),
-                    CategoryIdCategory = table.Column<int>(type: "int", nullable: true),
+                    CategoryId = table.Column<int>(type: "int", nullable: false),
                     Contractor = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
                     Date = table.Column<DateTime>(type: "datetime2", nullable: false),
                     ExpectedPrice = table.Column<decimal>(type: "decimal(18, 2)", nullable: false),
@@ -266,6 +267,7 @@ namespace Wediary.Data.Migrations
                     Payment = table.Column<decimal>(type: "decimal(18, 2)", nullable: false),
                     Quantity = table.Column<int>(type: "int", nullable: false),
                     TaskStatusIdTasksStatus = table.Column<int>(type: "int", nullable: true),
+                    TastStatusId = table.Column<int>(type: "int", nullable: false),
                     TotalPrice = table.Column<decimal>(type: "decimal(18, 2)", nullable: false),
                     Unit = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     UserId = table.Column<string>(type: "nvarchar(450)", nullable: true),
@@ -275,11 +277,11 @@ namespace Wediary.Data.Migrations
                 {
                     table.PrimaryKey("PK_TaskUsers", x => x.IdTask);
                     table.ForeignKey(
-                        name: "FK_TaskUsers_Categories_CategoryIdCategory",
-                        column: x => x.CategoryIdCategory,
+                        name: "FK_TaskUsers_Categories_CategoryId",
+                        column: x => x.CategoryId,
                         principalTable: "Categories",
                         principalColumn: "IdCategory",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
                         name: "FK_TaskUsers_TaskStatuses_TaskStatusIdTasksStatus",
                         column: x => x.TaskStatusIdTasksStatus,
@@ -305,18 +307,18 @@ namespace Wediary.Data.Migrations
                     C = table.Column<int>(type: "int", nullable: false),
                     D = table.Column<int>(type: "int", nullable: false),
                     Name = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    ProjectIdProject = table.Column<int>(type: "int", nullable: true),
+                    ProjectId = table.Column<int>(type: "int", nullable: false),
                     Type = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Coordinates", x => x.IdCoordinates);
                     table.ForeignKey(
-                        name: "FK_Coordinates_Projects_ProjectIdProject",
-                        column: x => x.ProjectIdProject,
+                        name: "FK_Coordinates_Projects_ProjectId",
+                        column: x => x.ProjectId,
                         principalTable: "Projects",
                         principalColumn: "IdProject",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateIndex(
@@ -359,9 +361,9 @@ namespace Wediary.Data.Migrations
                 filter: "[NormalizedUserName] IS NOT NULL");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Coordinates_ProjectIdProject",
+                name: "IX_Coordinates_ProjectId",
                 table: "Coordinates",
-                column: "ProjectIdProject");
+                column: "ProjectId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Guests_ApplicationUserId",
@@ -379,9 +381,9 @@ namespace Wediary.Data.Migrations
                 column: "UserId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_TaskUsers_CategoryIdCategory",
+                name: "IX_TaskUsers_CategoryId",
                 table: "TaskUsers",
-                column: "CategoryIdCategory");
+                column: "CategoryId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_TaskUsers_TaskStatusIdTasksStatus",

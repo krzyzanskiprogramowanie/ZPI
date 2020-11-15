@@ -50,10 +50,9 @@ namespace Wediary.Data.Models
         [Display(Name = "Opis diety")]
         public string DescriptionDiet { get; set; }
 
-        public virtual string IdApplicationUser { get; set; }
-
-        
+        public virtual string UserId { get; set; }
         public virtual ApplicationUser ApplicationUser { get; set; }
+        public virtual int InvitationId { get; set; }
         public virtual InvitationStatus InvitationStatus { get; set; }
 
 

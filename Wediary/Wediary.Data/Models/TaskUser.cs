@@ -84,9 +84,11 @@ namespace Wediary.Data.Models
         public string Contractor{ get; set; }
 
 
-
+        public virtual int TastStatusId { get; set; }
         public virtual TaskStatus TaskStatus{ get; set; }
+        public virtual int CategoryId  { get; set; }
         public virtual Category Category { get; set; }
+        public virtual string UserId { get; set; }
         public virtual ApplicationUser User { get; set; }
 
     }

@@ -1,0 +1,9 @@
+C:\Users\pawel\OneDrive\Desktop\ZPI\ZPI\Wediary\Wediary.Service\bin\Debug\netcoreapp2.0\Wediary.Service.deps.json
+C:\Users\pawel\OneDrive\Desktop\ZPI\ZPI\Wediary\Wediary.Service\bin\Debug\netcoreapp2.0\Wediary.Service.dll
+C:\Users\pawel\OneDrive\Desktop\ZPI\ZPI\Wediary\Wediary.Service\bin\Debug\netcoreapp2.0\Wediary.Service.pdb
+C:\Users\pawel\OneDrive\Desktop\ZPI\ZPI\Wediary\Wediary.Service\obj\Debug\netcoreapp2.0\Wediary.Service.csprojAssemblyReference.cache
+C:\Users\pawel\OneDrive\Desktop\ZPI\ZPI\Wediary\Wediary.Service\obj\Debug\netcoreapp2.0\Wediary.Service.AssemblyInfoInputs.cache
+C:\Users\pawel\OneDrive\Desktop\ZPI\ZPI\Wediary\Wediary.Service\obj\Debug\netcoreapp2.0\Wediary.Service.AssemblyInfo.cs
+C:\Users\pawel\OneDrive\Desktop\ZPI\ZPI\Wediary\Wediary.Service\obj\Debug\netcoreapp2.0\Wediary.Service.csproj.CoreCompileInputs.cache
+C:\Users\pawel\OneDrive\Desktop\ZPI\ZPI\Wediary\Wediary.Service\obj\Debug\netcoreapp2.0\Wediary.Service.dll
+C:\Users\pawel\OneDrive\Desktop\ZPI\ZPI\Wediary\Wediary.Service\obj\Debug\netcoreapp2.0\Wediary.Service.pdb

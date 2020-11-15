@@ -21,6 +21,7 @@ namespace Wediary.Data.Models
         [Display(Name = "Data utworzenia")]
         public DateTime CreationDate { get; set; } //automatycznie
 
+        public virtual string UserId{ get; set; }
         public virtual ApplicationUser User{ get; set; }
         public virtual List<Coordinate> Coordinates { get; set; }
     }
