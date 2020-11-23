@@ -13127,11 +13127,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Grzegorz\\Desktop\\Pulpit\\Studia\\ZPI\\ZPI\\Wediary\\Wediary.Data\\Wediary.Data.csproj",
+      "projectUniqueName": "C:\\Users\\Grzegorz\\Desktop\\Pulpit\\Studia\\ZPI\\Wediary\\Wediary.Data\\Wediary.Data.csproj",
       "projectName": "Wediary.Data",
-      "projectPath": "C:\\Users\\Grzegorz\\Desktop\\Pulpit\\Studia\\ZPI\\ZPI\\Wediary\\Wediary.Data\\Wediary.Data.csproj",
+      "projectPath": "C:\\Users\\Grzegorz\\Desktop\\Pulpit\\Studia\\ZPI\\Wediary\\Wediary.Data\\Wediary.Data.csproj",
       "packagesPath": "C:\\Users\\Grzegorz\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Grzegorz\\Desktop\\Pulpit\\Studia\\ZPI\\ZPI\\Wediary\\Wediary.Data\\obj\\",
+      "outputPath": "C:\\Users\\Grzegorz\\Desktop\\Pulpit\\Studia\\ZPI\\Wediary\\Wediary.Data\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

@@ -682,11 +682,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Grzegorz\\Desktop\\Pulpit\\Studia\\ZPI\\ZPI\\Wediary\\Wediary.Service\\Wediary.Service.csproj",
+      "projectUniqueName": "C:\\Users\\Grzegorz\\Desktop\\Pulpit\\Studia\\ZPI\\Wediary\\Wediary.Service\\Wediary.Service.csproj",
       "projectName": "Wediary.Service",
-      "projectPath": "C:\\Users\\Grzegorz\\Desktop\\Pulpit\\Studia\\ZPI\\ZPI\\Wediary\\Wediary.Service\\Wediary.Service.csproj",
+      "projectPath": "C:\\Users\\Grzegorz\\Desktop\\Pulpit\\Studia\\ZPI\\Wediary\\Wediary.Service\\Wediary.Service.csproj",
       "packagesPath": "C:\\Users\\Grzegorz\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Grzegorz\\Desktop\\Pulpit\\Studia\\ZPI\\ZPI\\Wediary\\Wediary.Service\\obj\\",
+      "outputPath": "C:\\Users\\Grzegorz\\Desktop\\Pulpit\\Studia\\ZPI\\Wediary\\Wediary.Service\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

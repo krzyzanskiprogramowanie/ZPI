@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "rhxL/pChRNsuoE8V+ZxKMPdZg1x2PU7k7QbpO8UxSoFsqyEOu41JBCu41bCq7rxvASNoUmauQIoHnIZ9s1duhg==",
+  "dgSpecHash": "O3WtOpB4duT4xMWwwRoG1Ri1yy3MK99rM4tC5mmTF1HSuyYndRCCGNmA54eA9N1CKqrgS6If/qxeHZh1L5Bsig==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Grzegorz\\Desktop\\Pulpit\\Studia\\ZPI\\ZPI\\Wediary\\Wediary.Service\\Wediary.Service.csproj",
+  "projectFilePath": "C:\\Users\\Grzegorz\\Desktop\\Pulpit\\Studia\\ZPI\\Wediary\\Wediary.Service\\Wediary.Service.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Grzegorz\\.nuget\\packages\\microsoft.netcore.app\\2.0.0\\microsoft.netcore.app.2.0.0.nupkg.sha512",
     "C:\\Users\\Grzegorz\\.nuget\\packages\\microsoft.netcore.dotnetapphost\\2.0.0\\microsoft.netcore.dotnetapphost.2.0.0.nupkg.sha512",

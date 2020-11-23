@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "gQhY7G35wcEevJiMVSfaCoqDRzJ7yGWYEROO8irBZkSa5EiF8A2QImCw5tRjxSPkPeQBQpMh6DgC/YpnJmW47Q==",
+  "dgSpecHash": "z8guA7DJ+t2YhXC6ipgbaV3dV4dbATgyG7aq4HbWfFPUvABOczIkSrr0X0+U/rGN+JVXGCGr7CyA09W/yzoZZg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Grzegorz\\Desktop\\Pulpit\\Studia\\ZPI\\ZPI\\Wediary\\Wediary.Data\\Wediary.Data.csproj",
+  "projectFilePath": "C:\\Users\\Grzegorz\\Desktop\\Pulpit\\Studia\\ZPI\\Wediary\\Wediary.Data\\Wediary.Data.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Grzegorz\\.nuget\\packages\\libuv\\1.10.0\\libuv.1.10.0.nupkg.sha512",
     "C:\\Users\\Grzegorz\\.nuget\\packages\\microsoft.applicationinsights\\2.4.0\\microsoft.applicationinsights.2.4.0.nupkg.sha512",
