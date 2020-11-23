@@ -5042,6 +5042,19 @@
         "runtime": {
           "bin/placeholder/Wediary.Data.dll": {}
         }
+      },
+      "Wediary.Service/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v2.0",
+        "dependencies": {
+          "Wediary.Data": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Wediary.Service.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Wediary.Service.dll": {}
+        }
       }
     }
   },
@@ -13746,6 +13759,11 @@
       "type": "project",
       "path": "../Wediary.Data/Wediary.Data.csproj",
       "msbuildProject": "../Wediary.Data/Wediary.Data.csproj"
+    },
+    "Wediary.Service/1.0.0": {
+      "type": "project",
+      "path": "../Wediary.Service/Wediary.Service.csproj",
+      "msbuildProject": "../Wediary.Service/Wediary.Service.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -13754,7 +13772,8 @@
       "Microsoft.EntityFrameworkCore.Tools >= 2.0.0",
       "Microsoft.NETCore.App >= 2.0.0",
       "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 2.0.0",
-      "Wediary.Data >= 1.0.0"
+      "Wediary.Data >= 1.0.0",
+      "Wediary.Service >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -13790,6 +13809,9 @@
           "projectReferences": {
             "C:\\Users\\Grzegorz\\Desktop\\Pulpit\\Studia\\ZPI\\Wediary\\Wediary.Data\\Wediary.Data.csproj": {
               "projectPath": "C:\\Users\\Grzegorz\\Desktop\\Pulpit\\Studia\\ZPI\\Wediary\\Wediary.Data\\Wediary.Data.csproj"
+            },
+            "C:\\Users\\Grzegorz\\Desktop\\Pulpit\\Studia\\ZPI\\Wediary\\Wediary.Service\\Wediary.Service.csproj": {
+              "projectPath": "C:\\Users\\Grzegorz\\Desktop\\Pulpit\\Studia\\ZPI\\Wediary\\Wediary.Service\\Wediary.Service.csproj"
             }
           }
         }
