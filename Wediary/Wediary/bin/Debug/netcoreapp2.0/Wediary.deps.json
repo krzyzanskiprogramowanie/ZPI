@@ -28,7 +28,8 @@
           "Microsoft.EntityFrameworkCore.Tools": "2.0.0",
           "Microsoft.NETCore.App": "2.0.0",
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": "2.0.0",
-          "Wediary.Data": "1.0.0"
+          "Wediary.Data": "1.0.0",
+          "Wediary.Service": "1.0.0"
         },
         "runtime": {
           "Wediary.dll": {}
@@ -4408,6 +4409,17 @@
           "Wediary.Data.dll": {}
         }
       },
+      "Wediary.Service/1.0.0": {
+        "dependencies": {
+          "Wediary.Data": "1.0.0"
+        },
+        "runtime": {
+          "Wediary.Service.dll": {}
+        },
+        "compile": {
+          "Wediary.Service.dll": {}
+        }
+      },
       "Microsoft.NETCore.App/2.0.0": {
         "dependencies": {
           "Microsoft.NETCore.DotNetHostPolicy": "2.0.0",
@@ -6721,6 +6733,11 @@
       "hashPath": "windowsazure.storage.8.1.4.nupkg.sha512"
     },
     "Wediary.Data/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Wediary.Service/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

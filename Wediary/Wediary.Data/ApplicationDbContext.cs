@@ -16,14 +16,14 @@ namespace Wediary.Data
         {
         }
 
-        DbSet<ApplicationUser> applicationUsers { get; set; }
-        DbSet<Category> Categories{ get; set; }
-        DbSet<Coordinate> Coordinates{ get; set; }
-        DbSet<Guest> Guests{ get; set; }
-        DbSet<InvitationStatus> InvitationStatuses{ get; set; }
-        DbSet<Project> Projects{ get; set; }
-        DbSet<Models.TaskStatus> TaskStatuses{ get; set; }
-        DbSet<TaskUser> TaskUsers{ get; set; }
+        public DbSet<ApplicationUser> ApplicationUsers { get; set; }
+        public DbSet<Category> Categories{ get; set; }
+        public DbSet<Coordinate> Coordinates{ get; set; }
+        public DbSet<Guest> Guests{ get; set; }
+        public DbSet<InvitationStatus> InvitationStatuses{ get; set; }
+        public DbSet<Project> Projects{ get; set; }
+        public DbSet<Models.TaskStatus> TaskStatuses{ get; set; }
+        public DbSet<TaskUser> TaskUsers{ get; set; }
 
      
     }

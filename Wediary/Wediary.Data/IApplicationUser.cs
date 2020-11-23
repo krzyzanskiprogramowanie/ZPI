@@ -5,10 +5,12 @@ using Wediary.Models;
 
 namespace Wediary.Data
 {
-    public interface IUser //zmien nazwe 
+    public interface IApplicationUser 
     {
         ApplicationUser GetById(string id);
         IEnumerable<ApplicationUser> GetAll();
+
+        Task SetImageProfile (string id, Uri uri);
 
         Task Create(ApplicationUser applicationUser);
         Task Delete(string id);

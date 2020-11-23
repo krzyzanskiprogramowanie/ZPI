@@ -11,6 +11,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Wediary.Data;
 using Wediary.Models;
 using Wediary.Services;
+using Wediary.Service;
 
 namespace Wediary
 {
@@ -35,6 +36,7 @@ namespace Wediary
 
             // Add application services.
             services.AddTransient<IEmailSender, EmailSender>();
+            services.AddScoped<IApplicationUser, UserService>();
 
             services.AddMvc();
         }

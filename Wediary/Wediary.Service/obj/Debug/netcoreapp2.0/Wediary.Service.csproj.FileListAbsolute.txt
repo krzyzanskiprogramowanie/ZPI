@@ -16,3 +16,15 @@ C:\Users\Grzegorz\Desktop\Pulpit\Studia\ZPI\ZPI\Wediary\Wediary.Service\obj\Debu
 C:\Users\Grzegorz\Desktop\Pulpit\Studia\ZPI\ZPI\Wediary\Wediary.Service\obj\Debug\netcoreapp2.0\Wediary.Service.csproj.CoreCompileInputs.cache
 C:\Users\Grzegorz\Desktop\Pulpit\Studia\ZPI\ZPI\Wediary\Wediary.Service\obj\Debug\netcoreapp2.0\Wediary.Service.dll
 C:\Users\Grzegorz\Desktop\Pulpit\Studia\ZPI\ZPI\Wediary\Wediary.Service\obj\Debug\netcoreapp2.0\Wediary.Service.pdb
+C:\Users\Grzegorz\Desktop\Pulpit\Studia\ZPI\Wediary\Wediary.Service\bin\Debug\netcoreapp2.0\Wediary.Service.deps.json
+C:\Users\Grzegorz\Desktop\Pulpit\Studia\ZPI\Wediary\Wediary.Service\bin\Debug\netcoreapp2.0\Wediary.Service.dll
+C:\Users\Grzegorz\Desktop\Pulpit\Studia\ZPI\Wediary\Wediary.Service\bin\Debug\netcoreapp2.0\Wediary.Service.pdb
+C:\Users\Grzegorz\Desktop\Pulpit\Studia\ZPI\Wediary\Wediary.Service\bin\Debug\netcoreapp2.0\Wediary.Data.dll
+C:\Users\Grzegorz\Desktop\Pulpit\Studia\ZPI\Wediary\Wediary.Service\bin\Debug\netcoreapp2.0\Wediary.Data.pdb
+C:\Users\Grzegorz\Desktop\Pulpit\Studia\ZPI\Wediary\Wediary.Service\obj\Debug\netcoreapp2.0\Wediary.Service.csprojAssemblyReference.cache
+C:\Users\Grzegorz\Desktop\Pulpit\Studia\ZPI\Wediary\Wediary.Service\obj\Debug\netcoreapp2.0\Wediary.Service.AssemblyInfoInputs.cache
+C:\Users\Grzegorz\Desktop\Pulpit\Studia\ZPI\Wediary\Wediary.Service\obj\Debug\netcoreapp2.0\Wediary.Service.AssemblyInfo.cs
+C:\Users\Grzegorz\Desktop\Pulpit\Studia\ZPI\Wediary\Wediary.Service\obj\Debug\netcoreapp2.0\Wediary.Service.csproj.CoreCompileInputs.cache
+C:\Users\Grzegorz\Desktop\Pulpit\Studia\ZPI\Wediary\Wediary.Service\obj\Debug\netcoreapp2.0\Wediary.Service.csproj.CopyComplete
+C:\Users\Grzegorz\Desktop\Pulpit\Studia\ZPI\Wediary\Wediary.Service\obj\Debug\netcoreapp2.0\Wediary.Service.dll
+C:\Users\Grzegorz\Desktop\Pulpit\Studia\ZPI\Wediary\Wediary.Service\obj\Debug\netcoreapp2.0\Wediary.Service.pdb

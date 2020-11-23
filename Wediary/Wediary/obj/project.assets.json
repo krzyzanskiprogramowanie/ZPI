@@ -5042,6 +5042,19 @@
         "runtime": {
           "bin/placeholder/Wediary.Data.dll": {}
         }
+      },
+      "Wediary.Service/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v2.0",
+        "dependencies": {
+          "Wediary.Data": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Wediary.Service.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Wediary.Service.dll": {}
+        }
       }
     }
   },
@@ -13746,6 +13759,11 @@
       "type": "project",
       "path": "../Wediary.Data/Wediary.Data.csproj",
       "msbuildProject": "../Wediary.Data/Wediary.Data.csproj"
+    },
+    "Wediary.Service/1.0.0": {
+      "type": "project",
+      "path": "../Wediary.Service/Wediary.Service.csproj",
+      "msbuildProject": "../Wediary.Service/Wediary.Service.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -13754,27 +13772,28 @@
       "Microsoft.EntityFrameworkCore.Tools >= 2.0.0",
       "Microsoft.NETCore.App >= 2.0.0",
       "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 2.0.0",
-      "Wediary.Data >= 1.0.0"
+      "Wediary.Data >= 1.0.0",
+      "Wediary.Service >= 1.0.0"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\pawel\\.nuget\\packages\\": {},
+    "C:\\Users\\Grzegorz\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\pawel\\OneDrive\\Desktop\\ZPI\\ZPI\\Wediary\\Wediary\\Wediary.csproj",
+      "projectUniqueName": "C:\\Users\\Grzegorz\\Desktop\\Pulpit\\Studia\\ZPI\\Wediary\\Wediary\\Wediary.csproj",
       "projectName": "Wediary",
-      "projectPath": "C:\\Users\\pawel\\OneDrive\\Desktop\\ZPI\\ZPI\\Wediary\\Wediary\\Wediary.csproj",
-      "packagesPath": "C:\\Users\\pawel\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\pawel\\OneDrive\\Desktop\\ZPI\\ZPI\\Wediary\\Wediary\\obj\\",
+      "projectPath": "C:\\Users\\Grzegorz\\Desktop\\Pulpit\\Studia\\ZPI\\Wediary\\Wediary\\Wediary.csproj",
+      "packagesPath": "C:\\Users\\Grzegorz\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Grzegorz\\Desktop\\Pulpit\\Studia\\ZPI\\Wediary\\Wediary\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\pawel\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Grzegorz\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -13788,8 +13807,11 @@
         "netcoreapp2.0": {
           "targetAlias": "netcoreapp2.0",
           "projectReferences": {
-            "C:\\Users\\pawel\\OneDrive\\Desktop\\ZPI\\ZPI\\Wediary\\Wediary.Data\\Wediary.Data.csproj": {
-              "projectPath": "C:\\Users\\pawel\\OneDrive\\Desktop\\ZPI\\ZPI\\Wediary\\Wediary.Data\\Wediary.Data.csproj"
+            "C:\\Users\\Grzegorz\\Desktop\\Pulpit\\Studia\\ZPI\\Wediary\\Wediary.Data\\Wediary.Data.csproj": {
+              "projectPath": "C:\\Users\\Grzegorz\\Desktop\\Pulpit\\Studia\\ZPI\\Wediary\\Wediary.Data\\Wediary.Data.csproj"
+            },
+            "C:\\Users\\Grzegorz\\Desktop\\Pulpit\\Studia\\ZPI\\Wediary\\Wediary.Service\\Wediary.Service.csproj": {
+              "projectPath": "C:\\Users\\Grzegorz\\Desktop\\Pulpit\\Studia\\ZPI\\Wediary\\Wediary.Service\\Wediary.Service.csproj"
             }
           }
         }

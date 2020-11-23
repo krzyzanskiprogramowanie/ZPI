@@ -20,6 +20,11 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Wediary.Data\Wediary.Data.csproj" />
+    <ProjectReference Include="..\Wediary.Service\Wediary.Service.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\images\ProfileImage\" />
   </ItemGroup>
 
 </Project>

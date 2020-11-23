@@ -38,6 +38,7 @@ namespace Wediary.Models
         [DataType(DataType.Date)]
         public DateTime WeddingDate { get; set; }
 
+        public string ImageProfileUrl { get; set; }
         public virtual List<TaskUser> Tasks { get; set; }
         public virtual List<Project> Projects { get; set; }
         public virtual List<Guest> Guests { get; set; }
