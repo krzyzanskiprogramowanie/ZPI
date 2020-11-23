@@ -6,12 +6,12 @@ using Wediary.Data.Models;
 
 namespace Wediary.Data
 {
-    public interface ICoordinate
+    interface IInvitationStatus
     {
-        Coordinate GetById(string id);
-        IEnumerable<Coordinate> GetAll();
+        InvitationStatus GetById(string id);
+        IEnumerable<InvitationStatus> GetAll();
 
-        Task Create(Coordinate coordinate);
+        Task Create(InvitationStatus invitationStatus);
         Task Delete(string id);
         Task UpdateUser(string id);
     }
