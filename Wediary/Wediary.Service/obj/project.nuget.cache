@@ -1,15 +1,15 @@
 {
   "version": 2,
-  "dgSpecHash": "47eGZ8jKvxPu9L57BgjeMZFelABTpOvWDmVcvp7Xm/bUyzsAb3LChexjJFkwu/ZUhOPENNSo3fDHP3Mwy5ZO3w==",
+  "dgSpecHash": "rhxL/pChRNsuoE8V+ZxKMPdZg1x2PU7k7QbpO8UxSoFsqyEOu41JBCu41bCq7rxvASNoUmauQIoHnIZ9s1duhg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\DEMACIA\\Documents\\GitHub\\ZPI\\Wediary\\Wediary.Service\\Wediary.Service.csproj",
+  "projectFilePath": "C:\\Users\\Grzegorz\\Desktop\\Pulpit\\Studia\\ZPI\\ZPI\\Wediary\\Wediary.Service\\Wediary.Service.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\DEMACIA\\.nuget\\packages\\microsoft.netcore.app\\2.0.0\\microsoft.netcore.app.2.0.0.nupkg.sha512",
-    "C:\\Users\\DEMACIA\\.nuget\\packages\\microsoft.netcore.dotnetapphost\\2.0.0\\microsoft.netcore.dotnetapphost.2.0.0.nupkg.sha512",
-    "C:\\Users\\DEMACIA\\.nuget\\packages\\microsoft.netcore.dotnethostpolicy\\2.0.0\\microsoft.netcore.dotnethostpolicy.2.0.0.nupkg.sha512",
-    "C:\\Users\\DEMACIA\\.nuget\\packages\\microsoft.netcore.dotnethostresolver\\2.0.0\\microsoft.netcore.dotnethostresolver.2.0.0.nupkg.sha512",
-    "C:\\Users\\DEMACIA\\.nuget\\packages\\microsoft.netcore.platforms\\2.0.0\\microsoft.netcore.platforms.2.0.0.nupkg.sha512",
-    "C:\\Users\\DEMACIA\\.nuget\\packages\\netstandard.library\\2.0.0\\netstandard.library.2.0.0.nupkg.sha512"
+    "C:\\Users\\Grzegorz\\.nuget\\packages\\microsoft.netcore.app\\2.0.0\\microsoft.netcore.app.2.0.0.nupkg.sha512",
+    "C:\\Users\\Grzegorz\\.nuget\\packages\\microsoft.netcore.dotnetapphost\\2.0.0\\microsoft.netcore.dotnetapphost.2.0.0.nupkg.sha512",
+    "C:\\Users\\Grzegorz\\.nuget\\packages\\microsoft.netcore.dotnethostpolicy\\2.0.0\\microsoft.netcore.dotnethostpolicy.2.0.0.nupkg.sha512",
+    "C:\\Users\\Grzegorz\\.nuget\\packages\\microsoft.netcore.dotnethostresolver\\2.0.0\\microsoft.netcore.dotnethostresolver.2.0.0.nupkg.sha512",
+    "C:\\Users\\Grzegorz\\.nuget\\packages\\microsoft.netcore.platforms\\2.0.0\\microsoft.netcore.platforms.2.0.0.nupkg.sha512",
+    "C:\\Users\\Grzegorz\\.nuget\\packages\\netstandard.library\\2.0.0\\netstandard.library.2.0.0.nupkg.sha512"
   ],
   "logs": []
 }
