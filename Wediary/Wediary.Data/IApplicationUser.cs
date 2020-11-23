@@ -13,10 +13,5 @@ namespace Wediary.Data
         Task Create(ApplicationUser applicationUser);
         Task Delete(string id);
         Task UpdateUser(string id);
-        //xa
-        //xa
-        //
-        //xd
-        //xd
     }
 }
