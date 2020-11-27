@@ -10,15 +10,9 @@ namespace Wediary.Data.Models
     {
         [Key]
         public int IdProject { get; set; }
-        
-        [Required]
-        [StringLength(50, MinimumLength = 2)]
-        [DataType(DataType.Text)]
-        [Display(Name = "Nazwa projektu")]
-        [RegularExpression(@"^[A-Za-z0-9]+$")]
+      
         public string Name { get; set; }
 
-        [Display(Name = "Data utworzenia")]
         public DateTime CreationDate { get; set; } //automatycznie
 
         public virtual string UserId{ get; set; }

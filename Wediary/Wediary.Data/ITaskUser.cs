@@ -13,6 +13,6 @@ namespace Wediary.Data
 
         Task Create(TaskUser taskUser);
         Task Delete(string id);
-        Task UpdateUser(string id);
+        Task UpdateTask(string id);
     }
 }

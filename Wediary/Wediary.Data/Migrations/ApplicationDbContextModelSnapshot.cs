@@ -157,6 +157,8 @@ namespace Wediary.Data.Migrations
 
                     b.Property<string>("Name");
 
+                    b.Property<string>("Owner");
+
                     b.Property<int>("ProjectId");
 
                     b.Property<string>("Type");
@@ -331,7 +333,6 @@ namespace Wediary.Data.Migrations
                     b.Property<DateTimeOffset?>("LockoutEnd");
 
                     b.Property<string>("Name")
-                        .IsRequired()
                         .HasMaxLength(30);
 
                     b.Property<string>("NormalizedEmail")
@@ -349,7 +350,6 @@ namespace Wediary.Data.Migrations
                     b.Property<string>("SecurityStamp");
 
                     b.Property<string>("Surname")
-                        .IsRequired()
                         .HasMaxLength(50);
 
                     b.Property<bool>("TwoFactorEnabled");

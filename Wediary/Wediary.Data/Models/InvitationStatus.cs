@@ -10,7 +10,6 @@ namespace Wediary.Data.Models
         [Key]
         public int IdInvitationStatus { get; set; }
 
-        [Display(Name = "Status zaproszenia")]
         public string Name { get; set; }    
 
         public virtual List<Guest> Guests { get; set; }
