@@ -21,6 +21,8 @@ namespace Wediary.Data.Models
         public decimal TotalPrice { get; set; }
         public DateTime Date { get; set; }
         public string Contractor{ get; set; }
+
+
         public virtual int TastStatusId { get; set; }
         public virtual TaskStatus TaskStatus{ get; set; }
         public virtual int CategoryId  { get; set; }
