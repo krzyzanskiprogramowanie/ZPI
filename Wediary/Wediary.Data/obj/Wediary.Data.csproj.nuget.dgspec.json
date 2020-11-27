@@ -1,23 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\pawel\\OneDrive\\Desktop\\ZPI\\ZPI\\Wediary\\Wediary.Data\\Wediary.Data.csproj": {}
+    "C:\\Users\\Marcin\\Documents\\GitHub\\ZPI\\Wediary\\Wediary.Data\\Wediary.Data.csproj": {}
   },
   "projects": {
-    "C:\\Users\\pawel\\OneDrive\\Desktop\\ZPI\\ZPI\\Wediary\\Wediary.Data\\Wediary.Data.csproj": {
+    "C:\\Users\\Marcin\\Documents\\GitHub\\ZPI\\Wediary\\Wediary.Data\\Wediary.Data.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\pawel\\OneDrive\\Desktop\\ZPI\\ZPI\\Wediary\\Wediary.Data\\Wediary.Data.csproj",
+        "projectUniqueName": "C:\\Users\\Marcin\\Documents\\GitHub\\ZPI\\Wediary\\Wediary.Data\\Wediary.Data.csproj",
         "projectName": "Wediary.Data",
-        "projectPath": "C:\\Users\\pawel\\OneDrive\\Desktop\\ZPI\\ZPI\\Wediary\\Wediary.Data\\Wediary.Data.csproj",
-        "packagesPath": "C:\\Users\\pawel\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\pawel\\OneDrive\\Desktop\\ZPI\\ZPI\\Wediary\\Wediary.Data\\obj\\",
+        "projectPath": "C:\\Users\\Marcin\\Documents\\GitHub\\ZPI\\Wediary\\Wediary.Data\\Wediary.Data.csproj",
+        "packagesPath": "C:\\Users\\Marcin\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Marcin\\Documents\\GitHub\\ZPI\\Wediary\\Wediary.Data\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\pawel\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Marcin\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -29,7 +26,6 @@
         },
         "frameworks": {
           "netcoreapp2.0": {
-            "targetAlias": "netcoreapp2.0",
             "projectReferences": {}
           }
         },
@@ -41,7 +37,6 @@
       },
       "frameworks": {
         "netcoreapp2.0": {
-          "targetAlias": "netcoreapp2.0",
           "dependencies": {
             "Microsoft.AspNetCore.All": {
               "target": "Package",
@@ -70,7 +65,7 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.403\\RuntimeIdentifierGraph.json"
         }
       }
     }

@@ -83,6 +83,11 @@ namespace Wediary.Data.Models
         [RegularExpression(@"^[A-Za-z0-9]+$")]
         public string Contractor{ get; set; }
 
+        [StringLength(1000, MinimumLength = 2)]
+        [DataType(DataType.Text)]
+        [Display(Name = "Notatka")]
+
+        public string Note { get; set; }
 
         public virtual int TastStatusId { get; set; }
         public virtual TaskStatus TaskStatus{ get; set; }
