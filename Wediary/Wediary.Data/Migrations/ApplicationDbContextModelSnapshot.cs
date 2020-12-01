@@ -128,20 +128,6 @@ namespace Wediary.Data.Migrations
                     b.ToTable("AspNetUserTokens");
                 });
 
-            modelBuilder.Entity("Wediary.Data.Models.Category", b =>
-                {
-                    b.Property<int>("IdCategory")
-                        .ValueGeneratedOnAdd();
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasMaxLength(30);
-
-                    b.HasKey("IdCategory");
-
-                    b.ToTable("Categories");
-                });
-
             modelBuilder.Entity("Wediary.Data.Models.Coordinate", b =>
                 {
                     b.Property<int>("IdCoordinates")
@@ -177,28 +163,19 @@ namespace Wediary.Data.Migrations
 
                     b.Property<string>("ApplicationUserId");
 
-                    b.Property<string>("DescriptionDiet")
-                        .HasMaxLength(1000);
+                    b.Property<string>("DescriptionDiet");
 
                     b.Property<bool>("IfAftermath");
 
                     b.Property<bool>("IfSpecialDiet");
 
-                    b.Property<int>("InvitationId");
+                    b.Property<string>("InvitationStatus");
 
-                    b.Property<int?>("InvitationStatusIdInvitationStatus");
+                    b.Property<string>("Name");
 
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasMaxLength(30);
+                    b.Property<string>("Role");
 
-                    b.Property<string>("Role")
-                        .IsRequired()
-                        .HasMaxLength(1000);
-
-                    b.Property<string>("Surname")
-                        .IsRequired()
-                        .HasMaxLength(50);
+                    b.Property<string>("Surname");
 
                     b.Property<string>("UserId");
 
@@ -206,21 +183,7 @@ namespace Wediary.Data.Migrations
 
                     b.HasIndex("ApplicationUserId");
 
-                    b.HasIndex("InvitationStatusIdInvitationStatus");
-
                     b.ToTable("Guests");
-                });
-
-            modelBuilder.Entity("Wediary.Data.Models.InvitationStatus", b =>
-                {
-                    b.Property<int>("IdInvitationStatus")
-                        .ValueGeneratedOnAdd();
-
-                    b.Property<string>("Name");
-
-                    b.HasKey("IdInvitationStatus");
-
-                    b.ToTable("InvitationStatuses");
                 });
 
             modelBuilder.Entity("Wediary.Data.Models.Project", b =>
@@ -230,9 +193,7 @@ namespace Wediary.Data.Migrations
 
                     b.Property<DateTime>("CreationDate");
 
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasMaxLength(50);
+                    b.Property<string>("Name");
 
                     b.Property<string>("UserId");
 
@@ -243,65 +204,34 @@ namespace Wediary.Data.Migrations
                     b.ToTable("Projects");
                 });
 
-            modelBuilder.Entity("Wediary.Data.Models.TaskStatus", b =>
-                {
-                    b.Property<int>("IdTasksStatus")
-                        .ValueGeneratedOnAdd();
-
-                    b.Property<string>("Name");
-
-                    b.HasKey("IdTasksStatus");
-
-                    b.ToTable("TaskStatuses");
-                });
-
             modelBuilder.Entity("Wediary.Data.Models.TaskUser", b =>
                 {
                     b.Property<int>("IdTask")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<decimal>("Budget")
-                        .HasColumnType("decimal(18, 2)");
+                    b.Property<string>("Category");
 
-                    b.Property<int>("CategoryId");
-
-                    b.Property<string>("Contractor")
-                        .IsRequired()
-                        .HasMaxLength(50);
+                    b.Property<string>("Contractor");
 
                     b.Property<DateTime>("Date");
 
-                    b.Property<decimal>("ExpectedPrice")
-                        .HasColumnType("decimal(18, 2)");
+                    b.Property<decimal>("ExpectedPrice");
 
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasMaxLength(50);
+                    b.Property<string>("Name");
 
-                    b.Property<decimal>("Payment")
-                        .HasColumnType("decimal(18, 2)");
+                    b.Property<decimal>("Payment");
 
                     b.Property<int>("Quantity");
 
-                    b.Property<int?>("TaskStatusIdTasksStatus");
+                    b.Property<string>("Status");
 
-                    b.Property<int>("TastStatusId");
-
-                    b.Property<decimal>("TotalPrice")
-                        .HasColumnType("decimal(18, 2)");
+                    b.Property<decimal>("TotalPrice");
 
                     b.Property<string>("Unit");
 
                     b.Property<string>("UserId");
 
-                    b.Property<decimal>("UserPrice")
-                        .HasColumnType("decimal(18, 2)");
-
                     b.HasKey("IdTask");
-
-                    b.HasIndex("CategoryId");
-
-                    b.HasIndex("TaskStatusIdTasksStatus");
 
                     b.HasIndex("UserId");
 
@@ -315,8 +245,7 @@ namespace Wediary.Data.Migrations
 
                     b.Property<int>("AccessFailedCount");
 
-                    b.Property<decimal>("Budget")
-                        .HasColumnType("decimal(18, 2)");
+                    b.Property<decimal>("Budget");
 
                     b.Property<string>("ConcurrencyStamp")
                         .IsConcurrencyToken();
@@ -332,8 +261,7 @@ namespace Wediary.Data.Migrations
 
                     b.Property<DateTimeOffset?>("LockoutEnd");
 
-                    b.Property<string>("Name")
-                        .HasMaxLength(30);
+                    b.Property<string>("Name");
 
                     b.Property<string>("NormalizedEmail")
                         .HasMaxLength(256);
@@ -349,8 +277,7 @@ namespace Wediary.Data.Migrations
 
                     b.Property<string>("SecurityStamp");
 
-                    b.Property<string>("Surname")
-                        .HasMaxLength(50);
+                    b.Property<string>("Surname");
 
                     b.Property<bool>("TwoFactorEnabled");
 
@@ -430,10 +357,6 @@ namespace Wediary.Data.Migrations
                     b.HasOne("Wediary.Models.ApplicationUser", "ApplicationUser")
                         .WithMany("Guests")
                         .HasForeignKey("ApplicationUserId");
-
-                    b.HasOne("Wediary.Data.Models.InvitationStatus", "InvitationStatus")
-                        .WithMany("Guests")
-                        .HasForeignKey("InvitationStatusIdInvitationStatus");
                 });
 
             modelBuilder.Entity("Wediary.Data.Models.Project", b =>
@@ -445,15 +368,6 @@ namespace Wediary.Data.Migrations
 
             modelBuilder.Entity("Wediary.Data.Models.TaskUser", b =>
                 {
-                    b.HasOne("Wediary.Data.Models.Category", "Category")
-                        .WithMany("Task")
-                        .HasForeignKey("CategoryId")
-                        .OnDelete(DeleteBehavior.Cascade);
-
-                    b.HasOne("Wediary.Data.Models.TaskStatus", "TaskStatus")
-                        .WithMany("TaskUsers")
-                        .HasForeignKey("TaskStatusIdTasksStatus");
-
                     b.HasOne("Wediary.Models.ApplicationUser", "User")
                         .WithMany("Tasks")
                         .HasForeignKey("UserId");

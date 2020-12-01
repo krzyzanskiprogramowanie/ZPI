@@ -10,10 +10,8 @@ namespace Wediary.Data.Models
     {
         [Key]
         public int IdProject { get; set; }
-      
         public string Name { get; set; }
-
-        public DateTime CreationDate { get; set; } //automatycznie
+        public DateTime CreationDate { get; set; }
 
         public virtual string UserId{ get; set; }
         public virtual ApplicationUser User{ get; set; }

@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 namespace Wediary.Data.Migrations
 {
-    public partial class Update : Migration
+    public partial class firstmigration : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -36,14 +36,14 @@ namespace Wediary.Data.Migrations
                     ImageProfileUrl = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     LockoutEnabled = table.Column<bool>(type: "bit", nullable: false),
                     LockoutEnd = table.Column<DateTimeOffset>(type: "datetimeoffset", nullable: true),
-                    Name = table.Column<string>(type: "nvarchar(30)", maxLength: 30, nullable: true),
+                    Name = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     NormalizedEmail = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
                     NormalizedUserName = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
                     PasswordHash = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     PhoneNumber = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     PhoneNumberConfirmed = table.Column<bool>(type: "bit", nullable: false),
                     SecurityStamp = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Surname = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: true),
+                    Surname = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     TwoFactorEnabled = table.Column<bool>(type: "bit", nullable: false),
                     UserName = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
                     WeddingDate = table.Column<DateTime>(type: "datetime2", nullable: false)
@@ -51,45 +51,6 @@ namespace Wediary.Data.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_AspNetUsers", x => x.Id);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "Categories",
-                columns: table => new
-                {
-                    IdCategory = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    Name = table.Column<string>(type: "nvarchar(30)", maxLength: 30, nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Categories", x => x.IdCategory);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "InvitationStatuses",
-                columns: table => new
-                {
-                    IdInvitationStatus = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    Name = table.Column<string>(type: "nvarchar(max)", nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_InvitationStatuses", x => x.IdInvitationStatus);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "TaskStatuses",
-                columns: table => new
-                {
-                    IdTasksStatus = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    Name = table.Column<string>(type: "nvarchar(max)", nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_TaskStatuses", x => x.IdTasksStatus);
                 });
 
             migrationBuilder.CreateTable(
@@ -199,13 +160,40 @@ namespace Wediary.Data.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Guests",
+                columns: table => new
+                {
+                    IdGuest = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    ApplicationUserId = table.Column<string>(type: "nvarchar(450)", nullable: true),
+                    DescriptionDiet = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    IfAftermath = table.Column<bool>(type: "bit", nullable: false),
+                    IfSpecialDiet = table.Column<bool>(type: "bit", nullable: false),
+                    InvitationStatus = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Name = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Role = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Surname = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    UserId = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Guests", x => x.IdGuest);
+                    table.ForeignKey(
+                        name: "FK_Guests_AspNetUsers_ApplicationUserId",
+                        column: x => x.ApplicationUserId,
+                        principalTable: "AspNetUsers",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Projects",
                 columns: table => new
                 {
                     IdProject = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     CreationDate = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    Name = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
+                    Name = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     UserId = table.Column<string>(type: "nvarchar(450)", nullable: true)
                 },
                 constraints: table =>
@@ -220,75 +208,26 @@ namespace Wediary.Data.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Guests",
-                columns: table => new
-                {
-                    IdGuest = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    ApplicationUserId = table.Column<string>(type: "nvarchar(450)", nullable: true),
-                    DescriptionDiet = table.Column<string>(type: "nvarchar(1000)", maxLength: 1000, nullable: true),
-                    IfAftermath = table.Column<bool>(type: "bit", nullable: false),
-                    IfSpecialDiet = table.Column<bool>(type: "bit", nullable: false),
-                    InvitationId = table.Column<int>(type: "int", nullable: false),
-                    InvitationStatusIdInvitationStatus = table.Column<int>(type: "int", nullable: true),
-                    Name = table.Column<string>(type: "nvarchar(30)", maxLength: 30, nullable: false),
-                    Role = table.Column<string>(type: "nvarchar(1000)", maxLength: 1000, nullable: false),
-                    Surname = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
-                    UserId = table.Column<string>(type: "nvarchar(max)", nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Guests", x => x.IdGuest);
-                    table.ForeignKey(
-                        name: "FK_Guests_AspNetUsers_ApplicationUserId",
-                        column: x => x.ApplicationUserId,
-                        principalTable: "AspNetUsers",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
-                    table.ForeignKey(
-                        name: "FK_Guests_InvitationStatuses_InvitationStatusIdInvitationStatus",
-                        column: x => x.InvitationStatusIdInvitationStatus,
-                        principalTable: "InvitationStatuses",
-                        principalColumn: "IdInvitationStatus",
-                        onDelete: ReferentialAction.Restrict);
-                });
-
-            migrationBuilder.CreateTable(
                 name: "TaskUsers",
                 columns: table => new
                 {
                     IdTask = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    Budget = table.Column<decimal>(type: "decimal(18, 2)", nullable: false),
-                    CategoryId = table.Column<int>(type: "int", nullable: false),
-                    Contractor = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
+                    Category = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Contractor = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Date = table.Column<DateTime>(type: "datetime2", nullable: false),
                     ExpectedPrice = table.Column<decimal>(type: "decimal(18, 2)", nullable: false),
-                    Name = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
+                    Name = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Payment = table.Column<decimal>(type: "decimal(18, 2)", nullable: false),
                     Quantity = table.Column<int>(type: "int", nullable: false),
-                    TaskStatusIdTasksStatus = table.Column<int>(type: "int", nullable: true),
-                    TastStatusId = table.Column<int>(type: "int", nullable: false),
+                    Status = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     TotalPrice = table.Column<decimal>(type: "decimal(18, 2)", nullable: false),
                     Unit = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    UserId = table.Column<string>(type: "nvarchar(450)", nullable: true),
-                    UserPrice = table.Column<decimal>(type: "decimal(18, 2)", nullable: false)
+                    UserId = table.Column<string>(type: "nvarchar(450)", nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_TaskUsers", x => x.IdTask);
-                    table.ForeignKey(
-                        name: "FK_TaskUsers_Categories_CategoryId",
-                        column: x => x.CategoryId,
-                        principalTable: "Categories",
-                        principalColumn: "IdCategory",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_TaskUsers_TaskStatuses_TaskStatusIdTasksStatus",
-                        column: x => x.TaskStatusIdTasksStatus,
-                        principalTable: "TaskStatuses",
-                        principalColumn: "IdTasksStatus",
-                        onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
                         name: "FK_TaskUsers_AspNetUsers_UserId",
                         column: x => x.UserId,
@@ -373,24 +312,9 @@ namespace Wediary.Data.Migrations
                 column: "ApplicationUserId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Guests_InvitationStatusIdInvitationStatus",
-                table: "Guests",
-                column: "InvitationStatusIdInvitationStatus");
-
-            migrationBuilder.CreateIndex(
                 name: "IX_Projects_UserId",
                 table: "Projects",
                 column: "UserId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_TaskUsers_CategoryId",
-                table: "TaskUsers",
-                column: "CategoryId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_TaskUsers_TaskStatusIdTasksStatus",
-                table: "TaskUsers",
-                column: "TaskStatusIdTasksStatus");
 
             migrationBuilder.CreateIndex(
                 name: "IX_TaskUsers_UserId",
@@ -429,15 +353,6 @@ namespace Wediary.Data.Migrations
 
             migrationBuilder.DropTable(
                 name: "Projects");
-
-            migrationBuilder.DropTable(
-                name: "InvitationStatuses");
-
-            migrationBuilder.DropTable(
-                name: "Categories");
-
-            migrationBuilder.DropTable(
-                name: "TaskStatuses");
 
             migrationBuilder.DropTable(
                 name: "AspNetUsers");

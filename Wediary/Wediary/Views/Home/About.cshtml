@@ -1,8 +1,7 @@
 ﻿@{
     ViewData["Title"] = "Formularz";
 }
-
-
+@model Wediary.Models.TaskUser.TaskUserModel;
 <!-- Button trigger modal -->
 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
     Launch demo modal
@@ -20,62 +19,63 @@
             </div>
             <div class="modal-body">
                 <!--Dodaj controlery -->
-                <form>
+                <form asp-controller="Task" asp-action="SaveChanges" method="post">
                     <div class="form-group row">
                         <label for="inputName" class="col-sm-2 col-form-label">Nazwa</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" id="inputName" placeholder="nazwa">
+                            <input asp-for="Name" type="text" class="form-control" id="inputName" placeholder="nazwa">
                         </div>
                     </div>
                     <div class="form-group row">
                         <label for="inputRealizator" class="col-sm-2 col-form-label">Realizator</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" id="inputRealizator" placeholder="osoba odpowiedzialna">
+                            <input asp-for="Contractor" type="text" class="form-control" id="inputRealizator" placeholder="osoba odpowiedzialna">
                         </div>
                     </div>
                     <div class="form-group row">
                         <label for="inputAmount" class="col-sm-2 col-form-label">Ilość</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" id="inputAmount" placeholder="ile ">
+                            <input asp-for="Quantity" type="number" class="form-control" id="inputAmount" placeholder="ile ">
                         </div>
                     </div>
                     <div class="form-group row">
                         <label for="inputUnit" class="col-sm-2 col-form-label">Jednostka</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" id="inputUnit" placeholder="szt/kg/L/cm ...">
+                            <input asp-for="Unit" type="text" class="form-control" id="inputUnit" placeholder="szt/kg/L/cm ...">
                         </div>
                     </div>
                     <div class="form-group row">
                         <label for="inputAproxPrice" class="col-sm-2 col-form-label">Cena spodziewana</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" id="inputAproxPrice" placeholder="cena zakładana przy planowaniu">
+                            <input asp-for="ExpectedPrice" type="number" class="form-control" id="inputAproxPrice" placeholder="cena zakładana przy planowaniu">
                         </div>
                     </div>
                     <div class="form-group row">
                         <label for="inputActualPrice" class="col-sm-2 col-form-label">Cena rzeczywista</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" id="inputActualPrice" placeholder="cena ostateczna">
+                            <input asp-for="TotalPrice" type="number" class="form-control" id="inputActualPrice" placeholder="cena ostateczna">
                         </div>
                     </div>
                     <div class="form-group row">
                         <label for="inputAdvance" class="col-sm-2 col-form-label">Zaliczka</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" id="inputAdvance" placeholder="ile już zapłacono">
+                            <input asp-for="Payment" type="number" class="form-control" id="inputAdvance" placeholder="ile już zapłacono">
                         </div>
                     </div>
                     <div class="form-group row">
                         <label for="inputDate" class="col-sm-2 col-form-label">Data</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" id="inputData" placeholder="Data dodania wydatku czy data jego endLine?">
+                            <input asp-for="Date" type="date" class="form-control" id="inputData" placeholder="Data dodania wydatku czy data jego endLine?">
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label for="inputNote" class="col-sm-2 col-form-label">Notatka</label>
+                        <label for="inputStatus" class="col-sm-2 col-form-label">Status</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" id="inputNote" placeholder="notatka do wydatku">
+                            <input asp-for="Status" type="text" class="form-control" id="inputData" placeholder="Data dodania wydatku czy data jego endLine?">
                         </div>
                     </div>
-                    <button type="button" class="btn btn-primary">Save changes</button>
+                    <button type="submit" class="btn btn-primary">Save changes</button>
+
                 </form>
 
             </div>

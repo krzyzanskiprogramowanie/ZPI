@@ -17,14 +17,9 @@ namespace Wediary.Data
         }
 
         public DbSet<ApplicationUser> ApplicationUsers { get; set; }
-        public DbSet<Category> Categories{ get; set; }
         public DbSet<Coordinate> Coordinates{ get; set; }
         public DbSet<Guest> Guests{ get; set; }
-        public DbSet<InvitationStatus> InvitationStatuses{ get; set; }
         public DbSet<Project> Projects{ get; set; }
-        public DbSet<Models.TaskStatus> TaskStatuses{ get; set; }
         public DbSet<TaskUser> TaskUsers{ get; set; }
-
-     
     }
 }

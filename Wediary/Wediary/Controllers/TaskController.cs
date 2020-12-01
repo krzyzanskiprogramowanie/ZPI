@@ -26,9 +26,7 @@ namespace Wediary.Controllers
 
             var task = _serviceTaskUser.Create(new TaskUser
             {
-                UserId = userTaskName.Id,
-                Budget = 123,
-                Name = name
+
             }) ;
 
 
