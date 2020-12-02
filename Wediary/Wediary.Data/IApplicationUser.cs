@@ -11,7 +11,6 @@ namespace Wediary.Data
         IEnumerable<ApplicationUser> GetAll();
 
         Task SetImageProfile (string id, Uri uri);
-
         Task Create(ApplicationUser applicationUser);
         Task Delete(string id);
         Task UpdateUser(string id);

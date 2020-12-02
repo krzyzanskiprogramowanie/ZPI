@@ -1,10 +1,13 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Wediary.Data;
 using Wediary.Data.Models;
+using Wediary.Models;
+using Wediary.Models.TaskUser;
 
 namespace Wediary.Controllers
 {
@@ -12,28 +15,45 @@ namespace Wediary.Controllers
     {
         private readonly ITaskUser _serviceTaskUser;
         private readonly IApplicationUser _serviceApplicationUser;
-        public TaskController(ITaskUser taskUser, IApplicationUser applicationUser)
+        private static UserManager<ApplicationUser> _userManager;
+        public TaskController(ITaskUser serviceTaskUser, IApplicationUser applicationUser, UserManager<ApplicationUser> userManager)
         {
-            _serviceTaskUser = taskUser;
+            _serviceTaskUser = serviceTaskUser;
             _serviceApplicationUser = applicationUser;
+            _userManager = userManager;
         }
-
-        public IActionResult SaveChanges(string id, string name)
+        public IActionResult Index()
         {
-            name = "test";
-
-            var userTaskName = _serviceApplicationUser.GetById(id);
-
-            var task = _serviceTaskUser.Create(new TaskUser
-            {
-
-            }) ;
-
-
-            return View(task);
+            return View();
         }
 
+        [HttpPost]
+        public async Task<IActionResult> SaveChanges(TaskUserModel m)
+        {
+            var userId = _userManager.GetUserId(User);
+            string id = userId;
+            var user = await _userManager.FindByIdAsync(userId);
+            var changes = ReplyBuild(m, user, id);
+            await _serviceTaskUser.Create(changes);
+            return RedirectToAction("Index", "Home", new { id = m.UserId });
+        }
 
-
+        private TaskUser ReplyBuild(TaskUserModel m, ApplicationUser user, string id)
+        {
+            return new TaskUser
+            {
+                UserId = id,
+                Category = m.Category,
+                Contractor = m.Contractor,
+                Date = m.Date,
+                ExpectedPrice = m.ExpectedPrice,
+                Name = m.Name,
+                Payment = m.Payment,
+                Quantity = m.Quantity,
+                Status = m.Status,
+                TotalPrice = m.TotalPrice,
+                Unit = m.Unit,
+            };
+        }
     }
 }

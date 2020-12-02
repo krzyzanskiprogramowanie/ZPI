@@ -11,7 +11,7 @@ using Wediary.Data;
 namespace Wediary.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20201201173750_first migration")]
+    [Migration("20201202173100_first migration")]
     partial class firstmigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
