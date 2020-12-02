@@ -1,0 +1,49 @@
+﻿@{
+    ViewData["Title"] = "Manager";
+}
+
+<link href="~/css/managerStyle.css" rel="stylesheet" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="fontawesome-all.css" rel="stylesheet">
+<link href="~/css/splide.min.css" rel="stylesheet">
+<link href="~/css/splide-skyblue.min.css" rel="stylesheet">
+
+
+    <div class="menu">
+        <div id="image-slider" class="splide">
+            <div class="splide__track">
+                <ul class="splide__list">
+                    <li class="splide__slide"><img alt="1" src="~/images/ManagerImages/1.png"></li>
+                    <li class="splide__slide"><img alt="1" src="~/images/ManagerImages/2.png"></li>
+                    <li class="splide__slide"><img alt="1" src="~/images/ManagerImages/3.png"></li>
+                    <li class="splide__slide"><img alt="1" src="~/images/ManagerImages/4.png"></li>
+                    <li class="splide__slide"><img alt="1" src="~/images/ManagerImages/5.png"></li>
+                    <li class="splide__slide"><img alt="1" src="~/images/ManagerImages/6.png"></li>
+                    <li class="splide__slide"><img alt="1" src="~/images/ManagerImages/7.png"></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="buttons">
+        <button onclick="removeFromPalette()">Remove element</button>
+        <button onclick="addToPalette()">Add Table</button>
+    </div>
+
+    <body onload="init()">
+
+        <div id="sample">
+            <div id="myFlexDiv">
+                <div id="myGuests"></div>
+                <div id="myDiagramDiv"></div>
+            </div>
+            <div>
+                <pre class="json" id="savedModel"></pre>
+            </div>
+        </div>
+        <script src="~/js/splide.min.js"></script>
+        <script src="~/js/go.js"></script>
+        <script src="~/js/managerScript.js"></script>
+
+    </body>
+
+  

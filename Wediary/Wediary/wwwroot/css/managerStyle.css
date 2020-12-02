@@ -1,0 +1,74 @@
+﻿
+#myFlexDiv {
+    position: absolute;
+    display: -webkit-flex;
+    display: flex;
+    flex-flow: row wrap;
+    width: 100%;
+    justify-content: center;
+}
+
+@media (min-width: 768px) {
+    #myGuests {
+        width: 100px;
+        height: 500px;
+        margin-right: 10px;
+    }
+
+    #myDiagramDiv {
+        height: 500px;
+        flex: 1;
+    }
+}
+
+@media (max-width: 767px) {
+    #myGuests {
+        width: 90%;
+        height: 100px;
+        margin-bottom: 10px;
+    }
+
+    #myDiagramDiv {
+        width: 90%;
+        height: 500px;
+    }
+}
+
+.json {
+    visibility: hidden;
+}
+
+.splide__slide img {
+    width: 25vh;
+    height: 16vh;
+}
+
+.menu {
+    position: absolute;
+    z-index: 10;
+    width: 25vh;
+    height: 16vh;
+}
+
+.buttons {
+    position: absolute;
+    margin-left: 25vh;
+    background-color: white;
+    width: 19vh;
+    height: 16vh;
+    z-index: 10;
+}
+
+button {
+    background-color: #49bdc9;
+    border: none;
+    color: #4f6982;
+    padding: 10px 9px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 10px;
+    cursor: pointer;
+    width 12vh;
+    margin-bottom: 4px;
+}

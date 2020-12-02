@@ -34,3 +34,12 @@ C:\Users\DEMACIA\Documents\GitHub\ZPI\Wediary\Wediary.Data\obj\Debug\netcoreapp2
 C:\Users\DEMACIA\Documents\GitHub\ZPI\Wediary\Wediary.Data\obj\Debug\netcoreapp2.0\Wediary.Data.csproj.CoreCompileInputs.cache
 C:\Users\DEMACIA\Documents\GitHub\ZPI\Wediary\Wediary.Data\obj\Debug\netcoreapp2.0\Wediary.Data.dll
 C:\Users\DEMACIA\Documents\GitHub\ZPI\Wediary\Wediary.Data\obj\Debug\netcoreapp2.0\Wediary.Data.pdb
+C:\Users\pswap\OneDrive\Dokumenty\GitHub\ZPI2\Wediary\Wediary.Data\bin\Debug\netcoreapp2.0\Wediary.Data.deps.json
+C:\Users\pswap\OneDrive\Dokumenty\GitHub\ZPI2\Wediary\Wediary.Data\bin\Debug\netcoreapp2.0\Wediary.Data.dll
+C:\Users\pswap\OneDrive\Dokumenty\GitHub\ZPI2\Wediary\Wediary.Data\bin\Debug\netcoreapp2.0\Wediary.Data.pdb
+C:\Users\pswap\OneDrive\Dokumenty\GitHub\ZPI2\Wediary\Wediary.Data\obj\Debug\netcoreapp2.0\Wediary.Data.csprojAssemblyReference.cache
+C:\Users\pswap\OneDrive\Dokumenty\GitHub\ZPI2\Wediary\Wediary.Data\obj\Debug\netcoreapp2.0\Wediary.Data.AssemblyInfoInputs.cache
+C:\Users\pswap\OneDrive\Dokumenty\GitHub\ZPI2\Wediary\Wediary.Data\obj\Debug\netcoreapp2.0\Wediary.Data.AssemblyInfo.cs
+C:\Users\pswap\OneDrive\Dokumenty\GitHub\ZPI2\Wediary\Wediary.Data\obj\Debug\netcoreapp2.0\Wediary.Data.csproj.CoreCompileInputs.cache
+C:\Users\pswap\OneDrive\Dokumenty\GitHub\ZPI2\Wediary\Wediary.Data\obj\Debug\netcoreapp2.0\Wediary.Data.dll
+C:\Users\pswap\OneDrive\Dokumenty\GitHub\ZPI2\Wediary\Wediary.Data\obj\Debug\netcoreapp2.0\Wediary.Data.pdb
