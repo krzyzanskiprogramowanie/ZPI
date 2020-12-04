@@ -22,9 +22,14 @@ namespace Wediary.Controllers
             _serviceApplicationUser = applicationUser;
             _userManager = userManager;
         }
+        
+
+
         public IActionResult Index()
         {
-            return View();
+            string userId = _userManager.GetUserId(User);
+            IEnumerable<TaskUser> listOfTask = _serviceTaskUser.GetAll(userId);
+            return View(listOfTask);
         }
 
         [HttpPost]

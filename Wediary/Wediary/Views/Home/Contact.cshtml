@@ -1,4 +1,6 @@
-﻿@{
+﻿@model IEnumerable<Wediary.Models.TaskUser>
+
+@{
     ViewData["Title"] = "Contact";
 }
 
@@ -12,7 +14,6 @@
     <table class="table table-hover table-responsive">
         <thead class="thead-dark">
             <tr>
-                <th scope="col">#</th>
                 <th scope="col">Stan</th>
                 <th scope="col">Nazwa</th>
                 <th scope="col">Realizator</th>
@@ -24,251 +25,32 @@
                 <th scope="col">Pozostało</th>
                 <th scope="col">Cena Całk.</th>
                 <th scope="col">Data</th>
-                <th scope="col">Notatka</th>
             </tr>
         </thead>
         <tbody>
-            <tr class="bg-success">
-                <th scope="row">1</th>
-                <td>
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="true" id="stanZad">
-                        <label class="form-check-label" for="defaultCheck1"></label>
-                    </div>
-                </td>
-                <td>Kwiaty</td>
-                <td>Anka</td>
-                <td>15</td>
-                <td>szt</td>
-                <td>40 zł</td>
-                <td>50 zł</td>
-                <td>100 zł</td>
-                <td>650 zł</td>
-                <td>750 zł</td>
-                <td>29.11.2020</td>
-                <td>  <i class="icon-eye"></i>  </td>
-            </tr>
-            <tr>
-                <th scope="row">2</th>
-                <td>
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="true" id="stanZad">
-                        <label class="form-check-label" for="defaultCheck1"></label>
-                    </div>
-                </td>
-                <td>Kwiaty</td>
-                <td>Anka</td>
-                <td>15</td>
-                <td>szt</td>
-                <td>40 zł</td>
-                <td>50 zł</td>
-                <td>100 zł</td>
-                <td>650 zł</td>
-                <td>750 zł</td>
-                <td>29.11.2020</td>
-                <td>  <div class="the-icons span3" title="Code: 0xe802"><i class="demo-icon icon-eye">&#xe802;</i></div>  </td>
-            </tr>
-            <tr class="bg-success">
-                <th scope="row">3</th>
-                <td>
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="true" id="stanZad">
-                        <label class="form-check-label" for="defaultCheck1"></label>
-                    </div>
-                </td>
-                <td>Kwiaty</td>
-                <td>Anka</td>
-                <td>15</td>
-                <td>szt</td>
-                <td>40 zł</td>
-                <td>50 zł</td>
-                <td>100 zł</td>
-                <td>650 zł</td>
-                <td>750 zł</td>
-                <td>29.11.2020</td>
-                <td>  <i class="icon-eye"></i>  </td>
-            </tr>
-            <tr>
-                <th scope="row">4</th>
-                <td>
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="true" id="stanZad">
-                        <label class="form-check-label" for="defaultCheck1"></label>
-                    </div>
-                </td>
-                <td>Kwiaty</td>
-                <td>Anka</td>
-                <td>15</td>
-                <td>szt</td>
-                <td>40 zł</td>
-                <td>50 zł</td>
-                <td>100 zł</td>
-                <td>650 zł</td>
-                <td>750 zł</td>
-                <td>29.11.2020</td>
-                <td>  <i class="icon-eye"></i>  </td>
-            </tr>
-            <tr class="bg-success">
-                <th scope="row">5</th>
-                <td>
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="true" id="stanZad">
-                        <label class="form-check-label" for="defaultCheck1"></label>
-                    </div>
-                </td>
-                <td>Kwiaty</td>
-                <td>Anka</td>
-                <td>15</td>
-                <td>szt</td>
-                <td>40 zł</td>
-                <td>50 zł</td>
-                <td>100 zł</td>
-                <td>650 zł</td>
-                <td>750 zł</td>
-                <td>29.11.2020</td>
-                <td>  <i class="icon-eye"></i>  </td>
-            </tr>
-            <tr>
-                <th scope="row">6</th>
-                <td>
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="true" id="stanZad">
-                        <label class="form-check-label" for="defaultCheck1"></label>
-                    </div>
-                </td>
-                <td>Kwiaty</td>
-                <td>Anka</td>
-                <td>15</td>
-                <td>szt</td>
-                <td>40 zł</td>
-                <td>50 zł</td>
-                <td>100 zł</td>
-                <td>650 zł</td>
-                <td>750 zł</td>
-                <td>29.11.2020</td>
-                <td>  <i class="icon-eye"></i>  </td>
-            </tr>
-            <tr class="bg-success">
-                <th scope="row">7</th>
-                <td>
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="true" id="stanZad">
-                        <label class="form-check-label" for="defaultCheck1"></label>
-                    </div>
-                </td>
-                <td>Kwiaty</td>
-                <td>Anka</td>
-                <td>15</td>
-                <td>szt</td>
-                <td>40 zł</td>
-                <td>50 zł</td>
-                <td>100 zł</td>
-                <td>650 zł</td>
-                <td>750 zł</td>
-                <td>29.11.2020</td>
-                <td>  <i class="icon-eye"></i>  </td>
-            </tr>
-            <tr>
-                <th scope="row">8</th>
-                <td>
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="true" id="stanZad">
-                        <label class="form-check-label" for="defaultCheck1"></label>
-                    </div>
-                </td>
-                <td>Kwiaty</td>
-                <td>Anka</td>
-                <td>15</td>
-                <td>szt</td>
-                <td>40 zł</td>
-                <td>50 zł</td>
-                <td>100 zł</td>
-                <td>650 zł</td>
-                <td>750 zł</td>
-                <td>29.11.2020</td>
-                <td>  <i class="icon-eye"></i>  </td>
-            </tr>
-            <tr class="bg-success">
-                <th scope="row">9</th>
-                <td>
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="true" id="stanZad">
-                        <label class="form-check-label" for="defaultCheck1"></label>
-                    </div>
-                </td>
-                <td>Kwiaty</td>
-                <td>Anka</td>
-                <td>15</td>
-                <td>szt</td>
-                <td>40 zł</td>
-                <td>50 zł</td>
-                <td>100 zł</td>
-                <td>650 zł</td>
-                <td>750 zł</td>
-                <td>29.11.2020</td>
-                <td>  <i class="icon-eye"></i>  </td>
-            </tr>
-            <tr>
-                <th scope="row">10</th>
-                <td>
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="true" id="stanZad">
-                        <label class="form-check-label" for="defaultCheck1"></label>
-                    </div>
-                </td>
-                <td>Kwiaty</td>
-                <td>Anka</td>
-                <td>15</td>
-                <td>szt</td>
-                <td>40 zł</td>
-                <td>50 zł</td>
-                <td>100 zł</td>
-                <td>650 zł</td>
-                <td>750 zł</td>
-                <td>29.11.2020</td>
-                <td>  <i class="icon-eye"></i>  </td>
-            </tr>
-            <tr class="bg-success">
-                <th scope="row">11</th>
-                <td>
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="true" id="stanZad">
-                        <label class="form-check-label" for="defaultCheck1"></label>
-                    </div>
-                </td>
-                <td>Kwiaty</td>
-                <td>Anka</td>
-                <td>15</td>
-                <td>szt</td>
-                <td>40 zł</td>
-                <td>50 zł</td>
-                <td>100 zł</td>
-                <td>650 zł</td>
-                <td>750 zł</td>
-                <td>29.11.2020</td>
-                <td>  <i class="icon-eye"></i>  </td>
-            </tr>
-            <tr>
-                <th scope="row">12</th>
-                <td>
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="true" id="stanZad">
-                        <label class="form-check-label" for="defaultCheck1"></label>
-                    </div>
-                </td>
-                <td>Kwiaty</td>
-                <td>Anka</td>
-                <td>15</td>
-                <td>szt</td>
-                <td>40 zł</td>
-                <td>50 zł</td>
-                <td>100 zł</td>
-                <td>650 zł</td>
-                <td>750 zł</td>
-                <td>29.11.2020</td>
-                <td>  <i class="icon-eye"></i>  </td>
-            </tr>
-
+            @foreach (var item in Model)
+            {
+                <tr class="bg-success">
+                    <th scope="row">1</th>
+                    <td>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="true" id="stanZad">
+                            <label class="form-check-label" for="defaultCheck1"></label>
+                        </div>
+                    </td>
+                    <td>@Html.DisplayFor(model => item.Name)</td>
+                    <td>@Html.DisplayFor(model => item.Quantity)</td>
+                    <td>@Html.DisplayFor(model => item.Unit)</td>
+                    <td>@Html.DisplayFor(model => item.ExpectedPrice)</td>
+                    <td>@Html.DisplayFor(model => item.Payment)</td>
+                    <td>@Html.DisplayFor(model => item.TotalPrice)</td>
+                    <td>@Html.DisplayFor(model => item.Date)</td>
+                    <td>@Html.DisplayFor(model => item.Contractor)</td>
+                    <td>@Html.DisplayFor(model => item.Status)</td>
+                    <td>@Html.DisplayFor(model => item.Category)</td>
+                    <td>  <i class="icon-eye"></i>  </td>
+                </tr>
+            }
         </tbody>
     </table>
 </div>

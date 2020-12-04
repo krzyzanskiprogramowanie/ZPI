@@ -9,7 +9,7 @@ namespace Wediary.Data
     public interface ITaskUser
     {
         TaskUser GetById(string id);
-        IEnumerable<TaskUser> GetAll();
+        IEnumerable<TaskUser> GetAll(string id);
 
         Task Create(TaskUser taskUser);
         Task Delete(string id);

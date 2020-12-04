@@ -11,6 +11,7 @@ namespace Wediary.Data.Models
   {
         [Key]
         public int IdTask { get; set; }
+        [Display(Name="Nazwa")]
         public string Name{ get; set; }
         public int Quantity { get; set; }
         public string Unit { get; set; }

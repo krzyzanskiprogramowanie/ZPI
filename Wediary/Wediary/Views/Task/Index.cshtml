@@ -1,0 +1,49 @@
+﻿@using Wediary.Data.Models
+@model IEnumerable<TaskUser>
+
+@{
+    ViewData["Title"] = "Contact";
+}
+
+<link href="~/css/fontello.css" rel="stylesheet" />
+
+<div class="container-fluid">
+    <div class="row">
+        <h2>Panna Młoda</h2>
+    </div>
+
+    <table class="table table-hover table-responsive">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">Nazwa</th>
+                <th scope="col">Ilość</th>
+                <th scope="col">Jednostka</th>
+                <th scope="col">Cena oczekiwana</th>
+                <th scope="col">Zaliczka</th>
+                <th scope="col">Cena rzeczywista</th>
+                <th scope="col">Data</th>
+                <th scope="col">Wykonawca</th>
+                <th scope="col">Status</th>
+                <th scope="col">Kategoria</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr class="bg-success">
+                    <td>@item.Name</td>
+                    <td>@item.Quantity</td>
+                    <td>@item.Unit</td>
+                    <td>@item.ExpectedPrice</td>
+                    <td>@item.Payment</td>
+                    <td>@item.TotalPrice</td>
+                    <td>@item.Date</td>
+                    <td>@item.Contractor</td>
+                    <td>@item.Status</td>
+                    <td>@item.Category</td>
+                    <td>  <i class="icon-eye"></i>  </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

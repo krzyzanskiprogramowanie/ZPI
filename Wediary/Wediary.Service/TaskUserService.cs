@@ -1,5 +1,7 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Wediary.Data;
@@ -27,9 +29,10 @@ namespace Wediary.Service
             throw new NotImplementedException();
         }
 
-        public IEnumerable<TaskUser> GetAll()
+        public IEnumerable<TaskUser> GetAll(string id)
         {
-            throw new NotImplementedException();
+            IEnumerable<TaskUser> listOut = _context.TaskUsers.ToList().Where(user => user.UserId == id);
+            return listOut;
         }
 
         public TaskUser GetById(string id)
