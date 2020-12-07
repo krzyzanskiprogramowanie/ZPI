@@ -38,7 +38,7 @@ namespace Wediary
             services.AddTransient<IEmailSender, EmailSender>();
             services.AddScoped<IApplicationUser, UserService>();
             services.AddScoped<ITaskUser, TaskUserService>();
-
+            services.AddScoped<IGuest, GuestService>();
             services.AddMvc();
         }
 

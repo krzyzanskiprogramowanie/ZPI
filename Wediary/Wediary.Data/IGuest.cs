@@ -9,7 +9,7 @@ namespace Wediary.Data
     public interface IGuest
     {
         Guest GetById(string id);
-        IEnumerable<Guest> GetAll();
+        IEnumerable<Guest> GetAll(string id);
 
         Task Create(Guest guest);
         Task Delete(string id);

@@ -1,0 +1,92 @@
+﻿@{
+    ViewData["Title"] = "ListaGosci";
+}
+@using Wediary.Data.Models
+@model IEnumerable<Guest>
+<link href="~/css/fontello.css" rel="stylesheet" />
+
+<div class="container-fluid">
+    <div class="row">
+        <h2>Lista Gości Weselnych</h2>
+    </div>
+
+    <table class="table table-hover table-responsive">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">Lp</th>
+                <th scope="col">Imie i Nazwisko</th>
+                <th scope="col">Zaproszenie</th>
+                <!--<th scope="col">Nocleg</th>-->
+                <th scope="col">Poprawiny</th>
+                <th scope="col">Czy specjalna dieta</th>
+                <th scope="col">Typ Diety</th>
+
+                <th scope="col">Rola</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+            <tr>
+                <th scope="row">1</th>
+                <td>@item.Name @item.Surname</td>
+                @if (item.InvitationStatus == "True")
+                {
+                    <td>
+                        <div class="the-icons span3" title="Code: 0xf2b7"><i class="demo-icon icon-envelope-open-o"> Tak</i> </div>
+                    </td>
+                }
+                else
+                {
+                    <td>
+                        <div class="the-icons span3" title="Code: 0xf2b7"><i class="demo-icon icon-envelope-open-o">Nie</i> </div>
+                    </td>
+                }
+
+
+                @if (item.IfAftermath == true)
+                {
+                    <td>
+                        <div class="the-icons span3" title="Code: 0xf236"><i class="demo-icon icon-bed">Tak</i> </div>
+                    </td>
+
+                }
+                else
+                {
+                    <td>
+                        <div class="the-icons span3" title="Code: 0xf236"><i class="demo-icon icon-bed">Nie</i> </div>
+                    </td>
+
+                }
+
+                @if (item.IfSpecialDiet)
+                {
+                    <td>
+                        <div class="the-icons span3" title="Code: 0xe803"><i class="demo-icon icon-glass">Tak</i></div>
+                    </td>
+                    <td>
+                        @item.DescriptionDiet
+                    </td>
+                }
+                else
+                {
+                    <td>
+                        <div class="the-icons span3" title="Code: 0xe803"><i class="demo-icon icon-glass">Nie</i></div>
+                    </td>
+                    <td>
+                        Brak diety                    
+                    </td>
+                }
+        
+                <td>
+                    @item.Role
+                </td>
+
+            </tr>
+            }
+
+
+        </tbody>
+    </table>
+</div>
