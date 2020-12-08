@@ -14,7 +14,8 @@ function init() {
             rotatingTool: $(HorizontalTextRotatingTool),
             "ModelChanged": function(e) {
               if (e.isTransactionFinished) {
-                document.getElementById("savedModel").textContent = myDiagram.model.toJson();
+                  document.getElementById("savedModel").textContent = myDiagram.model.toJson();
+                  console.log(JSON.stringify(document.getElementById("savedModel").textContent));
               }
             },
             "undoManager.isEnabled": true
@@ -511,14 +512,42 @@ function init() {
       return map;
     };
     // end SpecialDraggingTool
+var myGuests_String;// <--value for database
+var myDiagram_String; //<--value for database
+
+
+
 	   function removeFromPalette() {
       myDiagram.commandHandler.deleteSelection();
-    }
+    
+}
+
+
+
+       function saveElements() {
+           document.getElementById("savedDiagram").textContent = document.getElementById("savedModel").textContent;
+           document.getElementById("savedDiagram").textContent = myDiagram.model.toJson();
+           // document.getElementById("myGuests_json").value = myGuests.model.toJson();
+           myGuests.isModified = false;
+           myDiagram.isModified = false;
+    //myGuests_String = (document.getElementById("myDiagram_json").value).stringify();
+   // myDiagram_String = (document.getElementById("myGuests_json").value).stringify();
+}
+function loadElements() {
+    //document.getElementById("savedModel").value = JSON.parse(myDiagram_String);
+    // document.getElementById("myGuests_json").value = JSON.parse(myGuests_String);
+    myDiagram.model = go.Model.fromJson(document.getElementById("savedDiagram").textContent);
+    //  myGuests.model = go.Model.fromJson(document.getElementById("myGuests_json").value);
+
+}
+
+
 	       function addToPalette() {
 			   if(table_type==0){
 			   myDiagram.startTransaction();
 			   myDiagram.model.addNodeData({ "key": 1, "category": "TableR3", "name": "", "guests": {}, "loc": "163.5 58" })
 			   	myDiagram.commitTransaction("added table");
+                  
 			   }
 			     if(table_type==1){
 			   myDiagram.startTransaction();
@@ -555,13 +584,11 @@ function init() {
 			   } 
 		   }
 		   
-
-    // Automatically move seated people as a table is rotated, to keep them in their seats.
-    // Note that because people are separate Nodes, rotating a table Node means the people Nodes
-    // are not rotated, so their names (TextBlocks) remain horizontal.
     function HorizontalTextRotatingTool() {
       go.RotatingTool.call(this);
-    }
+}
+
+
     go.Diagram.inherit(HorizontalTextRotatingTool, go.RotatingTool);
 
     HorizontalTextRotatingTool.prototype.rotate = function(newangle) {

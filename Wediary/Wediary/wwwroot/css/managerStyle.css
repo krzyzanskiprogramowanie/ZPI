@@ -69,6 +69,6 @@ button {
     display: inline-block;
     font-size: 10px;
     cursor: pointer;
-    width 12vh;
+    width: 12vh;
     margin-bottom: 4px;
 }

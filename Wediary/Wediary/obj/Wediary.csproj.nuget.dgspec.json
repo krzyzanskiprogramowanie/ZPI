@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Grzegorz\\Desktop\\Pulpit\\Studia\\ZPI\\Wediary\\Wediary\\Wediary.csproj": {}
+    "C:\\Users\\pswap\\OneDrive\\Dokumenty\\GitHub\\ZPI2\\Wediary\\Wediary\\Wediary.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Grzegorz\\Desktop\\Pulpit\\Studia\\ZPI\\Wediary\\Wediary.Data\\Wediary.Data.csproj": {
+    "C:\\Users\\pswap\\OneDrive\\Dokumenty\\GitHub\\ZPI2\\Wediary\\Wediary.Data\\Wediary.Data.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Grzegorz\\Desktop\\Pulpit\\Studia\\ZPI\\Wediary\\Wediary.Data\\Wediary.Data.csproj",
+        "projectUniqueName": "C:\\Users\\pswap\\OneDrive\\Dokumenty\\GitHub\\ZPI2\\Wediary\\Wediary.Data\\Wediary.Data.csproj",
         "projectName": "Wediary.Data",
-        "projectPath": "C:\\Users\\Grzegorz\\Desktop\\Pulpit\\Studia\\ZPI\\Wediary\\Wediary.Data\\Wediary.Data.csproj",
-        "packagesPath": "C:\\Users\\Grzegorz\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Grzegorz\\Desktop\\Pulpit\\Studia\\ZPI\\Wediary\\Wediary.Data\\obj\\",
+        "projectPath": "C:\\Users\\pswap\\OneDrive\\Dokumenty\\GitHub\\ZPI2\\Wediary\\Wediary.Data\\Wediary.Data.csproj",
+        "packagesPath": "C:\\Users\\pswap\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\pswap\\OneDrive\\Dokumenty\\GitHub\\ZPI2\\Wediary\\Wediary.Data\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\Grzegorz\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\pswap\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -74,20 +74,20 @@
         }
       }
     },
-    "C:\\Users\\Grzegorz\\Desktop\\Pulpit\\Studia\\ZPI\\Wediary\\Wediary.Service\\Wediary.Service.csproj": {
+    "C:\\Users\\pswap\\OneDrive\\Dokumenty\\GitHub\\ZPI2\\Wediary\\Wediary.Service\\Wediary.Service.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Grzegorz\\Desktop\\Pulpit\\Studia\\ZPI\\Wediary\\Wediary.Service\\Wediary.Service.csproj",
+        "projectUniqueName": "C:\\Users\\pswap\\OneDrive\\Dokumenty\\GitHub\\ZPI2\\Wediary\\Wediary.Service\\Wediary.Service.csproj",
         "projectName": "Wediary.Service",
-        "projectPath": "C:\\Users\\Grzegorz\\Desktop\\Pulpit\\Studia\\ZPI\\Wediary\\Wediary.Service\\Wediary.Service.csproj",
-        "packagesPath": "C:\\Users\\Grzegorz\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Grzegorz\\Desktop\\Pulpit\\Studia\\ZPI\\Wediary\\Wediary.Service\\obj\\",
+        "projectPath": "C:\\Users\\pswap\\OneDrive\\Dokumenty\\GitHub\\ZPI2\\Wediary\\Wediary.Service\\Wediary.Service.csproj",
+        "packagesPath": "C:\\Users\\pswap\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\pswap\\OneDrive\\Dokumenty\\GitHub\\ZPI2\\Wediary\\Wediary.Service\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\Grzegorz\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\pswap\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -101,8 +101,8 @@
           "netcoreapp2.0": {
             "targetAlias": "netcoreapp2.0",
             "projectReferences": {
-              "C:\\Users\\Grzegorz\\Desktop\\Pulpit\\Studia\\ZPI\\Wediary\\Wediary.Data\\Wediary.Data.csproj": {
-                "projectPath": "C:\\Users\\Grzegorz\\Desktop\\Pulpit\\Studia\\ZPI\\Wediary\\Wediary.Data\\Wediary.Data.csproj"
+              "C:\\Users\\pswap\\OneDrive\\Dokumenty\\GitHub\\ZPI2\\Wediary\\Wediary.Data\\Wediary.Data.csproj": {
+                "projectPath": "C:\\Users\\pswap\\OneDrive\\Dokumenty\\GitHub\\ZPI2\\Wediary\\Wediary.Data\\Wediary.Data.csproj"
               }
             }
           }
@@ -138,20 +138,20 @@
         }
       }
     },
-    "C:\\Users\\Grzegorz\\Desktop\\Pulpit\\Studia\\ZPI\\Wediary\\Wediary\\Wediary.csproj": {
+    "C:\\Users\\pswap\\OneDrive\\Dokumenty\\GitHub\\ZPI2\\Wediary\\Wediary\\Wediary.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Grzegorz\\Desktop\\Pulpit\\Studia\\ZPI\\Wediary\\Wediary\\Wediary.csproj",
+        "projectUniqueName": "C:\\Users\\pswap\\OneDrive\\Dokumenty\\GitHub\\ZPI2\\Wediary\\Wediary\\Wediary.csproj",
         "projectName": "Wediary",
-        "projectPath": "C:\\Users\\Grzegorz\\Desktop\\Pulpit\\Studia\\ZPI\\Wediary\\Wediary\\Wediary.csproj",
-        "packagesPath": "C:\\Users\\Grzegorz\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Grzegorz\\Desktop\\Pulpit\\Studia\\ZPI\\Wediary\\Wediary\\obj\\",
+        "projectPath": "C:\\Users\\pswap\\OneDrive\\Dokumenty\\GitHub\\ZPI2\\Wediary\\Wediary\\Wediary.csproj",
+        "packagesPath": "C:\\Users\\pswap\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\pswap\\OneDrive\\Dokumenty\\GitHub\\ZPI2\\Wediary\\Wediary\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\Grzegorz\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\pswap\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -165,11 +165,11 @@
           "netcoreapp2.0": {
             "targetAlias": "netcoreapp2.0",
             "projectReferences": {
-              "C:\\Users\\Grzegorz\\Desktop\\Pulpit\\Studia\\ZPI\\Wediary\\Wediary.Data\\Wediary.Data.csproj": {
-                "projectPath": "C:\\Users\\Grzegorz\\Desktop\\Pulpit\\Studia\\ZPI\\Wediary\\Wediary.Data\\Wediary.Data.csproj"
+              "C:\\Users\\pswap\\OneDrive\\Dokumenty\\GitHub\\ZPI2\\Wediary\\Wediary.Data\\Wediary.Data.csproj": {
+                "projectPath": "C:\\Users\\pswap\\OneDrive\\Dokumenty\\GitHub\\ZPI2\\Wediary\\Wediary.Data\\Wediary.Data.csproj"
               },
-              "C:\\Users\\Grzegorz\\Desktop\\Pulpit\\Studia\\ZPI\\Wediary\\Wediary.Service\\Wediary.Service.csproj": {
-                "projectPath": "C:\\Users\\Grzegorz\\Desktop\\Pulpit\\Studia\\ZPI\\Wediary\\Wediary.Service\\Wediary.Service.csproj"
+              "C:\\Users\\pswap\\OneDrive\\Dokumenty\\GitHub\\ZPI2\\Wediary\\Wediary.Service\\Wediary.Service.csproj": {
+                "projectPath": "C:\\Users\\pswap\\OneDrive\\Dokumenty\\GitHub\\ZPI2\\Wediary\\Wediary.Service\\Wediary.Service.csproj"
               }
             }
           }

@@ -27,6 +27,8 @@
     <div class="buttons">
         <button onclick="removeFromPalette()">Remove element</button>
         <button onclick="addToPalette()">Add Table</button>
+        <button onclick="saveElements()">save</button>
+        <button onclick="loadElements()">load</button>
     </div>
 
     <body onload="init()">
@@ -38,6 +40,9 @@
             </div>
             <div>
                 <pre class="json" id="savedModel"></pre>
+                <pre class="json" id="savedDiagram"></pre>
+                <pre class="json" id="savedGuests"></pre>
+
             </div>
         </div>
         <script src="~/js/splide.min.js"></script>
