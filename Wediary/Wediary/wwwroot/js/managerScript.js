@@ -521,6 +521,8 @@ function save() {
     myDiagram.isModified = false;
     myGuests.isModified = false;
     myDiagram_String = JSON.stringify(document.getElementById("Diagram_saved").value);
+    var hdnfldVariable = document.getElementById('hdnfldVariable');
+    hdnfldVariable.value = myDiagram_String;
     myGuests_String = JSON.stringify(document.getElementById("Guests_saved").value)
 }
 function load() {

@@ -1,4 +1,5 @@
-﻿@{
+﻿@model Wediary.Models.MainTest.MainClass
+@{
     ViewData["Title"] = "Manager";
 }
 
@@ -27,11 +28,12 @@
     <div class="buttons">
         <button onclick="removeFromPalette()">Remove element</button>
         <button onclick="addToPalette()">Add Table</button>
-        <button onclick="save()">Save</button>
         <button onclick="load()">Load</button>
-
+        <form asp-controller="Task" asp-action="See" method="post">
+            <input asp-for="ValueC" type="text" class="form-control" id="hdnfldVariable" placeholder="nazwa">
+            <button onclick="save()">Save</button>
+        </form>
     </div>
-
     <body onload="init()">
 
         <div id="sample">
@@ -51,5 +53,6 @@
         <script src="~/js/managerScript.js"></script>
 
     </body>
+
 
   

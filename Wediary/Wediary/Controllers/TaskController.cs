@@ -60,5 +60,12 @@ namespace Wediary.Controllers
                 Unit = m.Unit,
             };
         }
+
+        [HttpPost]
+        public IActionResult See(string text)
+        {
+            var test = text;
+            return RedirectToPage("/");
+        }
     }
 }
