@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using Wediary.Data;
 using Wediary.Data.Models;
 using Wediary.Models;
+using Wediary.Models.MainTest;
 using Wediary.Models.TaskUser;
 
 namespace Wediary.Controllers
@@ -62,9 +63,9 @@ namespace Wediary.Controllers
         }
 
         [HttpPost]
-        public IActionResult See(string text)
+        public IActionResult See(MainClass text)
         {
-            var test = text;
+            var test = text.ValueC;
             return RedirectToPage("/");
         }
     }

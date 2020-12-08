@@ -31,7 +31,7 @@
         <button onclick="load()">Load</button>
         <form asp-controller="Task" asp-action="See" method="post">
             <input asp-for="ValueC" type="text" class="form-control" id="hdnfldVariable" placeholder="nazwa">
-            <button onclick="save()">Save</button>
+            <button type="submit" onclick="save()">Save</button>
         </form>
     </div>
     <body onload="init()">
