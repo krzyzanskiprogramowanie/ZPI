@@ -27,8 +27,9 @@
     <div class="buttons">
         <button onclick="removeFromPalette()">Remove element</button>
         <button onclick="addToPalette()">Add Table</button>
-        <button onclick="saveElements()">save</button>
-        <button onclick="loadElements()">load</button>
+        <button onclick="save()">Save</button>
+        <button onclick="load()">Load</button>
+
     </div>
 
     <body onload="init()">
@@ -40,8 +41,8 @@
             </div>
             <div>
                 <pre class="json" id="savedModel"></pre>
-                <pre class="json" id="savedDiagram"></pre>
-                <pre class="json" id="savedGuests"></pre>
+                <pre class="json" id="Guests_saved"></pre>
+                <pre class="json" id="Diagram_saved"></pre>
 
             </div>
         </div>

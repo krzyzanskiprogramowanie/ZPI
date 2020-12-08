@@ -15,7 +15,7 @@ function init() {
             "ModelChanged": function(e) {
               if (e.isTransactionFinished) {
                   document.getElementById("savedModel").textContent = myDiagram.model.toJson();
-                  console.log(JSON.stringify(document.getElementById("savedModel").textContent));
+                
               }
             },
             "undoManager.isEnabled": true
@@ -512,33 +512,25 @@ function init() {
       return map;
     };
     // end SpecialDraggingTool
-var myGuests_String;// <--value for database
-var myDiagram_String; //<--value for database
-
-
+var myGuests_String;
+var myDiagram_String;
+function save() {
+    document.getElementById("Diagram_saved").value = myDiagram.model.toJson();
+    document.getElementById("Guests_saved").value = myGuests.model.toJson();
+    //document.getElementById("Guests_saved").value = myDiagram.model.toJson();
+    myDiagram.isModified = false;
+    myGuests.isModified = false;
+    myDiagram_String = JSON.stringify(document.getElementById("Diagram_saved").value);
+    myGuests_String = JSON.stringify(document.getElementById("Guests_saved").value)
+}
+function load() {
+    myDiagram.model = go.Model.fromJson(JSON.parse(myDiagram_String));
+    myGuests.model = go.Model.fromJson(JSON.parse(myGuests_String));
+}
 
 	   function removeFromPalette() {
       myDiagram.commandHandler.deleteSelection();
     
-}
-
-
-
-       function saveElements() {
-           document.getElementById("savedDiagram").textContent = document.getElementById("savedModel").textContent;
-           document.getElementById("savedDiagram").textContent = myDiagram.model.toJson();
-           // document.getElementById("myGuests_json").value = myGuests.model.toJson();
-           myGuests.isModified = false;
-           myDiagram.isModified = false;
-    //myGuests_String = (document.getElementById("myDiagram_json").value).stringify();
-   // myDiagram_String = (document.getElementById("myGuests_json").value).stringify();
-}
-function loadElements() {
-    //document.getElementById("savedModel").value = JSON.parse(myDiagram_String);
-    // document.getElementById("myGuests_json").value = JSON.parse(myGuests_String);
-    myDiagram.model = go.Model.fromJson(document.getElementById("savedDiagram").textContent);
-    //  myGuests.model = go.Model.fromJson(document.getElementById("myGuests_json").value);
-
 }
 
 
