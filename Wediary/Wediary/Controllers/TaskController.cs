@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using Wediary.Data;
 using Wediary.Data.Models;
 using Wediary.Models;
-using Wediary.Models.MainTest;
+using Wediary.Models.ManagerTables;
 using Wediary.Models.TaskUser;
 
 namespace Wediary.Controllers
@@ -17,11 +17,16 @@ namespace Wediary.Controllers
         private readonly ITaskUser _serviceTaskUser;
         private readonly IApplicationUser _serviceApplicationUser;
         private static UserManager<ApplicationUser> _userManager;
-        public TaskController(ITaskUser serviceTaskUser, IApplicationUser applicationUser, UserManager<ApplicationUser> userManager)
+        private readonly IProject _serviceProject;
+        public TaskController(ITaskUser serviceTaskUser, IApplicationUser applicationUser, 
+            UserManager<ApplicationUser> userManager,
+            IProject serviceProject
+            )
         {
             _serviceTaskUser = serviceTaskUser;
             _serviceApplicationUser = applicationUser;
             _userManager = userManager;
+            _serviceProject = serviceProject;
         }
         
 
@@ -63,10 +68,25 @@ namespace Wediary.Controllers
         }
 
         [HttpPost]
-        public IActionResult See(MainClass text)
+        public async Task<IActionResult> See(CoordinatesModel coordinates)
         {
-            var test = text.ValueC;
-            return RedirectToPage("/");
+            string CoordinatesTableJson = coordinates.CoordinatesJson;
+            var userId = _userManager.GetUserId(User);
+            string id = userId;
+            var user = await _userManager.FindByIdAsync(userId);
+            var changes = ReplyBuildTableJson(CoordinatesTableJson, user, id);
+            await _serviceProject.Create(changes);
+            return RedirectToAction("Index", "Home", new { id = coordinates.UserId });
+        }
+
+        private Project ReplyBuildTableJson(string coordinates, ApplicationUser user, string id)
+        {
+            return new Project
+            {
+                UserId = id,
+                Name = coordinates,
+                CreationDate=DateTime.Now
+            };
         }
     }
 }

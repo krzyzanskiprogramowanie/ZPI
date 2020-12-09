@@ -39,6 +39,8 @@ namespace Wediary
             services.AddScoped<IApplicationUser, UserService>();
             services.AddScoped<ITaskUser, TaskUserService>();
             services.AddScoped<IGuest, GuestService>();
+            services.AddScoped<IProject, ProjectService>();
+
             services.AddMvc();
         }
 
