@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,6 +8,7 @@ using System.Threading.Tasks;
 using Wediary.Data;
 using Wediary.Data.Models;
 using Wediary.Models;
+using Wediary.Models.HelpModels;
 using Wediary.Models.ManagerTables;
 using Wediary.Models.TaskUser;
 
@@ -18,15 +20,19 @@ namespace Wediary.Controllers
         private readonly IApplicationUser _serviceApplicationUser;
         private static UserManager<ApplicationUser> _userManager;
         private readonly IProject _serviceProject;
+        private readonly IGuest _serviceGuest;
+
+
         public TaskController(ITaskUser serviceTaskUser, IApplicationUser applicationUser, 
             UserManager<ApplicationUser> userManager,
-            IProject serviceProject
+            IProject serviceProject,IGuest serviceGuest
             )
         {
             _serviceTaskUser = serviceTaskUser;
             _serviceApplicationUser = applicationUser;
             _userManager = userManager;
             _serviceProject = serviceProject;
+            _serviceGuest = serviceGuest;
         }
         
 
@@ -87,6 +93,15 @@ namespace Wediary.Controllers
                 Name = coordinates,
                 CreationDate=DateTime.Now
             };
+        }
+
+        public IActionResult ParseToJson()
+        {
+            var userID = _userManager.GetUserId(User);
+            var guest = _serviceGuest.GetAll(userID);
+            JsonFile testJson = new JsonFile();
+            testJson.valueJson = JsonConvert.SerializeObject(guest);
+            return View(testJson); //widok bez zwracania
         }
     }
 }
