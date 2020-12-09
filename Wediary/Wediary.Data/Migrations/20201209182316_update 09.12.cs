@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 namespace Wediary.Data.Migrations
 {
-    public partial class first : Migration
+    public partial class update0912 : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -167,6 +167,7 @@ namespace Wediary.Data.Migrations
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     ApplicationUserId = table.Column<string>(type: "nvarchar(450)", nullable: true),
                     DescriptionDiet = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    IfAccommodation = table.Column<bool>(type: "bit", nullable: false),
                     IfAftermath = table.Column<bool>(type: "bit", nullable: false),
                     IfSpecialDiet = table.Column<bool>(type: "bit", nullable: false),
                     InvitationStatus = table.Column<string>(type: "nvarchar(max)", nullable: true),
@@ -192,16 +193,19 @@ namespace Wediary.Data.Migrations
                 {
                     IdProject = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    ApplicationUserId = table.Column<string>(type: "nvarchar(450)", nullable: true),
                     CreationDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    JsonGuest = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    JsonTable = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Name = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    UserId = table.Column<string>(type: "nvarchar(450)", nullable: true)
+                    UserId = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Projects", x => x.IdProject);
                     table.ForeignKey(
-                        name: "FK_Projects_AspNetUsers_UserId",
-                        column: x => x.UserId,
+                        name: "FK_Projects_AspNetUsers_ApplicationUserId",
+                        column: x => x.ApplicationUserId,
                         principalTable: "AspNetUsers",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
@@ -213,6 +217,7 @@ namespace Wediary.Data.Migrations
                 {
                     IdTask = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    ApplicationUserId = table.Column<string>(type: "nvarchar(450)", nullable: true),
                     Category = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Contractor = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Date = table.Column<DateTime>(type: "datetime2", nullable: false),
@@ -223,43 +228,17 @@ namespace Wediary.Data.Migrations
                     Status = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     TotalPrice = table.Column<decimal>(type: "decimal(18, 2)", nullable: false),
                     Unit = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    UserId = table.Column<string>(type: "nvarchar(450)", nullable: true)
+                    UserId = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_TaskUsers", x => x.IdTask);
                     table.ForeignKey(
-                        name: "FK_TaskUsers_AspNetUsers_UserId",
-                        column: x => x.UserId,
+                        name: "FK_TaskUsers_AspNetUsers_ApplicationUserId",
+                        column: x => x.ApplicationUserId,
                         principalTable: "AspNetUsers",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "Coordinates",
-                columns: table => new
-                {
-                    IdCoordinates = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    A = table.Column<int>(type: "int", nullable: false),
-                    B = table.Column<int>(type: "int", nullable: false),
-                    C = table.Column<int>(type: "int", nullable: false),
-                    D = table.Column<int>(type: "int", nullable: false),
-                    Name = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Owner = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    ProjectId = table.Column<int>(type: "int", nullable: false),
-                    Type = table.Column<string>(type: "nvarchar(max)", nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Coordinates", x => x.IdCoordinates);
-                    table.ForeignKey(
-                        name: "FK_Coordinates_Projects_ProjectId",
-                        column: x => x.ProjectId,
-                        principalTable: "Projects",
-                        principalColumn: "IdProject",
-                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateIndex(
@@ -302,24 +281,19 @@ namespace Wediary.Data.Migrations
                 filter: "[NormalizedUserName] IS NOT NULL");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Coordinates_ProjectId",
-                table: "Coordinates",
-                column: "ProjectId");
-
-            migrationBuilder.CreateIndex(
                 name: "IX_Guests_ApplicationUserId",
                 table: "Guests",
                 column: "ApplicationUserId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Projects_UserId",
+                name: "IX_Projects_ApplicationUserId",
                 table: "Projects",
-                column: "UserId");
+                column: "ApplicationUserId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_TaskUsers_UserId",
+                name: "IX_TaskUsers_ApplicationUserId",
                 table: "TaskUsers",
-                column: "UserId");
+                column: "ApplicationUserId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
@@ -340,19 +314,16 @@ namespace Wediary.Data.Migrations
                 name: "AspNetUserTokens");
 
             migrationBuilder.DropTable(
-                name: "Coordinates");
+                name: "Guests");
 
             migrationBuilder.DropTable(
-                name: "Guests");
+                name: "Projects");
 
             migrationBuilder.DropTable(
                 name: "TaskUsers");
 
             migrationBuilder.DropTable(
                 name: "AspNetRoles");
-
-            migrationBuilder.DropTable(
-                name: "Projects");
 
             migrationBuilder.DropTable(
                 name: "AspNetUsers");

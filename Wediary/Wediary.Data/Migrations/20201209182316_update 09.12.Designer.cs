@@ -11,8 +11,8 @@ using Wediary.Data;
 namespace Wediary.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20201203182229_first")]
-    partial class first
+    [Migration("20201209182316_update 09.12")]
+    partial class update0912
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -129,34 +129,6 @@ namespace Wediary.Data.Migrations
                     b.ToTable("AspNetUserTokens");
                 });
 
-            modelBuilder.Entity("Wediary.Data.Models.Coordinate", b =>
-                {
-                    b.Property<int>("IdCoordinates")
-                        .ValueGeneratedOnAdd();
-
-                    b.Property<int>("A");
-
-                    b.Property<int>("B");
-
-                    b.Property<int>("C");
-
-                    b.Property<int>("D");
-
-                    b.Property<string>("Name");
-
-                    b.Property<string>("Owner");
-
-                    b.Property<int>("ProjectId");
-
-                    b.Property<string>("Type");
-
-                    b.HasKey("IdCoordinates");
-
-                    b.HasIndex("ProjectId");
-
-                    b.ToTable("Coordinates");
-                });
-
             modelBuilder.Entity("Wediary.Data.Models.Guest", b =>
                 {
                     b.Property<int>("IdGuest")
@@ -165,6 +137,8 @@ namespace Wediary.Data.Migrations
                     b.Property<string>("ApplicationUserId");
 
                     b.Property<string>("DescriptionDiet");
+
+                    b.Property<bool>("IfAccommodation");
 
                     b.Property<bool>("IfAftermath");
 
@@ -192,7 +166,13 @@ namespace Wediary.Data.Migrations
                     b.Property<int>("IdProject")
                         .ValueGeneratedOnAdd();
 
+                    b.Property<string>("ApplicationUserId");
+
                     b.Property<DateTime>("CreationDate");
+
+                    b.Property<string>("JsonGuest");
+
+                    b.Property<string>("JsonTable");
 
                     b.Property<string>("Name");
 
@@ -200,7 +180,7 @@ namespace Wediary.Data.Migrations
 
                     b.HasKey("IdProject");
 
-                    b.HasIndex("UserId");
+                    b.HasIndex("ApplicationUserId");
 
                     b.ToTable("Projects");
                 });
@@ -209,6 +189,8 @@ namespace Wediary.Data.Migrations
                 {
                     b.Property<int>("IdTask")
                         .ValueGeneratedOnAdd();
+
+                    b.Property<string>("ApplicationUserId");
 
                     b.Property<string>("Category");
 
@@ -234,7 +216,7 @@ namespace Wediary.Data.Migrations
 
                     b.HasKey("IdTask");
 
-                    b.HasIndex("UserId");
+                    b.HasIndex("ApplicationUserId");
 
                     b.ToTable("TaskUsers");
                 });
@@ -345,14 +327,6 @@ namespace Wediary.Data.Migrations
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 
-            modelBuilder.Entity("Wediary.Data.Models.Coordinate", b =>
-                {
-                    b.HasOne("Wediary.Data.Models.Project", "Project")
-                        .WithMany("Coordinates")
-                        .HasForeignKey("ProjectId")
-                        .OnDelete(DeleteBehavior.Cascade);
-                });
-
             modelBuilder.Entity("Wediary.Data.Models.Guest", b =>
                 {
                     b.HasOne("Wediary.Models.ApplicationUser", "ApplicationUser")
@@ -362,16 +336,16 @@ namespace Wediary.Data.Migrations
 
             modelBuilder.Entity("Wediary.Data.Models.Project", b =>
                 {
-                    b.HasOne("Wediary.Models.ApplicationUser", "User")
+                    b.HasOne("Wediary.Models.ApplicationUser", "ApplicationUser")
                         .WithMany("Projects")
-                        .HasForeignKey("UserId");
+                        .HasForeignKey("ApplicationUserId");
                 });
 
             modelBuilder.Entity("Wediary.Data.Models.TaskUser", b =>
                 {
-                    b.HasOne("Wediary.Models.ApplicationUser", "User")
+                    b.HasOne("Wediary.Models.ApplicationUser", "ApplicationUser")
                         .WithMany("Tasks")
-                        .HasForeignKey("UserId");
+                        .HasForeignKey("ApplicationUserId");
                 });
 #pragma warning restore 612, 618
         }

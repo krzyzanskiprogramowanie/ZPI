@@ -11,10 +11,12 @@ namespace Wediary.Data.Models
         [Key]
         public int IdProject { get; set; }
         public string Name { get; set; }
+        public string JsonTable { get; set; }
+        public string JsonGuest { get; set; }
+
         public DateTime CreationDate { get; set; }
 
         public virtual string UserId{ get; set; }
-        public virtual ApplicationUser User{ get; set; }
-        public virtual List<Coordinate> Coordinates { get; set; }
+        public virtual ApplicationUser ApplicationUser{ get; set; }
     }
 }

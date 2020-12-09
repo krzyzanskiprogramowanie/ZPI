@@ -16,8 +16,31 @@ namespace Wediary.Data
         {
         }
 
+        /*
+        protected override void OnModelCreating(ModelBuilder builder)
+        {
+            builder.Entity<Guest>()
+                .HasOne(g => g.ApplicationUser)
+                .WithMany(u => u.Guests)
+                .HasForeignKey(g => g.UserId)
+                .OnDelete(DeleteBehavior.Restrict);
+
+
+            builder.Entity<Project>()
+            .HasOne(p => p.ApplicationUser)
+            .WithMany(u => u.Projects)
+            .HasForeignKey(p => p.UserId)
+            .OnDelete(DeleteBehavior.Restrict);
+
+
+            builder.Entity<TaskUser>()
+            .HasOne(t => t.ApplicationUser)
+            .WithMany(u => u.Tasks)
+            .HasForeignKey(t => t.UserId)
+            .OnDelete(DeleteBehavior.Restrict);
+        }
+        */
         public DbSet<ApplicationUser> ApplicationUsers { get; set; }
-        public DbSet<Coordinate> Coordinates{ get; set; }
         public DbSet<Guest> Guests{ get; set; }
         public DbSet<Project> Projects{ get; set; }
         public DbSet<TaskUser> TaskUsers{ get; set; }

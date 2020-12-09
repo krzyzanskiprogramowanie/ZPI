@@ -90,7 +90,7 @@ namespace Wediary.Controllers
             return new Project
             {
                 UserId = id,
-                Name = coordinates,
+                JsonTable = coordinates,
                 CreationDate=DateTime.Now
             };
         }

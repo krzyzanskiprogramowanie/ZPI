@@ -15,6 +15,8 @@ namespace Wediary.Data.Models
         public string Role { get; set; }
         public bool IfAftermath { get; set; }
         public bool IfSpecialDiet { get; set; }
+        public bool IfAccommodation { get; set; }
+
         public string DescriptionDiet { get; set; }
         public string InvitationStatus { get; set; }
 
