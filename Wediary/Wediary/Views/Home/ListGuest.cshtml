@@ -1,0 +1,190 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+
+<body>
+    <div class="container">
+
+        <div class="row">
+            <h2 col-sm-10>Lista gości weselnych</h2>
+
+            <!-- Button trigger modal -->
+            <div class="col-sm-2">
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+                    Dodaj Gościa
+                </button>
+            </div>
+
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="modalGuestAdd">Dodaj Gościa</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+
+                            <form>
+                                <div class="form-group row">
+                                    <label for="inputName" class="col-sm-2 col-form-label">Imie</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control" id="inputName" placeholder="imie">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="inputSurName" class="col-sm-2 col-form-label">Nazwisko</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control" id="inputSurName" placeholder="nazwisko">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="inputRole" class="col-sm-2 col-form-label">Rola</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control" id="inputRole" placeholder="rola">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="inputDiet" class="col-sm-2 col-form-label">Dieta</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control" id="inputDiet" placeholder="jakaś dieta/uczuleni">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <div class="col-sm-6">Nocleg</div>
+                                    <div class="col-sm-6">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="true" id="accomodation">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <div class="col-sm-6">Poprawiny</div>
+                                    <div class="col-sm-6">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="true" id="aftermath">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <div class="col-sm-6">Potwierdzenie przybycia</div>
+                                    <div class="col-sm-6">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="invitationStatus">
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Zamknij</button>
+                            <button type="button" class="btn btn-primary">Dodaj</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Guest List -->
+        <div class="col align-self-center">
+            <table class="table table-hover table-responsive">
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">Lp</th>
+                        <th scope="col">Imie i Nazwisko</th>
+                        <th scope="col">Zaproszenie</th>
+                        <th scope="col">Nocleg</th>
+                        <th scope="col">Poprawiny</th>
+                        <th scope="col">Dieta</th>
+                        <th scope="col">Notatka</th>
+                        <th scope="col">Potwierdzenie</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">1</th>
+                        <td>Ania Kowalska</td>
+                        <td>
+                            <div class="the-icons span3" title="Code: 0xf2b7"><i class="demo-icon icon-envelope-open-o"></i> </div>
+                        </td>
+                        <td>
+                            <div class="the-icons span3" title="Code: 0xf236"><i class="demo-icon icon-bed"></i> </div>
+                        </td>
+                        <td>
+                            <div class="the-icons span3" title="Code: 0xe803"><i class="demo-icon icon-glass"></i></div>
+                        </td>
+                        <td>
+                            <div> wegetarianizm </div>
+                        </td>
+                        <td> <i class="icon-eye"></i> </td>
+                        <td>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="true" id="stanZad">
+                                <label class="form-check-label" for="stanZad"></label>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr class="bg-success">
+                        <th scope="row">2</th>
+                        <td>Ania Kowalska</td>
+                        <td>
+                            <div class="the-icons span3" title="Code: 0xf2b7"><i class="demo-icon icon-envelope-open-o"></i> </div>
+                        </td>
+                        <td>
+                            <div class="the-icons span3" title="Code: 0xf236"><i class="demo-icon icon-bed"></i> </div>
+                        </td>
+                        <td>
+                            <div class="the-icons span3" title="Code: 0xe803"><i class="demo-icon icon-glass"></i></div>
+                        </td>
+                        <td>
+                            <div> weganizm </div>
+                        </td>
+                        <td> <i class="icon-eye"></i> </td>
+                        <td>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="true" id="stanZad2">
+                                <label class="form-check-label" for="stanZad2"></label>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">3</th>
+                        <td>Ania Kowalska</td>
+                        <td>
+                            <div class="the-icons span3" title="Code: 0xf2b7"><i class="demo-icon icon-envelope-open-o"></i> </div>
+                        </td>
+                        <td>
+                            <div class="the-icons span3" title="Code: 0xf236"><i class="demo-icon icon-bed"></i> </div>
+                        </td>
+                        <td>
+                            <div class="the-icons span3" title="Code: 0xe803"><i class="demo-icon icon-glass"></i></div>
+                        </td>
+                        <td>
+                            <div> Orzeszki </div>
+                        </td>
+                        <td> <i class="icon-eye"></i> </td>
+                        <td>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="true" id="stanZad3">
+                                <label class="form-check-label" for="stanZad3"></label>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+
+    <script src="js/bootstrap.min.js"></script>
+</body>
