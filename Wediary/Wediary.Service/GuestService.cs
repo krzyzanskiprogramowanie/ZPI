@@ -18,9 +18,10 @@ namespace Wediary.Service
             _context = context;
         }
 
-        public Task Create(Guest guest)
+        public async Task Create(Guest guest)
         {
-            throw new NotImplementedException();
+            _context.Add(guest);
+            await _context.SaveChangesAsync();
         }
 
         public Task Delete(string id)
