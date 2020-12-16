@@ -30,7 +30,7 @@
         <button onclick="addToPalette()">Add Table</button>
         <button onclick="load()">Load</button>
         <form asp-controller="Task" asp-action="See" method="post">
-            <input asp-for="CoordinatesJson" type="text" class="form-control" id="hdnfldVariable" placeholder="nazwa">
+            <input asp-for="CoordinatesJson" type="hidden" class="form-control" id="hdnfldVariable" placeholder="nazwa" >
             <button type="submit" onclick="save()">Save</button>
         </form>
     </div>

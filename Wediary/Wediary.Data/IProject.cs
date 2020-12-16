@@ -9,7 +9,7 @@ namespace Wediary.Data
     public interface IProject
     {
         Project GetById(string id);
-        IEnumerable<Project> GetAll();
+        IEnumerable<Project> GetAll(string id);
 
         Task Create(Project project);
         Task Delete(string id);

@@ -82,7 +82,7 @@ namespace Wediary.Controllers
             var user = await _userManager.FindByIdAsync(userId);
             var changes = ReplyBuildTableJson(CoordinatesTableJson, user, id);
             await _serviceProject.Create(changes);
-            return RedirectToAction("Index", "Home", new { id = coordinates.UserId });
+            return RedirectToAction("Manager", "Home", new { id = coordinates.UserId });
         }
 
         private Project ReplyBuildTableJson(string coordinates, ApplicationUser user, string id)

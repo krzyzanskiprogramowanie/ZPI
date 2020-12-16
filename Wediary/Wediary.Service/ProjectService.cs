@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Wediary.Data;
@@ -27,9 +28,12 @@ namespace Wediary.Service
             throw new NotImplementedException();
         }
 
-        public IEnumerable<Project> GetAll()
+  
+
+        public IEnumerable<Project> GetAll(string id)
         {
-            throw new NotImplementedException();
+            IEnumerable<Project> listOut = _context.Projects.ToList().Where(user => user.UserId == id);
+            return listOut;
         }
 
         public Project GetById(string id)

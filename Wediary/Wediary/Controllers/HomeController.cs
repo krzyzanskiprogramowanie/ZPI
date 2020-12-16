@@ -31,12 +31,7 @@ namespace Wediary.Controllers
 
             return View();
         }
-        public IActionResult Manager()
-        {
-            ViewData["Message"] = "Your Manager page.";
-
-            return View();
-        }
+    
      
         public IActionResult Error()
         {

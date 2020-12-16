@@ -34,9 +34,11 @@
                     <li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
                     <li><a asp-area="" asp-controller="Home" asp-action="About">About</a></li>
                     <li><a asp-area="" asp-controller="Home" asp-action="Index">Contact</a></li>
-                    <li><a asp-area="" asp-controller="Home" asp-action="Manager">Table Manager</a></li>
+                    <li><a asp-area="" asp-controller="TableManager" asp-action="Manager">Table Manager</a></li>
                     <li><a asp-area="" asp-controller="Task" asp-action="Index">xD</a></li>
                     <li><a asp-area="" asp-controller="Guest" asp-action="Index">Lista gości</a></li>
+                    <li><a asp-area="" asp-controller="TableManager" asp-action="Index">Projekty</a></li>
+
                 </ul>
                 @await Html.PartialAsync("_LoginPartial")
             </div>

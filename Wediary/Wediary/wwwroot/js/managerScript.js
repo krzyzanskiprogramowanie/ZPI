@@ -526,7 +526,7 @@ function save() {
     myGuests_String = JSON.stringify(document.getElementById("Guests_saved").value)
 }
 function load() {
-    myDiagram.model = go.Model.fromJson(JSON.parse(myDiagram_String));
+    myDiagram.model = go.Model.fromJson(JSON.parse(myDiagram_String)); //Do zmiany odczy z bazy
     myGuests.model = go.Model.fromJson(JSON.parse(myGuests_String));
 }
 

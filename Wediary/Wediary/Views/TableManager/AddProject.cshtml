@@ -1,0 +1,13 @@
+﻿
+@model Wediary.Models.ProjectManager.ProjectModel;
+<h1>Tworzenie Nowego Projektu:</h1>
+<br />
+<form asp-controller="TableManager" asp-action="SaveChanges" method="post">
+    <div class="form-group row">
+        <label for="inputName" class="col-sm-2 col-form-label">Nazwa Projektu</label>
+        <div class="col-sm-10">
+            <input asp-for="Name" asp type="text" class="form-control" id="inputName" placeholder="Nazwa Projektu">
+        </div>
+    </div>
+    <button type="submit" class="btn btn-primary">Dodaj</button>
+</form>
