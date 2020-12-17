@@ -36,9 +36,16 @@ namespace Wediary.Service
             return listOut;
         }
 
-        public Project GetById(string id)
+        public Project GetById(int id)
         {
-            throw new NotImplementedException();
+
+            return _context.Projects.FirstOrDefault(project => project.IdProject == id);
+        }
+
+        public  async Task Update(Project project)
+        {
+            _context.Update(project);
+            await _context.SaveChangesAsync();
         }
 
         public Task UpdateUser(string id)

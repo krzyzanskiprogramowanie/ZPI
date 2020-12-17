@@ -9,5 +9,7 @@ namespace Wediary.Models.ManagerTables
     {
         public string CoordinatesJson { get; set; }
         public string UserId { get; set; }
+        public int IdProject { get; set; }
+        public string Name { get; set; }
     }
 }

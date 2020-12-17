@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using Wediary.Data;
 using Wediary.Data.Models;
 using Wediary.Models;
+using Wediary.Models.ManagerTables;
 using Wediary.Models.ProjectManager;
 
 namespace Wediary.Controllers
@@ -31,11 +32,18 @@ namespace Wediary.Controllers
         }
 
 
-        public IActionResult Manager()
+        public IActionResult Manager(int id)
         {
-            ViewData["Message"] = "Your Manager page.";
+           var model =new CoordinatesModel
+            {
+               IdProject=id,
+               CoordinatesJson="xd",
+               Name="franek"
+               
+            };
+                
 
-            return View();
+            return View(model);
         }
 
         public IActionResult Index()

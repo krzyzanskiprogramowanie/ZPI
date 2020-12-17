@@ -29,7 +29,7 @@
         <button onclick="removeFromPalette()">Remove element</button>
         <button onclick="addToPalette()">Add Table</button>
         <button onclick="load()">Load</button>
-        <form asp-controller="Task" asp-action="See" method="post">
+        <form asp-controller="Task" asp-action="See" asp-route-jsonTable="@Model.CoordinatesJson" method="post">
             <input asp-for="CoordinatesJson" type="hidden" class="form-control" id="hdnfldVariable" placeholder="nazwa" >
             <button type="submit" onclick="save()">Save</button>
         </form>

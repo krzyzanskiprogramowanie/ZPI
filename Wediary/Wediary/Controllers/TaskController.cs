@@ -74,24 +74,27 @@ namespace Wediary.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> See(CoordinatesModel coordinates)
+        public async Task<IActionResult> See(CoordinatesModel coordinates, string jsonTable)
         {
             string CoordinatesTableJson = coordinates.CoordinatesJson;
             var userId = _userManager.GetUserId(User);
-            string id = userId;
+            string IdUser = userId;
             var user = await _userManager.FindByIdAsync(userId);
-            var changes = ReplyBuildTableJson(CoordinatesTableJson, user, id);
-            await _serviceProject.Create(changes);
-            return RedirectToAction("Manager", "Home", new { id = coordinates.UserId });
+            //var Project = _serviceProject.GetById(id);
+            var changes = ReplyBuildTableJson(CoordinatesTableJson, user, IdUser,jsonTable);
+            await _serviceProject.Update(changes);
+            return RedirectToAction("Manager", "TableManager", new { id = coordinates.UserId });
         }
 
-        private Project ReplyBuildTableJson(string coordinates, ApplicationUser user, string id)
+        private Project ReplyBuildTableJson(string coordinates, ApplicationUser user, string id,string jsonTable)
         {
             return new Project
             {
                 UserId = id,
                 JsonTable = coordinates,
-                CreationDate=DateTime.Now
+                CreationDate=DateTime.Now,
+                IdProject=6022,
+                
             };
         }
 

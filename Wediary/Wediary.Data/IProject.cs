@@ -8,8 +8,9 @@ namespace Wediary.Data
 {
     public interface IProject
     {
-        Project GetById(string id);
+        Project GetById(int id);
         IEnumerable<Project> GetAll(string id);
+        Task Update(Project project);
 
         Task Create(Project project);
         Task Delete(string id);
