@@ -32,13 +32,12 @@ namespace Wediary.Controllers
         }
 
 
-        public IActionResult Manager(int id)
+        public IActionResult Manager(string id, int id2)
         {
            var model =new CoordinatesModel
-            {
-               IdProject=id,
-               CoordinatesJson="xd",
-               Name="franek"
+           { 
+                IdProject=id2,
+               Name=id
                
             };
                 

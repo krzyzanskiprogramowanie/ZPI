@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 namespace Wediary.Data.Migrations
 {
-    public partial class update0912 : Migration
+    public partial class pierwsza : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

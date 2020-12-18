@@ -1,11 +1,7 @@
 ﻿@model Wediary.Models.ManagerTables.CoordinatesModel
-@{
-    ViewData["Title"] = "Manager";
-}
 
 <link href="~/css/managerStyle.css" rel="stylesheet" />
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link href="fontawesome-all.css" rel="stylesheet">
 <link href="~/css/splide.min.css" rel="stylesheet">
 <link href="~/css/splide-skyblue.min.css" rel="stylesheet">
 
@@ -29,7 +25,7 @@
         <button onclick="removeFromPalette()">Remove element</button>
         <button onclick="addToPalette()">Add Table</button>
         <button onclick="load()">Load</button>
-        <form asp-controller="Task" asp-action="See" asp-route-jsonTable="@Model.CoordinatesJson" method="post">
+        <form asp-controller="Task" asp-action="See" asp-route-name="@Model.Name" asp-route-id="@Model.IdProject"  method="post">
             <input asp-for="CoordinatesJson" type="hidden" class="form-control" id="hdnfldVariable" placeholder="nazwa" >
             <button type="submit" onclick="save()">Save</button>
         </form>

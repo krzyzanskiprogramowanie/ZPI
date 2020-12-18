@@ -11,8 +11,8 @@ using Wediary.Data;
 namespace Wediary.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20201209182316_update 09.12")]
-    partial class update0912
+    [Migration("20201218033256_pierwsza")]
+    partial class pierwsza
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
