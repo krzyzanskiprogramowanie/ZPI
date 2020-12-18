@@ -32,12 +32,12 @@ namespace Wediary.Controllers
         }
 
 
-        public IActionResult Manager(string id, int id2)
+        public IActionResult Manager(string name, int id)
         {
            var model =new CoordinatesModel
            { 
-                IdProject=id2,
-               Name=id
+                IdProject=id,
+               Name=name
                
             };
                 
@@ -67,7 +67,7 @@ namespace Wediary.Controllers
             var user = await _userManager.FindByIdAsync(userId);
             var changes = ReplyBuild(m, user, id);
             await _serviceProject.Create(changes);
-            return RedirectToAction("Manager", "TableManager", new { id = m.IdProject });
+            return RedirectToAction("Index", "TableManager", new { id = m.IdProject });
         }
 
         private Project ReplyBuild(ProjectModel m, ApplicationUser user, string id)

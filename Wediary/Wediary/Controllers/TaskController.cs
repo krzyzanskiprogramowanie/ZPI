@@ -86,7 +86,7 @@ namespace Wediary.Controllers
             //var Project = _serviceProject.GetById(id);
             var changes = ReplyBuildTableJson(CoordinatesTableJson,IdUser, Name, ID);
             await _serviceProject.Update(changes);
-            return RedirectToAction("Manager", "TableManager", new { id = coordinates.UserId });
+            return RedirectToAction("Index", "TableManager", new { id = coordinates.UserId });
         }
 
         private Project ReplyBuildTableJson(string coordinates, string id, string name, int ID)
