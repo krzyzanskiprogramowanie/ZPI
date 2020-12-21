@@ -1,4 +1,6 @@
-﻿<!DOCTYPE html>
+﻿@inject SignInManager<ApplicationUser> SignInManager
+
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
@@ -17,40 +19,38 @@
     </environment>
 </head>
 <body>
-    <nav class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand">Wediary</a>
-            </div>
+    <div>
+        <nav class="navbar navbar-default bg-blue navbar-fixed-top">
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
-                    <li><a asp-area="" asp-controller="Home" asp-action="About">About</a></li>
-                    <li><a asp-area="" asp-controller="Home" asp-action="Index">Contact</a></li>
-                    <li><a asp-area="" asp-controller="TableManager" asp-action="Manager">Table Manager</a></li>
-                    <li><a asp-area="" asp-controller="Task" asp-action="Index">xD</a></li>
-                    <li><a asp-area="" asp-controller="Guest" asp-action="Index">Lista gości</a></li>
-                    <li><a asp-area="" asp-controller="TableManager" asp-action="Index">Projekty</a></li>
+                    <li>
+                        <div>
+                            <a asp-area="" asp-controller="Home" asp-action="MainInfo" class="navbar-brand">
+                                <img src="~/images/img/logo1.png" width="75" height="50" />
+                            </a>
+                        </div>
+                    </li>
+                    <li><a asp-area="" asp-controller="Home" asp-action="Index">Główny panel</a></li>
 
+                    @if (SignInManager.IsSignedIn(User))
+                    {
+                        <li><a asp-area="" asp-controller="Task" asp-action="Index">Lista Zadań</a></li>
+                        <li><a asp-area="" asp-controller="Guest" asp-action="Index">Lista gości</a></li>
+                        <li><a asp-area="" asp-controller="TableManager" asp-action="Index">Projekty</a></li>
+                        <li><a asp-area="" asp-controller="TableManager" asp-action="Manager">Menadżer stołów</a></li>
+                    }
                 </ul>
                 @await Html.PartialAsync("_LoginPartial")
             </div>
+        </nav>
+        <div class="container body-content">
+            @RenderBody()
         </div>
-    </nav>
-    <div class="container body-content">
-        @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; 2020 - Wediary</p>
+        <footer class="bg-blue text-center footer text-lg-start">
+            <p class="text-lg-start">&copy; 2020 - Wediary</p>
         </footer>
     </div>
+
 
     <environment include="Development">
         <script src="~/lib/jquery/dist/jquery.js"></script>

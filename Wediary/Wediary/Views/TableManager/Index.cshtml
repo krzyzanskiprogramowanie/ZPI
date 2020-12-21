@@ -4,20 +4,12 @@
 <link href="~/css/fontello.css" rel="stylesheet" />
 
 <div class="container">
-
     <div class="row">
-        <h2 col-sm-10>Lista gości weselnych</h2>
-
-        <!-- Button trigger modal -->
+        <h2 col-sm-10>Lista wszystkich projektów</h2>
         <div class="col-sm-2">
             <a asp-area="" asp-controller="TableManager" asp-action="AddProject" class="btn btn-primary">Dodaj projekt</a>
         </div>
-
-
     </div>
-
-
-    <!-- Guest List -->
     <div class="col align-self-center">
 
         <table class="table table-hover table-responsive">
@@ -25,47 +17,33 @@
                 <tr>
                     <th scope="col">Lp</th>
                     <th scope="col">Nazwa projektu</th>
-
                     <th scope="col">Data utworzenia</th>
-
-
                 </tr>
             </thead>
             <tbody>
                 @foreach (var item in Model.Select((value, i) => new { i = i + 1, value }))
                 {
-                <tr>
-                    <th scope="row">@item.i</th>
+                    <tr>
+                        <th scope="row">@item.i</th>
 
-                    <td>
-                        <div class="the-icons span3" title="Code: 0xf236">
-                            <i class="demo-icon icon-bed">
-                                <a asp-controller="TableManager" asp-action="Manager" asp-route-name="@item.value.Name" asp-route-id="@item.value.IdProject" >
-                                    @item.value.Name
-                                </a>
-                            </i> 
-                        </div>
-                    </td>
-
-
-                    <td>
-                        <div class="the-icons span3" title="Code: 0xf236"><i class="demo-icon icon-bed">@item.value.CreationDate</i> </div>
-                    </td>
-
-
-                </tr>
+                        <td>
+                            <div class="the-icons span3" title="Code: 0xf236">
+                                <i class="demo-icon icon-bed">
+                                    <a asp-controller="TableManager" asp-action="Manager" asp-route-name="@item.value.Name" asp-route-id="@item.value.IdProject">
+                                        @item.value.Name
+                                    </a>
+                                </i>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="the-icons span3" title="Code: 0xf236"><i class="demo-icon icon-bed">@item.value.CreationDate</i> </div>
+                        </td>
+                    </tr>
                 }
-
-
             </tbody>
         </table>
     </div>
 </div>
-
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-
 <script src="js/bootstrap.min.js"></script>
-
-<!--***********************************************************************************************-->

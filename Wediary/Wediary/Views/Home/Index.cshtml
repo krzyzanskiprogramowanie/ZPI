@@ -1,38 +1,32 @@
 ﻿<link href="~/css/homePage.css" rel="stylesheet" />
 
+@{
+    ViewData["Title"] = "Panel ślubu";
+}
 
 <section>
-
     <div class="container-fluid">
-        <article class="row">
+        <div class="row">
             <asaide class="col-12" style="min-height: 25px;"></asaide>
-
             <div class="left-part">
                 <div class=" col-md-5 m-5">
-
-                    <img src="img/lista różowa.jpg" class="img-fluid">
-
+                    <img src="~/images/img/lista różowa.jpg" class="img-fluid">
                 </div>
             </div>
             <div class="right-part">
-                <div class="col-md-5 text-center">
-
-                    <h2><img src="img/kalendarz1.jpg" class="img-fluid"></h2>
-
-                    <p>Panna & Pan Młodzi</p>
-                    <p>Data ślubu: 20.06.2020 </p>
-                    <p>Miejsce: Bydgoszcz</p>
-                    <p>Reustauracja Wóda i Koks</p>
-
+                <div class="col-md-12 text-center bg-info">
+                    <h2><img src="~/images/img/kalendarz1.jpg" class="img-fluid"></h2>
+                    <div class="text-left">
+                        <p class="alert-info">Panna & Pan Młodzi</p>
+                        <p class="alert-info">Data ślubu: 20.06.2020 </p>
+                        <p class="alert-info">Miejsce: Bydgoszcz</p>
+                        <p class="alert-info">Reustauracja: Przykładowa Restauracja</p>
+                    </div>
                 </div>
-
             </div>
             <div class="style=clear:both;"></div>
-
-        </article>
-
-        <article class="row">
-
+        </div>
+        <div class="row">
             <div class="kafelek col-md-3 ">
                 <p> Ukończone zadania </p>
                 <p> 20 / 60 </p>
@@ -45,8 +39,6 @@
                 <p> Budżet: </p>
                 <p> 5423 zł </p>
             </div>
-
-
-        </article>
+        </div>
     </div>
 </section>

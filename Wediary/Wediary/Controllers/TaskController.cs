@@ -52,7 +52,7 @@ namespace Wediary.Controllers
             var user = await _userManager.FindByIdAsync(userId);
             var changes = ReplyBuild(m, user, id);
             await _serviceTaskUser.Create(changes);
-            return RedirectToAction("Index", "Home", new { id = m.UserId });
+            return RedirectToAction("Index", "Task", new { id = m.UserId });
         }
 
         private TaskUser ReplyBuild(TaskUserModel m, ApplicationUser user, string id)

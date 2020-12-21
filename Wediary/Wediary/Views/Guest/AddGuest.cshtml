@@ -1,62 +1,57 @@
 ﻿@model Wediary.Models.Guest.GuestModel;
 
-    <h2 class="text-left">Tworzenie gościa</h2>
+<div class="container">
+    <h2 class="col-md-12">Tworzenie gościa</h2>
+</div>
 <br />
-
-    <div class="text-center">
-        <form asp-controller="Guest" asp-action="SaveChanges" method="post">
-            <div class="form-group row">
-                <label for="inputName" class="col-sm-2 col-form-label">Imie</label>
-                <div class="col-sm-10">
-                    <input asp-for="Name" asp type="text" class="form-control" id="inputName" placeholder="imie">
-                </div>
+<br />
+<div class="text-center col-md-12">
+    <form asp-controller="Guest" asp-action="SaveChanges" method="post" >
+        <div class="form-group row col-lg-12">
+            <label class="col-sm-4 col-form-label text-right">Imie</label>
+            <div class="col-sm-6">
+                <input asp-for="Name" asp type="text" class="form-control" id="inputName" placeholder="imie">
             </div>
-            <div class="form-group row">
-                <label for="inputSurName" class="col-sm-2 col-form-label">Nazwisko</label>
-                <div class="col-sm-10">
-                    <input asp-for="Surname" type="text" class="form-control" id="inputSurName" placeholder="nazwisko">
-                </div>
+        </div>
+        <div class="form-group row col-lg-12">
+            <label class="col-sm-4 col-form-label text-right">Nazwisko</label>
+            <div class="col-sm-6">
+                <input asp-for="Surname" type="text" class="form-control" id="inputSurName" placeholder="nazwisko">
             </div>
-            <div class="form-group row">
-                <label for="inputRole" class="col-sm-2 col-form-label">Rola</label>
-                <div class="col-sm-10">
-                    <input asp-for="Role" type="text" class="form-control" id="inputRole" placeholder="rola">
-                </div>
+        </div>
+        <div class="form-group row col-lg-12">
+            <label class="col-sm-4 col-form-label text-right">Rola</label>
+            <div class="col-sm-6">
+                <input asp-for="Role" type="text" class="form-control" id="inputRole" placeholder="rola">
             </div>
-            <div class="form-group row">
-                <label for="inputDiet" class="col-sm-2 col-form-label">Dieta</label>
-                <div class="col-sm-10">
-                    <input asp-for="DescriptionDiet" type="text" class="form-control" id="inputDiet" placeholder="jakaś dieta/uczuleni">
-                </div>
+        </div>
+        <div class="form-group row col-lg-12">
+            <label class="col-sm-4 col-form-label text-right">Dieta</label>
+            <div class="col-sm-6">
+                <input asp-for="DescriptionDiet" type="text" class="form-control" id="inputDiet" placeholder="jakaś dieta/uczuleni">
             </div>
-            <div class="form-group row">
-                <div class="col-sm-6">Nocleg</div>
-                <div class="col-sm-6">
-                    <div class="form-check">
-                        <input asp-for="IfAccommodation" type="checkbox" class="form-check-input" id="accomodation">
-                    </div>
-                </div>
+        </div>
+        <div class="form-group row col-lg-12">
+            <label class="col-sm-4 col-form-label text-right">Czy nocleguje?</label>
+            <div class="form-check">
+                <input asp-for="IfAccommodation" type="checkbox" class="form-check-input col-sm-2" id="accomodation">
             </div>
-            <div class="form-group row">
-                <div class="col-sm-6">Poprawiny</div>
-                <div class="col-sm-6">
-                    <div class="form-check">
-                        <input asp-for="IfAftermath" type="checkbox" class="form-check-input" id="aftermath">
-                    </div>
-                </div>
+        </div>
+        <div class="form-group row col-lg-12">
+            <label class="col-sm-4 col-form-label text-right">Czy będzie na poprawinach?</label>
+            <div class="form-check">
+                <input asp-for="IfAftermath" type="checkbox" class="form-check-input col-sm-2" id="aftermath" >
             </div>
-            <div class="form-group row">
-                <div class="col-sm-6">Potwierdzenie przybycia</div>
-                <div class="col-sm-6">
-                    <div class="form-check">
-                        <input asp-for="InvitationStatus" type="checkbox" class="form-check-input" id="invitationStatus">
-                    </div>
-                </div>
+        </div>
+        <div class="form-group row col-lg-12">
+            <label class="col-sm-4 col-form-label text-right">Czy potwierdza przybycie?</label>
+            <div class="form-check">
+                <input asp-for="InvitationStatus" type="checkbox" class="form-check-input col-sm-2" id="invitationStatus">
             </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Zamknij</button>
-                <button type="submit" class="btn btn-primary">Dodaj</button>
-
-            </div>
-        </form>
-    </div>
+        </div>
+        <div class="form-group row col-md-6">
+            <button type="submit" class="btn btn-primary">Dodaj</button>
+            <a class="btn btn-warning" asp-controller="Guest" asp-action="Index">Powróć do Listy</a>
+        </div>
+    </form>
+</div>
