@@ -24,11 +24,9 @@
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li>
-                        <div>
-                            <a asp-area="" asp-controller="Home" asp-action="MainInfo" class="navbar-brand">
+                            <a asp-area="" asp-controller="Home" asp-action="MainInfo">
                                 <img src="~/images/img/logo1.png" width="75" height="50" />
                             </a>
-                        </div>
                     </li>
                     <li><a asp-area="" asp-controller="Home" asp-action="Index">Główny panel</a></li>
 
@@ -43,11 +41,13 @@
                 @await Html.PartialAsync("_LoginPartial")
             </div>
         </nav>
-        <div class="container body-content">
+        <div class="body-content">
             @RenderBody()
         </div>
-        <footer class="bg-blue text-center footer text-lg-start">
-            <p class="text-lg-start">&copy; 2020 - Wediary</p>
+        <footer class="footer bg-blue text-center text-lg-start">
+            <div class="row">
+                <p class="text-lg-start">&copy; 2020 - Wediary</p>
+            </div>
         </footer>
     </div>
 

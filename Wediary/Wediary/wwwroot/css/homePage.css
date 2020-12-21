@@ -2,10 +2,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
 
 body {
-    margin: 0;
+    margin: 0px;
+    padding-bottom: 0px;
     font-family: 'Montserrat', sans-serif;
     font-size: 17px;
     background-image: url("../images/img/xv.png");
+    min-height: 100%;
+}
+
+.picture-container {
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .logoName {
@@ -24,6 +31,8 @@ body {
     font-weight: 500;
     color: #5C5200;
     letter-spacing: 2px;
+    margin-left: 10px;
+    margin-right: 10px;
 }
 
     .navbar-nav > li {
@@ -52,9 +61,11 @@ body {
 }
 
 .footer {
-    margin-left: auto;
-    margin-right: auto;
-    padding: 25px;
+    bottom: 0;
+    width: 100%;
+    padding-top: 20px;
+    position:relative;
+    margin-bottom: 0;
 }
 
 .container {
@@ -62,7 +73,8 @@ body {
     margin-left: auto;
     margin-right: auto;
     background-image: url("../images/img/geometric-leaves.png");
-    margin-bottom: 20px;
+    margin-bottom: 40px;
+    border: 5px solid #665E17;
 }
 
 .left-part {
@@ -85,6 +97,7 @@ body {
     padding: 25px;
     font-size: 45px;
     font-family: 'Lobster', cursive;
+    color: #665E17;
 }
 
 .right-part {
