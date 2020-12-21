@@ -55,3 +55,6 @@ C:\Users\pawel\OneDrive\Desktop\ZPI\ZPI\Wediary\Wediary.Service\obj\Debug\netcor
 C:\Users\pawel\OneDrive\Desktop\ZPI\ZPI\Wediary\Wediary.Service\obj\Debug\netcoreapp2.0\Wediary.Service.csproj.CopyComplete
 C:\Users\pawel\OneDrive\Desktop\ZPI\ZPI\Wediary\Wediary.Service\obj\Debug\netcoreapp2.0\Wediary.Service.dll
 C:\Users\pawel\OneDrive\Desktop\ZPI\ZPI\Wediary\Wediary.Service\obj\Debug\netcoreapp2.0\Wediary.Service.pdb
+C:\Users\Grzegorz\Desktop\Pulpit\Studia\ZPI\ZPI\Wediary\Wediary.Service\bin\Debug\netcoreapp2.0\Wediary.Data.dll
+C:\Users\Grzegorz\Desktop\Pulpit\Studia\ZPI\ZPI\Wediary\Wediary.Service\bin\Debug\netcoreapp2.0\Wediary.Data.pdb
+C:\Users\Grzegorz\Desktop\Pulpit\Studia\ZPI\ZPI\Wediary\Wediary.Service\obj\Debug\netcoreapp2.0\Wediary.Service.csproj.CopyComplete
