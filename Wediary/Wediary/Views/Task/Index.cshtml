@@ -1,4 +1,5 @@
 ﻿@using Wediary.Data.Models
+@using Wediary.Models.HelpModels
 @model IEnumerable<TaskUser>
 
 @{
@@ -15,7 +16,10 @@
             <a asp-area="" asp-controller="Home" asp-action="About" class="btn btn-primary">Dodaj nowe zadanie</a>
         </div>
     </div>
+</div>
 
+<div class="container">
+    <h2>Aktywne zadania</h2>
     <table class="table table-hover table-responsive">
         <thead class="thead-dark">
             <tr>
@@ -27,26 +31,135 @@
                 <th scope="col">Cena rzeczywista</th>
                 <th scope="col">Data</th>
                 <th scope="col">Wykonawca</th>
-                <th scope="col">Status</th>
                 <th scope="col">Kategoria</th>
+                <th scope="col">Stan zadania</th>
+                <th scope="col">Opcje</th>
             </tr>
         </thead>
         <tbody>
             @foreach (var item in Model)
             {
-                <tr class="bg-success">
-                    <td>@item.Name</td>
-                    <td>@item.Quantity</td>
-                    <td>@item.Unit</td>
-                    <td>@item.ExpectedPrice</td>
-                    <td>@item.Payment</td>
-                    <td>@item.TotalPrice</td>
-                    <td>@item.Date</td>
-                    <td>@item.Contractor</td>
-                    <td>@item.Status</td>
-                    <td>@item.Category</td>
-                    <td>  <i class="icon-eye"></i>  </td>
-                </tr>
+                if (item.State == StateTaskModels.Active)
+                {
+                    <tr class="bg-success">
+                        <td>@item.Name</td>
+                        <td>@item.Quantity</td>
+                        <td>@item.Unit</td>
+                        <td>@item.ExpectedPrice</td>
+                        <td>@item.Payment</td>
+                        <td>@item.TotalPrice</td>
+                        <td>@item.Date</td>
+                        <td>@item.Contractor</td>
+                        <td>@item.Category</td>
+                        <td>@item.State</td>
+                        <td>
+                            <form asp-controller="Task" asp-action="ChangeToActive" asp-route-id="@item.IdTask" asp-route-state="@StateTaskModels.End" method="post">
+                                <button type="submit" class="btn btn-success">Zakończ</button>
+                            </form>
+                            <form asp-controller="Task" asp-action="ChangeToActive" asp-route-id="@item.IdTask" asp-route-state="@StateTaskModels.Fail" method="post">
+                                <button type="submit" class="btn btn-danger">Odwołaj</button>
+                            </form>
+                        </td>
+                    </tr>
+                }
+            }
+        </tbody>
+    </table>
+</div>
+
+<div class="container">
+    <h2>Zakończone zadania</h2>
+    <table class="table table-hover table-responsive">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">Nazwa</th>
+                <th scope="col">Ilość</th>
+                <th scope="col">Jednostka</th>
+                <th scope="col">Cena oczekiwana</th>
+                <th scope="col">Zaliczka</th>
+                <th scope="col">Cena rzeczywista</th>
+                <th scope="col">Data</th>
+                <th scope="col">Wykonawca</th>
+                <th scope="col">Kategoria</th>
+                <th scope="col">Stan zadania</th>
+                <th scope="col">Opcje</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                if (item.State == StateTaskModels.End)
+                {
+                    <tr class="bg-success">
+                        <td>@item.Name</td>
+                        <td>@item.Quantity</td>
+                        <td>@item.Unit</td>
+                        <td>@item.ExpectedPrice</td>
+                        <td>@item.Payment</td>
+                        <td>@item.TotalPrice</td>
+                        <td>@item.Date</td>
+                        <td>@item.Contractor</td>
+                        <td>@item.Category</td>
+                        <td>@item.State</td>
+                        <td>
+                            <form asp-controller="Task" asp-action="ChangeToActive" asp-route-id="@item.IdTask" asp-route-state="@StateTaskModels.Active" method="post">
+                                <button type="submit" class="btn btn-info">Aktywuj</button>
+                            </form>
+                            <form asp-controller="Task" asp-action="ChangeToActive" asp-route-id="@item.IdTask" asp-route-state="@StateTaskModels.Fail" method="post">
+                                <button type="submit" class="btn btn-danger">Odwołaj</button>
+                            </form>
+                        </td>
+                    </tr>
+                }
+            }
+        </tbody>
+    </table>
+</div>
+
+<div class="container">
+    <h2>Nieudane zadania</h2>
+    <table class="table table-hover table-responsive">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">Nazwa</th>
+                <th scope="col">Ilość</th>
+                <th scope="col">Jednostka</th>
+                <th scope="col">Cena oczekiwana</th>
+                <th scope="col">Zaliczka</th>
+                <th scope="col">Cena rzeczywista</th>
+                <th scope="col">Data</th>
+                <th scope="col">Wykonawca</th>
+                <th scope="col">Kategoria</th>
+                <th scope="col">Stan zadania</th>
+                <th scope="col">Opcje</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                if (item.State == StateTaskModels.Fail)
+                {
+                    <tr class="bg-success">
+                        <td>@item.Name</td>
+                        <td>@item.Quantity</td>
+                        <td>@item.Unit</td>
+                        <td>@item.ExpectedPrice</td>
+                        <td>@item.Payment</td>
+                        <td>@item.TotalPrice</td>
+                        <td>@item.Date</td>
+                        <td>@item.Contractor</td>
+                        <td>@item.Category</td>
+                        <td>@item.State</td>
+                        <td>
+                            <form asp-controller="Task" asp-action="ChangeToActive" asp-route-id="@item.IdTask" asp-route-state="@StateTaskModels.End" method="post">
+                                <button type="submit" class="btn btn-success">Zakończ</button>
+                            </form>
+                            <form asp-controller="Task" asp-action="ChangeToActive" asp-route-id="@item.IdTask" asp-route-state="@StateTaskModels.Active" method="post">
+                                <button type="submit" class="btn btn-info">Aktywuj</button>
+                            </form>
+                        </td>
+                    </tr>
+                }
             }
         </tbody>
     </table>

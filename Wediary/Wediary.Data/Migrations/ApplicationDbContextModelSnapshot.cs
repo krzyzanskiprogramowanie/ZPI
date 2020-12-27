@@ -205,7 +205,7 @@ namespace Wediary.Data.Migrations
 
                     b.Property<int>("Quantity");
 
-                    b.Property<string>("Status");
+                    b.Property<string>("State");
 
                     b.Property<decimal>("TotalPrice");
 
@@ -227,6 +227,8 @@ namespace Wediary.Data.Migrations
 
                     b.Property<int>("AccessFailedCount");
 
+                    b.Property<string>("BrideName");
+
                     b.Property<decimal>("Budget");
 
                     b.Property<string>("ConcurrencyStamp")
@@ -237,13 +239,13 @@ namespace Wediary.Data.Migrations
 
                     b.Property<bool>("EmailConfirmed");
 
+                    b.Property<string>("GroomName");
+
                     b.Property<string>("ImageProfileUrl");
 
                     b.Property<bool>("LockoutEnabled");
 
                     b.Property<DateTimeOffset?>("LockoutEnd");
-
-                    b.Property<string>("Name");
 
                     b.Property<string>("NormalizedEmail")
                         .HasMaxLength(256);
@@ -258,8 +260,6 @@ namespace Wediary.Data.Migrations
                     b.Property<bool>("PhoneNumberConfirmed");
 
                     b.Property<string>("SecurityStamp");
-
-                    b.Property<string>("Surname");
 
                     b.Property<bool>("TwoFactorEnabled");
 

@@ -11,8 +11,8 @@ namespace Wediary.Models
     public class ApplicationUser : IdentityUser
     {
 
-        public string Name { get; set; }
-        public string Surname { get; set; }
+        public string BrideName  { get; set; }
+        public string GroomName  { get; set; }
         public decimal Budget { get; set; }
         public DateTime WeddingDate { get; set; }
 

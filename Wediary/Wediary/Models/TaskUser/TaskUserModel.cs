@@ -16,7 +16,6 @@ namespace Wediary.Models.TaskUser
         public decimal TotalPrice { get; set; }
         public DateTime Date { get; set; }
         public string Contractor { get; set; }
-        public string Status { get; set; }
         public string Category { get; set; }
     }
 }

@@ -20,8 +20,8 @@ namespace Wediary.Data.Models
         public decimal TotalPrice { get; set; }
         public DateTime Date { get; set; }
         public string Contractor{ get; set; }
-        public string Status { get; set; }
         public string Category { get; set; }
+        public string State { get; set; }
 
         public virtual string UserId { get; set; }
         public virtual ApplicationUser ApplicationUser { get; set; }

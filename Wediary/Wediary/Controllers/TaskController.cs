@@ -55,6 +55,14 @@ namespace Wediary.Controllers
             return RedirectToAction("Index", "Task", new { id = m.UserId });
         }
 
+        public async Task<IActionResult> ChangeToActive(int id, string state)
+        {
+            var taskUpdate = _serviceTaskUser.GetById(id);
+            taskUpdate.State = state;
+            await _serviceTaskUser.Update(taskUpdate);
+            return RedirectToAction("Index", "Task", new { id = taskUpdate.UserId });
+        }
+
         private TaskUser ReplyBuild(TaskUserModel m, ApplicationUser user, string id)
         {
             return new TaskUser
@@ -67,9 +75,9 @@ namespace Wediary.Controllers
                 Name = m.Name,
                 Payment = m.Payment,
                 Quantity = m.Quantity,
-                Status = m.Status,
                 TotalPrice = m.TotalPrice,
                 Unit = m.Unit,
+                State = StateTaskModels.Active,
             };
         }
 

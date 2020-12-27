@@ -35,14 +35,15 @@ namespace Wediary.Service
             return listOut;
         }
 
-        public TaskUser GetById(string id)
+        public TaskUser GetById(int id)
         {
-            throw new NotImplementedException();
+            return _context.TaskUsers.FirstOrDefault(task => task.IdTask == id);
         }
 
-        public Task UpdateTask(string id)
+        public async Task Update(TaskUser task)
         {
-            throw new NotImplementedException();
+            _context.Update(task);
+            await _context.SaveChangesAsync();
         }
     }
 }
