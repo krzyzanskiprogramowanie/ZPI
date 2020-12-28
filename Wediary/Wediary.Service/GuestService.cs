@@ -24,12 +24,10 @@ namespace Wediary.Service
             await _context.SaveChangesAsync();
         }
 
-        public Task Delete(string id)
+        public Task Delete(int id)
         {
             throw new NotImplementedException();
         }
-
-   
 
         public IEnumerable<Guest> GetAll(string id)
         {
@@ -37,14 +35,15 @@ namespace Wediary.Service
             return listOut;
         }
 
-        public Guest GetById(string id)
+        public Guest GetById(int id)
         {
-            throw new NotImplementedException();
+            return _context.Guests.FirstOrDefault(guest => guest.IdGuest == id);
         }
 
-        public Task UpdateUser(string id)
+        public async Task Update(Guest guest)
         {
-            throw new NotImplementedException();
+            _context.Guests.Update(guest);
+            await _context.SaveChangesAsync();
         }
     }
 }

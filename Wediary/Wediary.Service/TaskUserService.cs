@@ -24,7 +24,7 @@ namespace Wediary.Service
             await _context.SaveChangesAsync();
         }
 
-        public Task Delete(string id)
+        public Task Delete(int id)
         {
             throw new NotImplementedException();
         }

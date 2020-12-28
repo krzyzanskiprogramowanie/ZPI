@@ -106,7 +106,6 @@ namespace Wediary.Controllers
                 CreationDate=DateTime.Now,
                 IdProject=ID,
                 Name=name
-                
             };
         }
 

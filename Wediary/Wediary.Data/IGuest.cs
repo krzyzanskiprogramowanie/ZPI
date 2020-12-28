@@ -8,11 +8,11 @@ namespace Wediary.Data
 {
     public interface IGuest
     {
-        Guest GetById(string id);
+        Guest GetById(int id);
         IEnumerable<Guest> GetAll(string id);
 
         Task Create(Guest guest);
-        Task Delete(string id);
-        Task UpdateUser(string id);
+        Task Delete(int id);
+        Task Update(Guest guest);
     }
 }

@@ -1,5 +1,10 @@
 ﻿@using Wediary.Data.Models;
+@using Wediary.Models.HelpModels;
 @model IEnumerable<Guest>;
+
+@{ 
+    ViewData["Title"] = "Lista gości";
+}
 
 <link href="~/css/fontello.css" rel="stylesheet" />
 
@@ -8,10 +13,12 @@
         <h2 class="col-sm-12">Lista gości weselnych</h2>
         <!-- Button trigger modal -->
         <div class="col-sm-2">
-                <a asp-area="" asp-controller="Guest" asp-action="AddGuest" class="btn btn-primary">Dodaj gości</a>
+            <a asp-area="" asp-controller="Guest" asp-action="AddGuest" class="btn btn-primary">Dodaj gości</a>
         </div>
     </div>
-    <!-- Guest List -->
+</div>
+<div class="container">
+    <h2>Goście który potwierdzili obecność</h2>
     <div class="col align-self-center">
 
         <table class="table table-hover table-responsive">
@@ -24,98 +31,186 @@
                     <th scope="col">Poprawiny</th>
                     <th scope="col">Czy dieta</th>
                     <th scope="col">Opis diety</th>
-                    <th scope="col">Zaproszenie</th>
+                    <th scope="col">Opcje</th>
 
                 </tr>
             </thead>
             <tbody>
                 @foreach (var item in Model.Select((value, i) => new { i = i + 1, value }))
                 {
-                <tr>
-                    <th scope="row">@item.i</th>
-
-                    <td>@item.value.Name @item.value.Surname</td>
-                    @if (item.value.Role == null)
+                    if (item.value.InvitationStatus == StatusGuestInvitation.Accept)
                     {
-                        <td>Gość</td>
-                    }
-                    else
-                    {
-                        <td>@item.value.Role</td>
-                    }
+                        <tr>
+                            <th scope="row">@item.i</th>
 
-                    @if (item.value.IfAccommodation == true)
-                    {
-                        <td>
-                            <div class="the-icons span3" title="Code: 0xf236"><i class="demo-icon icon-bed">Tak</i> </div>
-                        </td>
+                            <td>@item.value.Name @item.value.Surname</td>
+                            @if (item.value.Role == null)
+                            {
+                                <td>Gość</td>
+                            }
+                            else
+                            {
+                                <td>@item.value.Role</td>
+                            }
 
+                            @if (item.value.IfAccommodation == true)
+                            {
+                                <td>
+                                    <div class="the-icons span3" title="Code: 0xf236"><i class="demo-icon icon-bed">Tak</i> </div>
+                                </td>
+
+                            }
+                            else
+                            {
+                                <td>
+                                    <div class="the-icons span3" title="Code: 0xf236"><i class="demo-icon icon-bed">Nie</i> </div>
+                                </td>
+
+                            }
+                            <!--Ikony bed przy poprawinach ?-->
+                            @if (item.value.IfAftermath == true)
+                            {
+                                <td>
+                                    <div class="the-icons span3" title="Code: 0xf236"><i class="demo-icon icon-bed">Tak</i> </div>
+                                </td>
+
+                            }
+                            else
+                            {
+                                <td>
+                                    <div class="the-icons span3" title="Code: 0xf236"><i class="demo-icon icon-bed">Nie</i> </div>
+                                </td>
+
+                            }
+
+                            @if (item.value.DescriptionDiet == null)
+                            {
+                                <td>
+                                    <div class="the-icons span3" title="Code: 0xe803"><i class="demo-icon icon-glass">Nie</i></div>
+                                </td>
+                                <td>
+                                    Brak
+                                </td>
+                            }
+                            else
+                            {
+                                <td>
+                                    <div class="the-icons span3" title="Code: 0xe803"><i class="demo-icon icon-glass">Tak</i></div>
+                                </td>
+                                <td>
+                                    @item.value.DescriptionDiet
+                                </td>
+                            }
+                            <td>
+                                <form asp-controller="Guest" asp-action="ChangeInvitation" asp-route-id="@item.value.IdGuest" asp-route-state="@StatusGuestInvitation.Unanswered" method="post">
+                                    <button type="submit" class="btn btn-danger">Wykreś potwierdzenie</button>
+                                </form>
+                            </td>
+                        </tr>
                     }
-                    else
-                    {
-                        <td>
-                            <div class="the-icons span3" title="Code: 0xf236"><i class="demo-icon icon-bed">Nie</i> </div>
-                        </td>
-
-                    }
-                    <!--Ikony bed przy poprawinach ?-->
-                    @if (item.value.IfAftermath == true)
-                    {
-                        <td>
-                            <div class="the-icons span3" title="Code: 0xf236"><i class="demo-icon icon-bed">Tak</i> </div>
-                        </td>
-
-                    }
-                    else
-                    {
-                        <td>
-                            <div class="the-icons span3" title="Code: 0xf236"><i class="demo-icon icon-bed">Nie</i> </div>
-                        </td>
-
-                    }
-
-                    @if (item.value.DescriptionDiet == null)
-                    {
-                        <td>
-                            <div class="the-icons span3" title="Code: 0xe803"><i class="demo-icon icon-glass">Nie</i></div>
-                        </td>
-                        <td>
-                            Brak
-                        </td>
-                    }
-                    else
-                    {
-                        <td>
-                            <div class="the-icons span3" title="Code: 0xe803"><i class="demo-icon icon-glass">Tak</i></div>
-                        </td>
-                        <td>
-                            @item.value.DescriptionDiet
-                        </td>
-                    }
-
-                    @if (item.value.InvitationStatus == "true")
-                    {
-                        <td>
-                            <div class="the-icons span3" title="Code: 0xf2b7"><i class="demo-icon icon-envelope-open-o">Zaproszony</i> </div>
-                        </td>
-                    }
-                    else
-                    {
-                        <td>
-                            <div class="the-icons span3" title="Code: 0xf2b7"><i class="demo-icon icon-envelope-open-o">Nie Zaproszony</i> </div>
-                        </td>
-                    }
-
-
-
-                </tr>
                 }
-
-
             </tbody>
         </table>
     </div>
 </div>
+
+<div class="container">
+    <h2>Goście który nie potwierdzili obecność</h2>
+    <div class="col align-self-center">
+
+        <table class="table table-hover table-responsive">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">Lp</th>
+                    <th scope="col">Imie i Nazwisko</th>
+                    <th scope="col">Rola</th>
+                    <th scope="col">Nocleg</th>
+                    <th scope="col">Poprawiny</th>
+                    <th scope="col">Czy dieta</th>
+                    <th scope="col">Opis diety</th>
+                    <th scope="col">Opcje</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.Select((value, i) => new { i = i + 1, value }))
+                {
+                    if (item.value.InvitationStatus == StatusGuestInvitation.Unanswered)
+                    {
+                        <tr>
+                            <th scope="row">@item.i</th>
+
+                            <td>@item.value.Name @item.value.Surname</td>
+                            @if (item.value.Role == null)
+                            {
+                                <td>Gość</td>
+                            }
+                            else
+                            {
+                                <td>@item.value.Role</td>
+                            }
+
+                            @if (item.value.IfAccommodation == true)
+                            {
+                                <td>
+                                    <div class="the-icons span3" title="Code: 0xf236"><i class="demo-icon icon-bed">Tak</i> </div>
+                                </td>
+
+                            }
+                            else
+                            {
+                                <td>
+                                    <div class="the-icons span3" title="Code: 0xf236"><i class="demo-icon icon-bed">Nie</i> </div>
+                                </td>
+
+                            }
+                            <!--Ikony bed przy poprawinach ?-->
+                            @if (item.value.IfAftermath == true)
+                            {
+                                <td>
+                                    <div class="the-icons span3" title="Code: 0xf236"><i class="demo-icon icon-bed">Tak</i> </div>
+                                </td>
+
+                            }
+                            else
+                            {
+                                <td>
+                                    <div class="the-icons span3" title="Code: 0xf236"><i class="demo-icon icon-bed">Nie</i> </div>
+                                </td>
+
+                            }
+
+                            @if (item.value.DescriptionDiet == null)
+                            {
+                                <td>
+                                    <div class="the-icons span3" title="Code: 0xe803"><i class="demo-icon icon-glass">Nie</i></div>
+                                </td>
+                                <td>
+                                    Brak
+                                </td>
+                            }
+                            else
+                            {
+                                <td>
+                                    <div class="the-icons span3" title="Code: 0xe803"><i class="demo-icon icon-glass">Tak</i></div>
+                                </td>
+                                <td>
+                                    @item.value.DescriptionDiet
+                                </td>
+                            }
+                            <td>
+                                <form asp-controller="Guest" asp-action="ChangeInvitation" asp-route-id="@item.value.IdGuest" asp-route-state="@StatusGuestInvitation.Accept" method="post">
+                                    <button type="submit" class="btn btn-info">Potwierdź</button>
+                                </form>
+                            </td>
+                        </tr>
+                    }
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
 
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 

@@ -8,6 +8,7 @@ using Wediary.Data;
 using Wediary.Data.Models;
 using Wediary.Models;
 using Wediary.Models.Guest;
+using Wediary.Models.HelpModels;
 
 namespace Wediary.Controllers
 {
@@ -60,16 +61,24 @@ namespace Wediary.Controllers
         {
             return new Guest
             {
-                UserId=id,
-                Name=m.Name,
-                Surname=m.Surname,
-                Role=m.Role,
-                IfAftermath=m.IfAftermath,
-                IfSpecialDiet=m.IfSpecialDiet,
-                IfAccommodation=m.IfAccommodation,
-                DescriptionDiet=m.DescriptionDiet,
-                InvitationStatus=m.InvitationStatus
+                UserId = id,
+                Name = m.Name,
+                Surname = m.Surname,
+                Role = m.Role,
+                IfAftermath = m.IfAftermath,
+                IfSpecialDiet = m.IfSpecialDiet,
+                IfAccommodation = m.IfAccommodation,
+                DescriptionDiet = m.DescriptionDiet,
+                InvitationStatus = StatusGuestInvitation.Unanswered,
             };
+        }
+
+        public async Task<IActionResult> ChangeInvitation (int id, string state)
+        {
+            var guestStatus = _serviceGuest.GetById(id);
+            guestStatus.InvitationStatus = state;
+            await _serviceGuest.Update(guestStatus);
+            return RedirectToAction("Index", "Guest", new { id = guestStatus.UserId });
         }
     }
 }

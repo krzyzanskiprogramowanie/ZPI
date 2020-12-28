@@ -23,12 +23,10 @@ namespace Wediary.Service
             await _context.SaveChangesAsync();
         }
 
-        public Task Delete(string id)
+        public Task Delete(int id)
         {
             throw new NotImplementedException();
         }
-
-  
 
         public IEnumerable<Project> GetAll(string id)
         {
@@ -48,9 +46,5 @@ namespace Wediary.Service
             await _context.SaveChangesAsync();
         }
 
-        public Task UpdateUser(string id)
-        {
-            throw new NotImplementedException();
-        }
     }
 }

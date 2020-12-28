@@ -10,10 +10,10 @@ namespace Wediary.Data
     {
         Project GetById(int id);
         IEnumerable<Project> GetAll(string id);
-        Task Update(Project project);
 
         Task Create(Project project);
-        Task Delete(string id);
-        Task UpdateUser(string id);
+        Task Delete(int id);
+        Task Update(Project project);
+
     }
 }
