@@ -274,9 +274,9 @@ function init() {
       myGuests.model = new go.GraphLinksModel([ //musicie dodac pobieranie z tabeli i wprowadzanie tutaj (tylko w pierwszym uruchomieniu)
 		  { key: "" }, //zeby ukryc tekst
 		  { key: "" }, //zeby ukryc tekst
-        { key: "test user 1" },
+        { key: "Pawe³"},
         { key: "test user 2"},  
-        { key: "test user 3" },
+        { key: "Marcin" },
         { key: "test user 4" },
         { key: "test user 5" },
 		{ key: "test user 6" },

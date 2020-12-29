@@ -40,7 +40,8 @@ namespace Wediary.Controllers
                Name=name
                
             };
-                
+
+            GetAllGuest();
 
             return View(model);
         }
@@ -84,5 +85,20 @@ namespace Wediary.Controllers
             };
         }
 
+        public IActionResult GetAllGuest()
+        {
+
+            string userId = _userManager.GetUserId(User);
+            IEnumerable<Guest> listOfTask = _serviceGuest.GetAll(userId);
+            string[] tabName = new string[listOfTask.Count()];
+            int i = 0;
+            foreach (var item in listOfTask)
+            {
+                    tabName[i] = item.Name;
+                i++;
+            }
+            string xd;
+            return null;
+        }
     }
 }

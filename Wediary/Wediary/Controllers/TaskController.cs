@@ -85,6 +85,7 @@ namespace Wediary.Controllers
         public async Task<IActionResult> See(CoordinatesModel coordinates, string name, int id)
         {
             string CoordinatesTableJson = coordinates.CoordinatesJson;
+            string CoordiatesGuest = coordinates.GuestJson;
             int x = coordinates.IdProject;
             string Name = name;
             int ID = id;
@@ -92,17 +93,18 @@ namespace Wediary.Controllers
             string IdUser = userId;
             var user = await _userManager.FindByIdAsync(userId);
             //var Project = _serviceProject.GetById(id);
-            var changes = ReplyBuildTableJson(CoordinatesTableJson,IdUser, Name, ID);
+            var changes = ReplyBuildTableJson(CoordinatesTableJson,IdUser, Name, ID,CoordiatesGuest);
             await _serviceProject.Update(changes);
             return RedirectToAction("Index", "TableManager", new { id = coordinates.UserId });
         }
 
-        private Project ReplyBuildTableJson(string coordinates, string id, string name, int ID)
+        private Project ReplyBuildTableJson(string coordinates, string id, string name, int ID,string coordinatesGuest)
         {
             return new Project
             {
                 UserId = id,
                 JsonTable = coordinates,
+                JsonGuest=coordinatesGuest,
                 CreationDate=DateTime.Now,
                 IdProject=ID,
                 Name=name
@@ -117,5 +119,10 @@ namespace Wediary.Controllers
             testJson.valueJson = JsonConvert.SerializeObject(guest);
             return View(testJson); //widok bez zwracania
         }
+
+   
+
+
+
     }
 }
