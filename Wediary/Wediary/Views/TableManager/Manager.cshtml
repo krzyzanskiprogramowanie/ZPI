@@ -32,6 +32,7 @@
             <button onclick="load()">Wczytaj</button>
             <form asp-controller="Task" asp-action="See" asp-route-name="@Model.Name" asp-route-id="@Model.IdProject" method="post">
                 <input asp-for="CoordinatesJson" type="hidden" class="form-control" id="hdnfldVariable" placeholder="nazwa">
+                <input asp-for="GuestJson" type="hidden" class="form-control" id="hdnfldVariable2" placeholder="nazwa">
                 <button type="submit" onclick="save()">Zapisz</button>
             </form>
         </div>

@@ -524,6 +524,9 @@ function save() {
     var hdnfldVariable = document.getElementById('hdnfldVariable');
     hdnfldVariable.value = myDiagram_String;
     myGuests_String = JSON.stringify(document.getElementById("Guests_saved").value)
+
+    var hdnfldVariable2 = document.getElementById('hdnfldVariable2');
+    hdnfldVariable2.value = myGuests_String;
 }
 function load() {
     myDiagram.model = go.Model.fromJson(JSON.parse(myDiagram_String)); //Do zmiany odczy z bazy
