@@ -41,7 +41,8 @@ namespace Wediary.Controllers
                
             };
 
-            GetAllGuest();
+           
+            ViewData["FieldsList"] = GetAllGuest() ;
 
             return View(model);
         }
@@ -85,7 +86,7 @@ namespace Wediary.Controllers
             };
         }
 
-        public IActionResult GetAllGuest()
+        public string [] GetAllGuest()
         {
 
             string userId = _userManager.GetUserId(User);
@@ -94,11 +95,11 @@ namespace Wediary.Controllers
             int i = 0;
             foreach (var item in listOfTask)
             {
-                    tabName[i] = item.Name;
+                    tabName[i] = item.Name+" "+item.Surname+" "+item.IdGuest;
                 i++;
             }
-            string xd;
-            return null;
+
+            return tabName;
         }
     }
 }

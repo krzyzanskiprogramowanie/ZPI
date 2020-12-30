@@ -1,9 +1,9 @@
-
 var table_type = 0;
 function init() {
-    
-      var $ = go.GraphObject.make;
+    var test = document.getElementById("Pawel");
 
+    var $ = go.GraphObject.make;
+    console.log(test.value);
       // Initialize the main Diagram
       myDiagram =
         $(go.Diagram, "myDiagramDiv",
