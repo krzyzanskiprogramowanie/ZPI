@@ -86,17 +86,15 @@ namespace Wediary.Controllers
             };
         }
 
-        public string [] GetAllGuest()
+        public string GetAllGuest()
         {
 
             string userId = _userManager.GetUserId(User);
             IEnumerable<Guest> listOfTask = _serviceGuest.GetAll(userId);
-            string[] tabName = new string[listOfTask.Count()];
-            int i = 0;
+            string tabName="";
             foreach (var item in listOfTask)
             {
-                    tabName[i] = item.Name+" "+item.Surname+" "+item.IdGuest;
-                i++;
+                    tabName += item.Name+" "+item.Surname+" "+item.IdGuest + ", ";
             }
 
             return tabName;

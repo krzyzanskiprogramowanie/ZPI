@@ -51,11 +51,8 @@
 
             </div>
         </div>
-        @foreach (var item in ViewBag.FieldsList)
-        {
-            <input id="Pawel" type="hidden" value="@item" />
+        <input id="hiddenGuest" type="hidden" value="@ViewBag.FieldsList" />
 
-        }
 
         <script src="~/js/splide.min.js"></script>
         <script src="~/js/go.js"></script>
