@@ -1,4 +1,4 @@
-var table_type = 0;
+﻿var table_type = 0;
 
 
 
@@ -305,7 +305,7 @@ function init() {
 
       // specify the contents of the Palette
     myGuests.model = new go.GraphLinksModel([ //musicie dodac pobieranie z tabeli i wprowadzanie tutaj (tylko w pierwszym uruchomieniu)
-        
+
     ]);
     //Show Guest from database in manager
     var i;
@@ -557,8 +557,10 @@ function save() {
     hdnfldVariable2.value = myGuests_String;
 }
 function load() {
-    myDiagram.model = go.Model.fromJson(JSON.parse(myDiagram_String)); //Do zmiany odczy z bazy
-    myGuests.model = go.Model.fromJson(JSON.parse(myGuests_String));
+    var zmG = "{ \"class\": \"GraphLinksModel\",\n  \"nodeDataArray\": [ \n{\"key\":\"Marcin Saganek 1005 \", \"loc\":\"0 109.04569499661588\"},\n{\"key\":\" Piotr Sitarz 2002 \", \"loc\":\"0 0\"},\n{\"key\":\" Piotr Źróbek 2003 \", \"loc\":\"0 54.52284749830795\"}\n ],\n  \"linkDataArray\": []}";
+    var zmT = "{ \"class\": \"GraphLinksModel\",\n  \"nodeDataArray\": [ \n{\"key\":1, \"category\":\"TableR3\", \"name\":\"\", \"guests\":{\"1\":\" Test K 3002 \"}, \"loc\":\"-380.5 131\"},\n{\"key\":\" Test K 3002 \", \"loc\":\"-429 81\", \"table\":1, \"seat\":1},\n{\"key\":-3, \"category\":\"TableR3\", \"name\":\"\", \"guests\":{\"1\":\" Pawel Rogiewicz 1007 \"}, \"loc\":\"-156.5 6\"},\n{\"key\":\" Pawel Rogiewicz 1007 \", \"loc\":\"-221.5 -37\", \"table\":-3, \"seat\":1},\n{\"key\":-5, \"category\":\"TableR5\", \"name\":\"\", \"guests\":{\"1\":\" Grzegorz Krzyzanski 1006 \"}, \"loc\":\"-887.5 75\", \"angle\":305.33814869402113},\n{\"key\":\" Grzegorz Krzyzanski 1006 \", \"loc\":\"-813 -8\", \"table\":-5, \"seat\":1}\n ],\n  \"linkDataArray\": []}";
+    myDiagram.model = go.Model.fromJson(JSON.parse(zmT)); //Do zmiany odczy z bazy
+    myGuests.model = go.Model.fromJson(JSON.parse(zmG));
 }
 
 	   function removeFromPalette() {
