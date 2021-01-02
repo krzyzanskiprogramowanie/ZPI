@@ -6,26 +6,35 @@ var table_type = 0;
 
 function init() {
     var test = document.getElementById("hiddenGuest");
-
     var guestsFromBackend = document.getElementById("hiddenGuest");
-    var guestListFromBackend = new Array(3);
     var helpValue = "";
     console.log(guestsFromBackend);
     var guest = guestsFromBackend.value;
     console.log(guest);
     var counter = 0;
-    for (i = 0; i < guest.length; i++) {
-
+    var arraySize = 0;
+    for (var i = 0; i < guest.length; i++)
+    {
+        if (guest.charAt(i) == ",") {
+            arraySize++;
+        }
+    }
+    var guestListFromBackend = new Array(arraySize);
+    for (i = 0; i < guest.length; i++)
+    {
         helpValue += guest.charAt(i);
         if (guest.charAt(i) == ",") {
             guestListFromBackend[counter] = helpValue;
             helpValue = "";
             counter++;
             continue;
-
         }
     }
-    console.log(guestListFromBackend[1]);
+    console.log(guestListFromBackend[1].length);
+    for (var i = 0; i < arraySize; i++) {
+
+        guestListFromBackend[i] = guestListFromBackend[i].replace(",", " ");
+    }
     var $ = go.GraphObject.make;
         console.log(test.value);
       // Initialize the main Diagram
@@ -295,20 +304,15 @@ function init() {
       myGuests.nodeTemplateMap = myDiagram.nodeTemplateMap;
 
       // specify the contents of the Palette
-      myGuests.model = new go.GraphLinksModel([ //musicie dodac pobieranie z tabeli i wprowadzanie tutaj (tylko w pierwszym uruchomieniu)
-		  { key: "" }, //zeby ukryc tekst
-		  { key: "" }, //zeby ukryc tekst
-          { key: guestListFromBackend[0]},
-          { key: guestListFromBackend[1]},  
-          { key: guestListFromBackend[2]},
-          { key: guestListFromBackend[0]},
-          { key: guestListFromBackend[1]},
-          { key: guestListFromBackend[2]},
-          { key: guestListFromBackend[0]},  
-          { key: guestListFromBackend[1]},
-          { key: guestListFromBackend[2]},
-          { key: guestListFromBackend[1]},
-      ]);
+    myGuests.model = new go.GraphLinksModel([ //musicie dodac pobieranie z tabeli i wprowadzanie tutaj (tylko w pierwszym uruchomieniu)
+        
+    ]);
+    //Show Guest from database in manager
+    var i;
+    for (i = 0; i < arraySize; i++) {
+
+        myGuests.model.addNodeData({ key: guestListFromBackend[i] })
+    }
 
       myGuests.model.undoManager = myDiagram.model.undoManager  // shared UndoManager!
 
