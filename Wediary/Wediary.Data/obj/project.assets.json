@@ -13121,23 +13121,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Grzegorz\\.nuget\\packages\\": {},
+    "C:\\Users\\DEMACIA\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Grzegorz\\Desktop\\Pulpit\\Studia\\ZPI\\ZPI\\Wediary\\Wediary.Data\\Wediary.Data.csproj",
+      "projectUniqueName": "C:\\Users\\DEMACIA\\Documents\\GitHub\\ZPI\\Wediary\\Wediary.Data\\Wediary.Data.csproj",
       "projectName": "Wediary.Data",
-      "projectPath": "C:\\Users\\Grzegorz\\Desktop\\Pulpit\\Studia\\ZPI\\ZPI\\Wediary\\Wediary.Data\\Wediary.Data.csproj",
-      "packagesPath": "C:\\Users\\Grzegorz\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Grzegorz\\Desktop\\Pulpit\\Studia\\ZPI\\ZPI\\Wediary\\Wediary.Data\\obj\\",
+      "projectPath": "C:\\Users\\DEMACIA\\Documents\\GitHub\\ZPI\\Wediary\\Wediary.Data\\Wediary.Data.csproj",
+      "packagesPath": "C:\\Users\\DEMACIA\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\DEMACIA\\Documents\\GitHub\\ZPI\\Wediary\\Wediary.Data\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\Grzegorz\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\DEMACIA\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -13149,7 +13149,6 @@
       },
       "frameworks": {
         "netcoreapp2.0": {
-          "targetAlias": "netcoreapp2.0",
           "projectReferences": {}
         }
       },
@@ -13161,7 +13160,6 @@
     },
     "frameworks": {
       "netcoreapp2.0": {
-        "targetAlias": "netcoreapp2.0",
         "dependencies": {
           "Microsoft.AspNetCore.All": {
             "target": "Package",
@@ -13190,7 +13188,7 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.100\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.403\\RuntimeIdentifierGraph.json"
       }
     }
   }
