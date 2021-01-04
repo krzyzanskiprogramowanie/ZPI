@@ -42,13 +42,16 @@ namespace Wediary.Service
 
         public string getJsonGuest(string id, int projectId)
         {
-            var test =  _context.Projects.Where(project => project.UserId == id && project.IdProject == projectId).Select(project => project.JsonGuest).ToString();
-            return test;
+            var findProject =  _context.Projects.FirstOrDefault(project => project.UserId == id && project.IdProject == projectId);
+            var findJson =  findProject.JsonGuest;
+            return findJson;
         }
 
         public string getJsonTables(string id, int projectId)
         {
-            return _context.Projects.Where(project => project.UserId == id && project.IdProject == projectId).Select(project => project.JsonTable).ToString();
+            var findProject = _context.Projects.FirstOrDefault(project => project.UserId == id && project.IdProject == projectId);
+            var findTables = findProject.JsonTable;
+            return findTables;
         }
 
         public  async Task Update(Project project)
