@@ -36,16 +36,16 @@ namespace Wediary.Controllers
         {
            var model =new CoordinatesModel
            { 
-                IdProject=id,
+               IdProject=id,
                Name=name
-               
             };
-
            
-            ViewData["FieldsList"] = GetAllGuest() ;
-
+            ViewData["FieldsList"] = GetAllGuest();
+            ViewData["JsonGuest"] = GetJsonFromDb();
             return View(model);
         }
+
+
 
         public IActionResult Index()
         {
@@ -86,7 +86,7 @@ namespace Wediary.Controllers
             };
         }
 
-        public string GetAllGuest()
+        private string GetAllGuest()
         {
 
             string userId = _userManager.GetUserId(User);
@@ -99,5 +99,15 @@ namespace Wediary.Controllers
 
             return tabName;
         }
+
+        private string GetJsonFromDb()
+        {
+            string userId = _userManager.GetUserId(User);
+
+            string jsonGuest = _serviceProject.getJsonGuest(userId, 1);
+
+            return jsonGuest;
+        }
+
     }
 }

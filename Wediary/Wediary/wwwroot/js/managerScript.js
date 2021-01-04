@@ -1,9 +1,5 @@
 ﻿var table_type = 0;
 
-
-
-
-
 function init() {
     var test = document.getElementById("hiddenGuest");
     var guestsFromBackend = document.getElementById("hiddenGuest");

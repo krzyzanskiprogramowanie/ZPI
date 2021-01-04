@@ -14,6 +14,8 @@ namespace Wediary.Data
         Task Create(Project project);
         Task Delete(int id);
         Task Update(Project project);
+        string getJsonGuest(string id, int projectId);
+        string getJsonTables(string id, int projectId);
 
     }
 }
