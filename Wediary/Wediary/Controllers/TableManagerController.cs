@@ -41,8 +41,8 @@ namespace Wediary.Controllers
             };
            
             ViewData["FieldsList"] = GetAllGuest();
-            ViewData["JsonGuest"] = GetGuestFromDb();
-            ViewData["JsonTables"] = GetTablesFromDb();
+            ViewData["JsonGuest"] = GetGuestFromDb(id);
+            ViewData["JsonTables"] = GetTablesFromDb(id);
             return View(model);
         }
 
@@ -101,17 +101,17 @@ namespace Wediary.Controllers
             return tabName;
         }
 
-        private string GetGuestFromDb()
+        private string GetGuestFromDb(int id)
         {
             string userId = _userManager.GetUserId(User);
-            string jsonGuest = _serviceProject.getJsonGuest(userId, 1);
+            string jsonGuest = _serviceProject.getJsonGuest(userId, id);
             return jsonGuest;
         }
 
-        private string GetTablesFromDb()
+        private string GetTablesFromDb(int id)
         {
             string userId = _userManager.GetUserId(User);
-            string jsonGuest = _serviceProject.getJsonTables(userId, 1);
+            string jsonGuest = _serviceProject.getJsonTables(userId, id);
             return jsonGuest;
         }
 
