@@ -38,3 +38,11 @@
         display: none;
     }
 }
+
+.iconActive {
+    color: #5C5200;
+}
+
+.iconOff {
+    color: #4b4100;
+}

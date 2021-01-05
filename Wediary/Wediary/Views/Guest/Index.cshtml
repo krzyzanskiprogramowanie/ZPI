@@ -2,7 +2,7 @@
 @using Wediary.Models.HelpModels;
 @model IEnumerable<Guest>;
 
-@{ 
+@{
     ViewData["Title"] = "Lista gości";
 }
 
@@ -56,14 +56,14 @@
                             @if (item.value.IfAccommodation == true)
                             {
                                 <td>
-                                    <div class="the-icons span3" title="Code: 0xf236"><i class="demo-icon icon-bed">Tak</i> </div>
+                                    <div class="iconActive"><i class="fa fa-bed">Tak</i> </div>
                                 </td>
 
                             }
                             else
                             {
                                 <td>
-                                    <div class="the-icons span3" title="Code: 0xf236"><i class="demo-icon icon-bed">Nie</i> </div>
+                                    <div class="iconOff"><i class="fa fa-bed">Nie</i> </div>
                                 </td>
 
                             }
@@ -71,14 +71,15 @@
                             @if (item.value.IfAftermath == true)
                             {
                                 <td>
-                                    <div class="the-icons span3" title="Code: 0xf236"><i class="demo-icon icon-bed">Tak</i> </div>
+                                    <div class="iconActive"><i class="fa fa-birthday-cake">Tak</i> </div>
                                 </td>
 
                             }
                             else
                             {
                                 <td>
-                                    <div class="the-icons span3" title="Code: 0xf236"><i class="demo-icon icon-bed">Nie</i> </div>
+                                    <div class="iconOff"><i class="fa fa-birthday-cake">Nie</i> </div>
+
                                 </td>
 
                             }
@@ -86,7 +87,7 @@
                             @if (item.value.DescriptionDiet == null)
                             {
                                 <td>
-                                    <div class="the-icons span3" title="Code: 0xe803"><i class="demo-icon icon-glass">Nie</i></div>
+                                    <div class="iconOff"><i class="fa fa-book">Nie</i> </div>
                                 </td>
                                 <td>
                                     Brak
@@ -95,7 +96,7 @@
                             else
                             {
                                 <td>
-                                    <div class="the-icons span3" title="Code: 0xe803"><i class="demo-icon icon-glass">Tak</i></div>
+                                    <div class="iconActive"><i class="fa fa-book">Tak</i>  </div>
                                 </td>
                                 <td>
                                     @item.value.DescriptionDiet

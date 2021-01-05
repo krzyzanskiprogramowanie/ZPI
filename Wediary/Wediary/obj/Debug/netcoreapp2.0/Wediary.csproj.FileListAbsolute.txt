@@ -111,3 +111,4 @@ C:\Users\pawel\OneDrive\Desktop\ZPI\ZPI\Wediary\Wediary\obj\Debug\netcoreapp2.0\
 C:\Users\pawel\OneDrive\Desktop\ZPI\ZPI\Wediary\Wediary\obj\Debug\netcoreapp2.0\Wediary.genruntimeconfig.cache
 C:\Users\Grzegorz\Desktop\Pulpit\Studia\ZPI\ZPI\Wediary\Wediary\bin\Debug\netcoreapp2.0\Wediary.Service.dll
 C:\Users\Grzegorz\Desktop\Pulpit\Studia\ZPI\ZPI\Wediary\Wediary\bin\Debug\netcoreapp2.0\Wediary.Service.pdb
+C:\Users\DEMACIA\Documents\GitHub\ZPI\Wediary\Wediary\bin\Debug\netcoreapp2.0\libman.json
