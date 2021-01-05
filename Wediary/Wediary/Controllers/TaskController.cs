@@ -98,6 +98,40 @@ namespace Wediary.Controllers
             return RedirectToAction("Index", "TableManager", new { id = coordinates.UserId });
         }
 
+        public IActionResult EditTask(int id)
+        {
+            var modelView = _serviceTaskUser.GetById(id);
+            var outPutModel = new TaskUserModel()
+            {
+                Name = modelView.Name,
+                Contractor = modelView.Contractor,
+                Category = modelView.Category,
+                Quantity = modelView.Quantity,
+                Unit = modelView.Unit,
+                ExpectedPrice = modelView.ExpectedPrice,
+                Payment = modelView.Payment,
+                TotalPrice = modelView.TotalPrice,
+                Date = modelView.Date,
+            };
+            return View(outPutModel);
+        }
+
+        [HttpPost]
+        public async Task<ActionResult> UpdateTask(TaskUserModel model, int id)
+        {
+            var actualTask = _serviceTaskUser.GetById(id);
+            actualTask.Name = model.Name;
+            actualTask.Quantity = model.Quantity;
+            actualTask.Unit = model.Unit;
+            actualTask.ExpectedPrice = model.ExpectedPrice;
+            actualTask.Payment = model.Payment;
+            actualTask.TotalPrice = model.TotalPrice;
+            actualTask.Date = model.Date;
+            actualTask.Contractor = model.Contractor;
+            await _serviceTaskUser.Update(actualTask);
+            return RedirectToAction("Index", "Task", new { id = actualTask.UserId });
+        }
+
         private Project ReplyBuildTableJson(string coordinates, string id, string name, int ID,string coordinatesGuest)
         {
             return new Project
