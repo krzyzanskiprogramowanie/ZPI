@@ -12,7 +12,7 @@ namespace Wediary.Data
         IEnumerable<Guest> GetAll(string id);
 
         Task Create(Guest guest);
-        Task Delete(int id);
+        Task Delete(Guest guest);
         Task Update(Guest guest);
     }
 }

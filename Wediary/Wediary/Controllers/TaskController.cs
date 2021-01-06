@@ -75,9 +75,9 @@ namespace Wediary.Controllers
                 Name = m.Name,
                 Payment = m.Payment,
                 Quantity = m.Quantity,
-                TotalPrice = m.TotalPrice,
                 Unit = m.Unit,
                 State = StateTaskModels.Active,
+                TotalPrice = m.Quantity * m.ExpectedPrice - m.Payment,
             };
         }
 
@@ -103,6 +103,7 @@ namespace Wediary.Controllers
             var modelView = _serviceTaskUser.GetById(id);
             var outPutModel = new TaskUserModel()
             {
+                Id = modelView.IdTask,
                 Name = modelView.Name,
                 Contractor = modelView.Contractor,
                 Category = modelView.Category,
@@ -116,6 +117,13 @@ namespace Wediary.Controllers
             return View(outPutModel);
         }
 
+        public async Task<IActionResult> DeleteTask(int id)
+        {
+            var task = _serviceTaskUser.GetById(id);
+            await _serviceTaskUser.Delete(task);
+            return RedirectToAction("Index", "Task", new { id = task.UserId });
+        }
+
         [HttpPost]
         public async Task<ActionResult> UpdateTask(TaskUserModel model, int id)
         {
@@ -125,7 +133,7 @@ namespace Wediary.Controllers
             actualTask.Unit = model.Unit;
             actualTask.ExpectedPrice = model.ExpectedPrice;
             actualTask.Payment = model.Payment;
-            actualTask.TotalPrice = model.TotalPrice;
+            actualTask.TotalPrice = model.Quantity * model.ExpectedPrice - model.Payment;
             actualTask.Date = model.Date;
             actualTask.Contractor = model.Contractor;
             await _serviceTaskUser.Update(actualTask);

@@ -24,9 +24,10 @@ namespace Wediary.Service
             await _context.SaveChangesAsync();
         }
 
-        public Task Delete(int id)
+        public async Task Delete(TaskUser task)
         {
-            throw new NotImplementedException();
+            _context.Remove(task);
+            await _context.SaveChangesAsync();
         }
 
         public IEnumerable<TaskUser> GetAll(string id)

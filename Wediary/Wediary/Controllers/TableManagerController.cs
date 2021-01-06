@@ -73,6 +73,14 @@ namespace Wediary.Controllers
             return RedirectToAction("Index", "TableManager", new { id = m.IdProject });
         }
 
+        public async Task<IActionResult> Delete(int id)
+        {
+            var project = _serviceProject.GetById(id);
+            await _serviceProject.Delete(project);
+            return RedirectToAction("Index", "TableManager", new { id = project.IdProject });
+        }
+
+
         private Project ReplyBuild(ProjectModel m, ApplicationUser user, string id)
         {
             return new Project

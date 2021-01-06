@@ -12,7 +12,7 @@ namespace Wediary.Data
         IEnumerable<Project> GetAll(string id);
 
         Task Create(Project project);
-        Task Delete(int id);
+        Task Delete(Project project);
         Task Update(Project project);
         string getJsonGuest(string id, int projectId);
         string getJsonTables(string id, int projectId);

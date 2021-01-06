@@ -32,7 +32,7 @@
                     <th scope="col">Czy dieta</th>
                     <th scope="col">Opis diety</th>
                     <th scope="col">Opcje</th>
-
+                    <th scope="col">Operacje</th>
                 </tr>
             </thead>
             <tbody>
@@ -109,6 +109,9 @@
                             <button type="submit" class="btn btn-danger">Wykreś potwierdzenie</button>
                         </form>
                     </td>
+                    <td>
+                        <a asp-controller="Guest" asp-action="Delete" asp-route-id="@item.value.IdGuest" class="btn btn-danger">Usuń</a>
+                    </td>
                 </tr>
                     }
                 }
@@ -132,7 +135,7 @@
                     <th scope="col">Czy dieta</th>
                     <th scope="col">Opis diety</th>
                     <th scope="col">Opcje</th>
-
+                    <th scope="col">Operacje</th>
                 </tr>
             </thead>
             <tbody>
@@ -205,6 +208,9 @@
                         <form asp-controller="Guest" asp-action="ChangeInvitation" asp-route-id="@item.value.IdGuest" asp-route-state="@StatusGuestInvitation.Accept" method="post">
                             <button type="submit" class="btn btn-info">Potwierdź</button>
                         </form>
+                    </td>
+                    <td>
+                        <a asp-controller="Guest" asp-action="Delete" asp-route-id="@item.value.IdGuest" class="btn btn-danger">Usuń</a>
                     </td>
                 </tr>
                     }

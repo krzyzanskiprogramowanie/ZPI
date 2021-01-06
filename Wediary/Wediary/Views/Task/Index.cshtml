@@ -63,6 +63,7 @@
                         </td>
                         <th>
                             <a asp-controller="Task" asp-action="EditTask" asp-route-id="@item.IdTask" class="btn btn-warning">Modyfikuj</a>
+                            <a asp-controller="Task" asp-action="DeleteTask" asp-route-id="@item.IdTask" class="btn btn-danger">Usuń</a>
                         </th>
                     </tr>
                 }
@@ -87,6 +88,7 @@
                 <th scope="col">Kategoria</th>
                 <th scope="col">Stan zadania</th>
                 <th scope="col">Opcje</th>
+                <th scope="col">Operacje</th>
             </tr>
         </thead>
         <tbody>
@@ -94,26 +96,30 @@
             {
                 if (item.State == StateTaskModels.End)
                 {
-                    <tr class="bg-success">
-                        <td>@item.Name</td>
-                        <td>@item.Quantity</td>
-                        <td>@item.Unit</td>
-                        <td>@item.ExpectedPrice</td>
-                        <td>@item.Payment</td>
-                        <td>@item.TotalPrice</td>
-                        <td>@item.Date</td>
-                        <td>@item.Contractor</td>
-                        <td>@item.Category</td>
-                        <td>@item.State</td>
-                        <td>
-                            <form asp-controller="Task" asp-action="ChangeToActive" asp-route-id="@item.IdTask" asp-route-state="@StateTaskModels.Active" method="post">
-                                <button type="submit" class="btn btn-info">Aktywuj</button>
-                            </form>
-                            <form asp-controller="Task" asp-action="ChangeToActive" asp-route-id="@item.IdTask" asp-route-state="@StateTaskModels.Fail" method="post">
-                                <button type="submit" class="btn btn-danger">Odwołaj</button>
-                            </form>
-                        </td>
-                    </tr>
+            <tr class="bg-success">
+                <td>@item.Name</td>
+                <td>@item.Quantity</td>
+                <td>@item.Unit</td>
+                <td>@item.ExpectedPrice</td>
+                <td>@item.Payment</td>
+                <td>@item.TotalPrice</td>
+                <td>@item.Date</td>
+                <td>@item.Contractor</td>
+                <td>@item.Category</td>
+                <td>@item.State</td>
+                <td>
+                    <form asp-controller="Task" asp-action="ChangeToActive" asp-route-id="@item.IdTask" asp-route-state="@StateTaskModels.Active" method="post">
+                        <button type="submit" class="btn btn-info">Aktywuj</button>
+                    </form>
+                    <form asp-controller="Task" asp-action="ChangeToActive" asp-route-id="@item.IdTask" asp-route-state="@StateTaskModels.Fail" method="post">
+                        <button type="submit" class="btn btn-danger">Odwołaj</button>
+                    </form>
+                </td>
+                <th>
+                    <a asp-controller="Task" asp-action="EditTask" asp-route-id="@item.IdTask" class="btn btn-warning">Modyfikuj</a>
+                    <a asp-controller="Task" asp-action="DeleteTask" asp-route-id="@item.IdTask" class="btn btn-danger">Usuń</a>
+                </th>
+            </tr>
                 }
             }
         </tbody>
@@ -136,6 +142,7 @@
                 <th scope="col">Kategoria</th>
                 <th scope="col">Stan zadania</th>
                 <th scope="col">Opcje</th>
+                <th scope="col">Operacje</th>
             </tr>
         </thead>
         <tbody>
@@ -143,26 +150,30 @@
             {
                 if (item.State == StateTaskModels.Fail)
                 {
-                    <tr class="bg-success">
-                        <td>@item.Name</td>
-                        <td>@item.Quantity</td>
-                        <td>@item.Unit</td>
-                        <td>@item.ExpectedPrice</td>
-                        <td>@item.Payment</td>
-                        <td>@item.TotalPrice</td>
-                        <td>@item.Date</td>
-                        <td>@item.Contractor</td>
-                        <td>@item.Category</td>
-                        <td>@item.State</td>
-                        <td>
-                            <form asp-controller="Task" asp-action="ChangeToActive" asp-route-id="@item.IdTask" asp-route-state="@StateTaskModels.End" method="post">
-                                <button type="submit" class="btn btn-success">Zakończ</button>
-                            </form>
-                            <form asp-controller="Task" asp-action="ChangeToActive" asp-route-id="@item.IdTask" asp-route-state="@StateTaskModels.Active" method="post">
-                                <button type="submit" class="btn btn-info">Aktywuj</button>
-                            </form>
-                        </td>
-                    </tr>
+            <tr class="bg-success">
+                <td>@item.Name</td>
+                <td>@item.Quantity</td>
+                <td>@item.Unit</td>
+                <td>@item.ExpectedPrice</td>
+                <td>@item.Payment</td>
+                <td>@item.TotalPrice</td>
+                <td>@item.Date</td>
+                <td>@item.Contractor</td>
+                <td>@item.Category</td>
+                <td>@item.State</td>
+                <td>
+                    <form asp-controller="Task" asp-action="ChangeToActive" asp-route-id="@item.IdTask" asp-route-state="@StateTaskModels.End" method="post">
+                        <button type="submit" class="btn btn-success">Zakończ</button>
+                    </form>
+                    <form asp-controller="Task" asp-action="ChangeToActive" asp-route-id="@item.IdTask" asp-route-state="@StateTaskModels.Active" method="post">
+                        <button type="submit" class="btn btn-info">Aktywuj</button>
+                    </form>
+                </td>
+                <th>
+                    <a asp-controller="Task" asp-action="EditTask" asp-route-id="@item.IdTask" class="btn btn-warning">Modyfikuj</a>
+                    <a asp-controller="Task" asp-action="DeleteTask" asp-route-id="@item.IdTask" class="btn btn-danger">Usuń</a>
+                </th>
+            </tr>
                 }
             }
         </tbody>

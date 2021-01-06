@@ -23,6 +23,7 @@
                     <th scope="col">Lp</th>
                     <th scope="col">Nazwa projektu</th>
                     <th scope="col">Data utworzenia</th>
+                    <th scope="col">Operacja</th>
                 </tr>
             </thead>
             <tbody>
@@ -40,6 +41,9 @@
                         </td>
                         <td>
                             <div class="the-icons span3" title="Code: 0xf236"><i class="demo-icon icon-bed">@item.value.CreationDate</i> </div>
+                        </td>
+                        <td>
+                            <a asp-controller="TableManager" asp-action="Delete" asp-route-id="@item.value.IdProject" class="btn btn-danger">Usuń</a>
                         </td>
                     </tr>
                 }

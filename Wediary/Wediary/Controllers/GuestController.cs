@@ -57,6 +57,13 @@ namespace Wediary.Controllers
             return RedirectToAction("Index", "Guest", new { id = m.IdGuest });
         }
 
+        public async Task<IActionResult> Delete(int id)
+        {
+            var guest = _serviceGuest.GetById(id);
+            await _serviceGuest.Delete(guest);
+            return RedirectToAction("Index", "Guest", new { id = guest.IdGuest });
+        }
+
         private Guest ReplyBuild(GuestModel m, ApplicationUser user, string id)
         {
             return new Guest
