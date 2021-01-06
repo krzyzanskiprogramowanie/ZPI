@@ -40,74 +40,76 @@
                 {
                     if (item.value.InvitationStatus == StatusGuestInvitation.Accept)
                     {
-                        <tr>
-                            <th scope="row">@item.i</th>
+                <tr>
+                    <th scope="row">@item.i</th>
 
-                            <td>@item.value.Name @item.value.Surname</td>
-                            @if (item.value.Role == null)
-                            {
-                                <td>Gość</td>
-                            }
-                            else
-                            {
-                                <td>@item.value.Role</td>
-                            }
+                    <td>@item.value.Name @item.value.Surname</td>
+                    @if (item.value.Role == null)
+                    {
+                        <td>Gość</td>
+                    }
+                    else
+                    {
+                        <td>@item.value.Role</td>
+                    }
 
-                            @if (item.value.IfAccommodation == true)
-                            {
-                                <td>
-                                    <div class="iconActive"><i class="fa fa-bed">Tak</i> </div>
-                                </td>
+                    <!--Ikony bed przy noclegu -->
+                    @if (item.value.IfAccommodation == true)
+                    {
+                        <td>
+                            <div class="iconActive"><i class="fa fa-bed">Tak</i> </div>
+                        </td>
 
-                            }
-                            else
-                            {
-                                <td>
-                                    <div class="iconOff"><i class="fa fa-bed">Nie</i> </div>
-                                </td>
+                    }
+                    else
+                    {
+                        <td>
+                            <div class="iconOff"><i class="fa fa-bed">Nie</i> </div>
+                        </td>
 
-                            }
-                            <!--Ikony bed przy poprawinach ?-->
-                            @if (item.value.IfAftermath == true)
-                            {
-                                <td>
-                                    <div class="iconActive"><i class="fa fa-birthday-cake">Tak</i> </div>
-                                </td>
+                    }
+                    <!--Ikony ciasto przy poprawinach -->
+                    @if (item.value.IfAftermath == true)
+                    {
+                        <td>
+                            <div class="iconActive"><i class="fa fa-birthday-cake"> Tak</i> </div>
+                        </td>
 
-                            }
-                            else
-                            {
-                                <td>
-                                    <div class="iconOff"><i class="fa fa-birthday-cake">Nie</i> </div>
+                    }
+                    else
+                    {
+                        <td>
+                            <div class="iconOff"><i class="fa fa-birthday-cake"> Nie</i> </div>
 
-                                </td>
+                        </td>
 
-                            }
+                    }
 
-                            @if (item.value.DescriptionDiet == null)
-                            {
-                                <td>
-                                    <div class="iconOff"><i class="fa fa-book">Nie</i> </div>
-                                </td>
-                                <td>
-                                    Brak
-                                </td>
-                            }
-                            else
-                            {
-                                <td>
-                                    <div class="iconActive"><i class="fa fa-book">Tak</i>  </div>
-                                </td>
-                                <td>
-                                    @item.value.DescriptionDiet
-                                </td>
-                            }
-                            <td>
-                                <form asp-controller="Guest" asp-action="ChangeInvitation" asp-route-id="@item.value.IdGuest" asp-route-state="@StatusGuestInvitation.Unanswered" method="post">
-                                    <button type="submit" class="btn btn-danger">Wykreś potwierdzenie</button>
-                                </form>
-                            </td>
-                        </tr>
+                    <!--Ikony ksiazki prz diecie bo niestety inne ikonki nie chciały dzialac-->
+                    @if (item.value.DescriptionDiet == null)
+                    {
+                        <td>
+                            <div class="iconActive"><i class="fa fa-book"> Tak</i> </div>
+                        </td>
+                        <td>
+                            Brak
+                        </td>
+                    }
+                    else
+                    {
+                        <td>
+                            <div class="iconOff"><i class="fa fa-book"> Nie</i>  </div>
+                        </td>
+                        <td>
+                            @item.value.DescriptionDiet
+                        </td>
+                    }
+                    <td>
+                        <form asp-controller="Guest" asp-action="ChangeInvitation" asp-route-id="@item.value.IdGuest" asp-route-state="@StatusGuestInvitation.Unanswered" method="post">
+                            <button type="submit" class="btn btn-danger">Wykreś potwierdzenie</button>
+                        </form>
+                    </td>
+                </tr>
                     }
                 }
             </tbody>
@@ -138,73 +140,73 @@
                 {
                     if (item.value.InvitationStatus == StatusGuestInvitation.Unanswered)
                     {
-                        <tr>
-                            <th scope="row">@item.i</th>
+                <tr>
+                    <th scope="row">@item.i</th>
 
-                            <td>@item.value.Name @item.value.Surname</td>
-                            @if (item.value.Role == null)
-                            {
-                                <td>Gość</td>
-                            }
-                            else
-                            {
-                                <td>@item.value.Role</td>
-                            }
+                    <td>@item.value.Name @item.value.Surname</td>
+                    @if (item.value.Role == null)
+                    {
+                        <td>Gość</td>
+                    }
+                    else
+                    {
+                        <td>@item.value.Role</td>
+                    }
+                    <!--Ikony bed przy noclegu -->
+                    @if (item.value.IfAccommodation == true)
+                    {
+                        <td>
+                            <div class="iconActive"><i class="fa fa-bed"> Tak</i> </div>
+                        </td>
 
-                            @if (item.value.IfAccommodation == true)
-                            {
-                                <td>
-                                    <div class="the-icons span3" title="Code: 0xf236"><i class="demo-icon icon-bed">Tak</i> </div>
-                                </td>
+                    }
+                    else
+                    {
+                        <td>
+                            <div class="iconOff"><i class="fa fa-bed"> Nie</i> </div>
+                        </td>
 
-                            }
-                            else
-                            {
-                                <td>
-                                    <div class="the-icons span3" title="Code: 0xf236"><i class="demo-icon icon-bed">Nie</i> </div>
-                                </td>
+                    }
+                    <!--Ikony ciasto przy poprawinach -->
+                    @if (item.value.IfAftermath == true)
+                    {
+                        <td>
+                            <div class="iconActive"><i class="fa fa-birthday-cake"> Tak</i> </div>
+                        </td>
 
-                            }
-                            <!--Ikony bed przy poprawinach ?-->
-                            @if (item.value.IfAftermath == true)
-                            {
-                                <td>
-                                    <div class="the-icons span3" title="Code: 0xf236"><i class="demo-icon icon-bed">Tak</i> </div>
-                                </td>
+                    }
+                    else
+                    {
+                        <td>
+                            <div class="iconOff"><i class="fa fa-birthday-cake"> Nie</i> </div>
 
-                            }
-                            else
-                            {
-                                <td>
-                                    <div class="the-icons span3" title="Code: 0xf236"><i class="demo-icon icon-bed">Nie</i> </div>
-                                </td>
-
-                            }
-
-                            @if (item.value.DescriptionDiet == null)
-                            {
-                                <td>
-                                    <div class="the-icons span3" title="Code: 0xe803"><i class="demo-icon icon-glass">Nie</i></div>
-                                </td>
-                                <td>
-                                    Brak
-                                </td>
-                            }
-                            else
-                            {
-                                <td>
-                                    <div class="the-icons span3" title="Code: 0xe803"><i class="demo-icon icon-glass">Tak</i></div>
-                                </td>
-                                <td>
-                                    @item.value.DescriptionDiet
-                                </td>
-                            }
-                            <td>
-                                <form asp-controller="Guest" asp-action="ChangeInvitation" asp-route-id="@item.value.IdGuest" asp-route-state="@StatusGuestInvitation.Accept" method="post">
-                                    <button type="submit" class="btn btn-info">Potwierdź</button>
-                                </form>
-                            </td>
-                        </tr>
+                        </td>
+                    }
+                    <!--Ikony ksiazki prz diecie bo niestety inne ikonki nie chciały dzialac-->
+                    @if (item.value.DescriptionDiet == null)
+                    {
+                        <td>
+                            <div class="iconActive"><i class="fa fa-book"> Tak</i> </div>
+                        </td>
+                        <td>
+                            Brak
+                        </td>
+                    }
+                    else
+                    {
+                        <td>
+                            <div class="iconOff"><i class="fa fa-book"> Nie</i>  </div>
+                        </td>
+                        <td>
+                            @item.value.DescriptionDiet
+                        </td>
+                    }
+                    <td>
+                        <form asp-controller="Guest" asp-action="ChangeInvitation" asp-route-id="@item.value.IdGuest" asp-route-state="@StatusGuestInvitation.Accept" method="post">
+                            <button type="submit" class="btn btn-info">Potwierdź</button>
+                        </form>
+                    </td>
+                </tr>
                     }
                 }
             </tbody>

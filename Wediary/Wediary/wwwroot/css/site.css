@@ -39,8 +39,10 @@
     }
 }
 
+
+/*colors for icons in guest list*/
 .iconActive {
-    color: #5C5200;
+    color: #408cc4;
 }
 
 .iconOff {
