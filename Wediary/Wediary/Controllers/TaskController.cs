@@ -37,10 +37,28 @@ namespace Wediary.Controllers
         
 
 
-        public IActionResult Index()
+        public IActionResult Index(string filter)
         {
-            string userId = _userManager.GetUserId(User);
-            IEnumerable<TaskUser> listOfTask = _serviceTaskUser.GetAll(userId);
+            IEnumerable<TaskUser> listOfTask;
+            if (filter == null)
+            {
+                string userId = _userManager.GetUserId(User);
+                listOfTask = _serviceTaskUser.GetAll(userId);
+            }
+            else if(filter=="MaxToMin")
+            {
+                string userId = _userManager.GetUserId(User);
+                listOfTask = _serviceTaskUser.GetAll(userId);
+                listOfTask = listOfTask.OrderBy(task => task.TotalPrice);
+            }
+            else 
+            {
+                string userId = _userManager.GetUserId(User);
+                listOfTask = _serviceTaskUser.GetAll(userId);
+                listOfTask = listOfTask.OrderByDescending(task => task.TotalPrice);
+
+            }
+
             return View(listOfTask);
         }
 
@@ -162,9 +180,9 @@ namespace Wediary.Controllers
             return View(testJson); //widok bez zwracania
         }
 
-   
 
 
+     
 
     }
 }

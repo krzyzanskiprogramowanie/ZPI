@@ -23,6 +23,7 @@ namespace Wediary.Data.Models
         public string Category { get; set; }
         public string State { get; set; }
 
+
         public virtual string UserId { get; set; }
         public virtual ApplicationUser ApplicationUser { get; set; }
 

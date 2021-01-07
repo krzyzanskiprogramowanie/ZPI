@@ -15,6 +15,15 @@
         <div class="col-sm-2">
             <a asp-area="" asp-controller="Home" asp-action="About" class="btn btn-primary">Dodaj nowe zadanie</a>
         </div>
+
+        <div class="col-sm-2">
+            <a asp-area="" asp-controller="Task" asp-action="Index" asp-route-filter="MaxToMin" class="btn btn-primary">Sortuj od najmniejszej</a>
+
+        </div>
+        <div class="col-sm-2">
+            <a asp-area="" asp-controller="Task" asp-action="Index" asp-route-filter="MinToMax" class="btn btn-primary">Sortuj od najwiekszej</a>
+
+        </div>
     </div>
 </div>
 

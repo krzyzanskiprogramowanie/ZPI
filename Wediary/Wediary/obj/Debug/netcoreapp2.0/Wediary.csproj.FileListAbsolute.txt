@@ -113,3 +113,4 @@ C:\Users\Grzegorz\Desktop\Pulpit\Studia\ZPI\ZPI\Wediary\Wediary\bin\Debug\netcor
 C:\Users\Grzegorz\Desktop\Pulpit\Studia\ZPI\ZPI\Wediary\Wediary\bin\Debug\netcoreapp2.0\Wediary.Service.pdb
 C:\Users\DEMACIA\Documents\GitHub\ZPI\Wediary\Wediary\bin\Debug\netcoreapp2.0\libman.json
 C:\Users\pawel\OneDrive\Desktop\ZPI\ZPI\Wediary\Wediary\bin\Debug\netcoreapp2.0\libman.json
+C:\Users\Grzegorz\Desktop\Pulpit\Studia\ZPI\ZPI\Wediary\Wediary\bin\Debug\netcoreapp2.0\libman.json
