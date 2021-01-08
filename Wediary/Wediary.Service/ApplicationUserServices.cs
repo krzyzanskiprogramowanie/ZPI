@@ -10,6 +10,13 @@ namespace Wediary.Service
 {
     public class ApplicationUserServices : IApplicationUser
     {
+        private readonly ApplicationDbContext _context;
+
+        public ApplicationUserServices(ApplicationDbContext context)
+        {
+            _context = context;
+        }
+
         public Task Create(ApplicationUser applicationUser)
         {
             throw new NotImplementedException();
@@ -35,9 +42,10 @@ namespace Wediary.Service
             throw new NotImplementedException();
         }
 
-        public Task UpdateUser(string id)
+        public async Task UpdateUser(ApplicationUser user)
         {
-            throw new NotImplementedException();
+            _context.Update(user);
+            await _context.SaveChangesAsync();
         }
     }
 }

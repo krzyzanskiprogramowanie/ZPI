@@ -13,6 +13,6 @@ namespace Wediary.Data
         Task SetImageProfile (string id, Uri uri);
         Task Create(ApplicationUser applicationUser);
         Task Delete(string id);
-        Task UpdateUser(string id);
+        Task UpdateUser(ApplicationUser user);
     }
 }

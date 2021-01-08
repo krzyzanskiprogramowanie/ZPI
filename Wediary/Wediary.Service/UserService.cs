@@ -46,9 +46,10 @@ namespace Wediary.Service
             await _context.SaveChangesAsync();
         }
 
-        public Task UpdateUser(string id)
+        public async Task UpdateUser(ApplicationUser user)
         {
-            throw new NotImplementedException();
+            _context.Update(user);
+            await _context.SaveChangesAsync();
         }
     }
 }

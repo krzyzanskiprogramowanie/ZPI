@@ -26,9 +26,9 @@
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li>
-                            <a asp-area="" asp-controller="Home" asp-action="MainInfo">
-                                <img src="~/images/img/logo1.png" width="75" height="50" />
-                            </a>
+                        <a asp-area="" asp-controller="Home" asp-action="MainInfo">
+                            <img src="~/images/img/logo1.png" width="75" height="50" />
+                        </a>
                     </li>
                     <li><a asp-area="" asp-controller="Home" asp-action="Index">Główny panel</a></li>
 
@@ -37,6 +37,7 @@
                         <li><a asp-area="" asp-controller="Task" asp-action="Index">Lista Zadań</a></li>
                         <li><a asp-area="" asp-controller="Guest" asp-action="Index">Lista gości</a></li>
                         <li><a asp-area="" asp-controller="TableManager" asp-action="Index">Projekty</a></li>
+                        <li><a asp-area="" asp-controller="Home" asp-action="ConfigureProfile">Pan i Pani Młoda</a></li>
                     }
                 </ul>
                 @await Html.PartialAsync("_LoginPartial")
