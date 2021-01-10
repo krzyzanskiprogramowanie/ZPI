@@ -5,60 +5,61 @@
 }
 
 
-
 <link href="~/css/managerStyle.css" rel="stylesheet" />
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link href="~/css/splide.min.css" rel="stylesheet">
 <link href="~/css/splide-skyblue.min.css" rel="stylesheet">
-<div class="text-center col-md-12">
-    <div class="menu">
-        <div id="image-slider" class="splide">
-            <div class="splide__track">
-                <ul class="splide__list">
-                    <li class="splide__slide"><img alt="1" src="~/images/ManagerImages/1.png"></li>
-                    <li class="splide__slide"><img alt="1" src="~/images/ManagerImages/2.png"></li>
-                    <li class="splide__slide"><img alt="1" src="~/images/ManagerImages/3.png"></li>
-                    <li class="splide__slide"><img alt="1" src="~/images/ManagerImages/4.png"></li>
-                    <li class="splide__slide"><img alt="1" src="~/images/ManagerImages/5.png"></li>
-                    <li class="splide__slide"><img alt="1" src="~/images/ManagerImages/6.png"></li>
-                    <li class="splide__slide"><img alt="1" src="~/images/ManagerImages/7.png"></li>
-                </ul>
+<div class="whole_manager">
+    <div class="text-center col-md-12">
+        <div class="menu">
+            <div id="image-slider" class="splide">
+                <div class="splide__track">
+                    <ul class="splide__list">
+                        <li class="splide__slide"><img alt="1" src="~/images/ManagerImages/1.png"></li>
+                        <li class="splide__slide"><img alt="1" src="~/images/ManagerImages/2.png"></li>
+                        <li class="splide__slide"><img alt="1" src="~/images/ManagerImages/3.png"></li>
+                        <li class="splide__slide"><img alt="1" src="~/images/ManagerImages/4.png"></li>
+                        <li class="splide__slide"><img alt="1" src="~/images/ManagerImages/5.png"></li>
+                        <li class="splide__slide"><img alt="1" src="~/images/ManagerImages/6.png"></li>
+                        <li class="splide__slide"><img alt="1" src="~/images/ManagerImages/7.png"></li>
+                    </ul>
+                </div>
             </div>
         </div>
+        <div class="buttons">
+            <button onclick="removeFromPalette()">Usuń Element</button>
+            <button onclick="addToPalette()">Dodaj stół</button>
+            <button onclick="load()">Drukuj</button>
+            <form asp-controller="Task" asp-action="See" asp-route-name="@Model.Name" asp-route-id="@Model.IdProject" method="post">
+                <input asp-for="CoordinatesJson" type="hidden" class="form-control" id="hdnfldVariable" placeholder="nazwa">
+                <input asp-for="GuestJson" type="hidden" class="form-control" id="hdnfldVariable2" placeholder="nazwa">
+                <button type="submit" onclick="save()">Zapisz</button>
+            </form>
+        </div>
     </div>
-    <div class="buttons">
-        <button onclick="removeFromPalette()">Usuń Element</button>
-        <button onclick="addToPalette()">Dodaj stół</button>
-        <button onclick="load()">Wczytaj</button>
-        <form asp-controller="Task" asp-action="See" asp-route-name="@Model.Name" asp-route-id="@Model.IdProject" method="post">
-            <input asp-for="CoordinatesJson" type="hidden" class="form-control" id="hdnfldVariable" placeholder="nazwa">
-            <input asp-for="GuestJson" type="hidden" class="form-control" id="hdnfldVariable2" placeholder="nazwa">
-            <button type="submit" onclick="save()">Zapisz</button>
-        </form>
-    </div>
+
+    <body onload="init()">
+
+        <div id="sample">
+            <div id="myFlexDiv">
+                <div id="myGuests"></div>
+                <div id="myDiagramDiv"></div>
+            </div>
+
+        </div>
+    </body>
 </div>
+<input id="hiddenGuest" type="hidden" value="@ViewBag.FieldsList" />
+<input id="jsonGuests" type="hidden" value="@ViewBag.JsonGuest" />
+<input id="jsonTables" type="hidden" value="@ViewBag.JsonTables" />
+<json class="json" id="savedModel"></json>
+<json class="json" id="Guests_saved"></json>
+<json class="json" id="Diagram_saved"></json>
 
-<body onload="init()">
 
-    <div id="sample">
-        <div id="myFlexDiv">
-            <div id="myGuests"></div>
-            <div id="myDiagramDiv"></div>
-        </div>
-        <div>
-            <pre class="json" id="savedModel"></pre>
-            <pre class="json" id="Guests_saved"></pre>
-            <pre class="json" id="Diagram_saved"></pre>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.2/jspdf.min.js"></script>
+<script src="~/js/splide.min.js"></script>
+<script src="~/js/go.js"></script>
+<script src="~/js/managerScript.js"></script>
 
-        </div>
-    </div>
-    <input id="hiddenGuest" type="hidden" value="@ViewBag.FieldsList" />
-    <input id="jsonGuests" type="hidden" value="@ViewBag.JsonGuest" />
-    <input id="jsonTables" type="hidden" value="@ViewBag.JsonTables" />
-    
-
-    <script src="~/js/splide.min.js"></script>
-    <script src="~/js/go.js"></script>
-    <script src="~/js/managerScript.js"></script>
-</body>
 

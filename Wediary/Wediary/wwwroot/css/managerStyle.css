@@ -35,7 +35,7 @@
 }
 
 .json {
-    visibility: hidden;
+    visibility: collapse;
 }
 
 .splide__slide img {
@@ -44,8 +44,10 @@
 }
 
 .menu {
+    background: #ead4b4;
     position: absolute;
     z-index: 10;
+    margin-top 3vh;
     width: 25vh;
     height: 16vh;
 }

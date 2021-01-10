@@ -298,9 +298,7 @@ function init() {
     myGuests.nodeTemplateMap = myDiagram.nodeTemplateMap;
 
     // specify the contents of the Palette
-    myGuests.model = new go.GraphLinksModel([ //musicie dodac pobieranie z tabeli i wprowadzanie tutaj (tylko w pierwszym uruchomieniu)
-
-    ]);
+    
     //Show Guest from database in manager
     var i;
     for (i = 0; i < arraySize; i++) {
@@ -557,7 +555,10 @@ function load() {
     var jsonTableFromDatabase = document.getElementById("jsonTables");
     myDiagram.model = go.Model.fromJson(JSON.parse(jsonTableFromDatabase.value)); //Do zmiany odczy z bazy
     myGuests.model = go.Model.fromJson(JSON.parse(jsonGuestFromDatabase.value));
-    
+ 
+
+
+   
 }
 
 function removeFromPalette() {
@@ -569,41 +570,41 @@ function removeFromPalette() {
 function addToPalette() {
     if (table_type == 0) {
         myDiagram.startTransaction();
-        myDiagram.model.addNodeData({ "key": 1, "category": "TableR3", "name": "", "guests": {}, "loc": "163.5 58" })
+        myDiagram.model.addNodeData({ "key": 1, "category": "TableR3", "name": "Stół 3os.", "guests": {}, "loc": "163.5 58" })
         myDiagram.commitTransaction("added table");
 
     }
     if (table_type == 1) {
         myDiagram.startTransaction();
-        myDiagram.model.addNodeData({ "key": 1, "category": "TableR6", "name": "", "guests": {}, "loc": "163.5 58" })
+        myDiagram.model.addNodeData({ "key": 1, "category": "TableR6", "name":"stół 6os." , "guests": {}, "loc": "163.5 58" })
         myDiagram.commitTransaction("added table");
     }
 
     if (table_type == 2) {
         myDiagram.startTransaction();
-        myDiagram.model.addNodeData({ "key": 1, "category": "TableR5", "name": "", "guests": {}, "loc": "163.5 58" })
+        myDiagram.model.addNodeData({ "key": 1, "category": "TableR5", "name": "stół 5os. ","guests": {}, "loc": "163.5 58" })
         myDiagram.commitTransaction("added table");
     }
 
     if (table_type == 3) {
         myDiagram.startTransaction();
-        myDiagram.model.addNodeData({ "key": 1, "category": "TableR8", "name": "", "guests": {}, "loc": "163.5 58" })
+        myDiagram.model.addNodeData({ "key": 1, "category": "TableR8", "name":"stół 8os." , "guests": {}, "loc": "163.5 58" })
         myDiagram.commitTransaction("added table");
     }
 
     if (table_type == 4) {
         myDiagram.startTransaction();
-        myDiagram.model.addNodeData({ "key": 1, "category": "TableL3_L", "name": "", "guests": {}, "loc": "163.5 58" })
+        myDiagram.model.addNodeData({ "key": 1, "category": "TableL3_L", "name": "stół 4os.", "guests": {}, "loc": "163.5 58" })
         myDiagram.commitTransaction("added table");
     }
     if (table_type == 5) {
         myDiagram.startTransaction();
-        myDiagram.model.addNodeData({ "key": 1, "category": "TableL3_R", "name": "", "guests": {}, "loc": "163.5 58" })
+        myDiagram.model.addNodeData({ "key": 1, "category": "TableL3_R", "name": "stół 4os.", "guests": {}, "loc": "163.5 58" })
         myDiagram.commitTransaction("added table");
     }
     if (table_type == 6) {
         myDiagram.startTransaction();
-        myDiagram.model.addNodeData({ "key": 1, "category": "TableC8", "name": "", "guests": {}, "loc": "163.5 58" })
+        myDiagram.model.addNodeData({ "key": 1, "category": "TableC8", "name": "stół okrągły", "guests": {}, "loc": "163.5 58" })
         myDiagram.commitTransaction("added table");
     }
 }

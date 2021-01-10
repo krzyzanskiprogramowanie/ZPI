@@ -42,3 +42,4 @@ C:\Users\pawel\OneDrive\Desktop\ZPI\ZPI\Wediary\Wediary.Data\obj\Debug\netcoreap
 C:\Users\pawel\OneDrive\Desktop\ZPI\ZPI\Wediary\Wediary.Data\obj\Debug\netcoreapp2.0\Wediary.Data.csproj.CoreCompileInputs.cache
 C:\Users\pawel\OneDrive\Desktop\ZPI\ZPI\Wediary\Wediary.Data\obj\Debug\netcoreapp2.0\Wediary.Data.dll
 C:\Users\pawel\OneDrive\Desktop\ZPI\ZPI\Wediary\Wediary.Data\obj\Debug\netcoreapp2.0\Wediary.Data.pdb
+C:\Users\pswap\OneDrive\Dokumenty\GitHub\ZPI2\Wediary\Wediary.Data\obj\Debug\netcoreapp2.0\Wediary.Data.csprojAssemblyReference.cache
