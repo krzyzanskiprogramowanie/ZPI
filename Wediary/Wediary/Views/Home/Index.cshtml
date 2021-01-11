@@ -1,6 +1,8 @@
 ﻿<link href="~/css/homePage.css" rel="stylesheet" />
 <link href="~/css/splide.min.css" rel="stylesheet" />
 <link href="~/css/splide-skyblue.min.css" rel="stylesheet" />
+@model Wediary.Models.HelpModels.MainPageDataModel;
+
 @{
     ViewData["Title"] = "Panel ślubu";
 }
@@ -49,10 +51,33 @@
                 <div class="col-md-12 text-center bg-info">
                     <h2><img src="~/images/img/kalendarz1.jpg" class="img-fluid"></h2>
                     <div class="text-left">
-                        <p class="alert-info">Panna & Pan Młodzi</p>
-                        <p class="alert-info">Data ślubu: 20.06.2020 </p>
-                        <p class="alert-info">Miejsce: Bydgoszcz</p>
-                        <p class="alert-info">Reustauracja: Przykładowa Restauracja</p>
+                        @if ((String.IsNullOrWhiteSpace(Model.FullNameGroom) && String.IsNullOrWhiteSpace(Model.FullNameBride)))
+                        {
+                            <p class="alert-info">Pan Młody & Pani Młoda</p>
+
+                        }
+                        else if (String.IsNullOrWhiteSpace(Model.FullNameBride))
+                        {
+                            <p class="alert-info"> @Model.FullNameGroom & Pani Młoda </p>
+
+                        }
+                        else if (String.IsNullOrWhiteSpace(Model.FullNameGroom))
+                        {
+
+                            <p class="alert-info">Pan Młody & @Model.FullNameBride</p>
+
+                        }
+                        else
+                        {
+                            <p class="alert-info">@Model.FullNameBride & @Model.FullNameGroom</p>
+                        }
+                        @if (!(Model.WeddingDate == "1.1.1"))
+                        {
+                            <p class="alert-info">Data ślubu: @Model.WeddingDate </p>
+
+                        }
+
+
                     </div>
                 </div>
             </div>
@@ -61,15 +86,15 @@
         <div class="row">
             <div class="kafelek col-md-3 ">
                 <p> Ukończone zadania </p>
-                <p> 20 / 60 </p>
+                <p> @Model.EndTasks / @Model.CounterTask </p>
             </div>
             <div class="kafelek col-md-3">
                 <p> Porwierdzenie Goście </p>
-                <p>  5 / 100 </p>
+                <p>  @Model.ConfirmGuests / @Model.CounterGuest </p>
             </div>
             <div class="kafelek col-md-3">
                 <p> Budżet: </p>
-                <p> 5423 zł </p>
+                <p> @Model.Budget </p>
             </div>
         </div>
     </div>

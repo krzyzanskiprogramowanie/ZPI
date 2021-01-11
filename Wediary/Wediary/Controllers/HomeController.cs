@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Wediary.Data;
@@ -14,23 +15,70 @@ using Wediary.Service;
 
 namespace Wediary.Controllers
 {
+    [Authorize]
     public class HomeController : Controller
     {
         private readonly IApplicationUser _userService;
         private readonly IGuest _guestService;
         private readonly UserManager<ApplicationUser> _userManager;
+        private readonly ITaskUser _taskUserService;
+        
 
-        public HomeController(IApplicationUser userService, IGuest guestService, UserManager<ApplicationUser> userManager)
+        public HomeController(IApplicationUser userService, IGuest guestService, UserManager<ApplicationUser> userManager, ITaskUser taskUserService)
         {
             _userService = userService;
             _guestService = guestService;
             _userManager = userManager;
+            _taskUserService = taskUserService;
         }
 
         public IActionResult Index()
         {
-            return View();
+
+            var userId = _userManager.GetUserId(User);
+            var user = _userService.GetById(userId);
+            var guest = _guestService.GetAll(userId);
+            int guestInvitationStatus=0;
+            int guestCounter = 0;
+            foreach (var item in guest)
+            {
+                if (!(item.InvitationStatus == "Niezakceptowany"))
+                {
+                    guestInvitationStatus ++;
+
+                }
+                guestCounter++;
+            }
+            var task = _taskUserService.GetAll(userId);
+            int taskCompleted = 0;
+            int taskCounter = 0;
+            foreach (var item in task)
+            {
+                if (item.State== "Zakońcozny")
+                {
+                    taskCompleted++;
+                }
+                taskCounter++;
+            }
+
+
+            var model = new MainPageDataModel()
+            {
+                Budget = user.Budget,
+                FullNameBride = user.BrideName,
+                FullNameGroom=user.GroomName,
+                CounterGuest=guestCounter,
+                ConfirmGuests=guestInvitationStatus,
+                CounterTask=taskCounter,
+                EndTasks=taskCompleted,
+                WeddingDate=user.WeddingDate.Day.ToString() +"."
+                + user.WeddingDate.Month.ToString() +"." 
+                + user.WeddingDate.Year.ToString()
+            };
+            return View(model);
         }
+
+    
 
         public IActionResult About()
         {

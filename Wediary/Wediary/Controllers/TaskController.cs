@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using System;
@@ -14,6 +15,7 @@ using Wediary.Models.TaskUser;
 
 namespace Wediary.Controllers
 {
+    [Authorize]
     public class TaskController : Controller
     {
         private readonly ITaskUser _serviceTaskUser;

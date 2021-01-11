@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -12,6 +13,7 @@ using Wediary.Models.ProjectManager;
 
 namespace Wediary.Controllers
 {
+    [Authorize]
     public class TableManagerController : Controller
     {
         private static UserManager<ApplicationUser> _userManager;
