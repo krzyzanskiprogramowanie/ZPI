@@ -29,7 +29,7 @@
         <div class="buttons">
             <button onclick="removeFromPalette()">Usuń Element</button>
             <button onclick="addToPalette()">Dodaj stół</button>
-            <button onclick="load()">Drukuj</button>
+            <button onclick="drukuj()">Drukuj</button>
             <form asp-controller="Task" asp-action="See" asp-route-name="@Model.Name" asp-route-id="@Model.IdProject" method="post">
                 <input asp-for="CoordinatesJson" type="hidden" class="form-control" id="hdnfldVariable" placeholder="nazwa">
                 <input asp-for="GuestJson" type="hidden" class="form-control" id="hdnfldVariable2" placeholder="nazwa">
