@@ -1,11 +1,43 @@
 ﻿<link href="~/css/homePage.css" rel="stylesheet" />
-
+<link href="~/css/splide.min.css" rel="stylesheet" />
+<link href="~/css/splide-skyblue.min.css" rel="stylesheet" />
 @{
     ViewData["Title"] = "Panel ślubu";
 }
 
 <section>
+    <br />
+
+    <div id="image-slider" class="splide">
+        <div class="splide__track">
+            <ul class="splide__list">
+                <li class="splide__slide">
+                    <img src="~/images/img/obraczki i kwiat.jpg">
+                    <h3>Weddiary</h3>
+                    <div class="splideText">
+                        Zaplanuj swoje wymarzone wesele!
+                    </div>
+                </li>
+                <li class="splide__slide" style="width: 110%">
+                    <img src="~/images/img/img 1600x1200/weddingtables-1600x1200.jpg" />
+                    <h3>Weddiary</h3>
+                    <div class="splideText">
+                        Zaplanuj posadzenie gości i stoły!
+                    </div>
+                </li>
+                <li class="splide__slide" style="width: 110%">
+                    <img src="~/images/img/img 1600x1200/stol weselny.jpg" />
+                    <h3>Weddiary</h3>
+                    <div class="splideText">
+                        Zapanuj nad listą gości!
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+
     <div class="container-fluid">
+
         <div class="row">
             <asaide class="col-12" style="min-height: 25px;"></asaide>
             <div class="left-part">
@@ -42,3 +74,16 @@
         </div>
     </div>
 </section>
+
+<script src="~/js/splide.min.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        new Splide('#image-slider', {
+            'cover': true,
+            'heightRatio': 0.35,
+            type: 'fade',
+            rewind: true
+
+        }).mount();
+    });
+</script>
