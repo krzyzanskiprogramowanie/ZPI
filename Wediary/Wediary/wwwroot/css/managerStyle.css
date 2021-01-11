@@ -20,7 +20,10 @@
         flex: 1;
     }
 }
-
+.main{
+    display: block;
+    min-height: 600px;
+}
 @media (max-width: 767px) {
     #myGuests {
         width: 90%;
@@ -34,28 +37,40 @@
     }
 }
 
+.jsons{
+
+    max-height: 0px;
+}
 .json {
+   
     visibility: collapse;
 }
 
 .splide__slide img {
+    margin-top: 4vh;
     width: 25vh;
     height: 16vh;
 }
+.canvas{
 
+    display:block;
+    height: 550px;
+    background-color:antiquewhite;
+}
 .menu {
-    background: #ead4b4;
+    background-color: antiquewhite;
     position: absolute;
     z-index: 10;
-    margin-top 3vh;
+    margin-top 5vh;
     width: 25vh;
     height: 16vh;
 }
 
 .buttons {
+    margin-top:4vh;
     position: absolute;
     margin-left: 25vh;
-    background-color: white;
+    background-color: antiquewhite;
     width: 19vh;
     height: 16vh;
     z-index: 10;
