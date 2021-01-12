@@ -142,6 +142,16 @@ body {
     margin-bottom: 100px;
 }
 
+.calendarInfo {
+    background-color: #A4961F;
+    text-align: center;
+    color: #5C5200;
+    font-size: 36px;
+    border: 2px solid #5C5200;
+    border-radius: 10px;
+    margin-left: 50px;
+}
+
 .sekcje {
     text-align: left;
     padding: 25px;

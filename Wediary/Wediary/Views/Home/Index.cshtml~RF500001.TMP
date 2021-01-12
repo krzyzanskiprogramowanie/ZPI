@@ -9,7 +9,9 @@
 
 <section>
 
+
     <div class="container-fluid">
+
         <!-- slider -->
         <div class="row">
             <div class="col-12">
@@ -54,60 +56,53 @@
             <div class="col-lg-5">
                 <!--  <img class="featurette-image img-fluid mx-auto" data-src="holder.js/500x500/auto" alt="500x500" src=""true" style="width: 500px; height: 500px;"> -->
                 <div class="right-part">
-                    <div class="calendarInfo bg-blue">
+                    <div class="calendarInfo">
                         <div>
                             <h2><img src="~/images/img/kalendarz1.jpg" class="img-fluid" style="width:auto; height: auto;"></h2>
-                            <div class="text-center bg-blue">
+                            <div class="text-left">
                                 @if ((String.IsNullOrWhiteSpace(Model.FullNameGroom) && String.IsNullOrWhiteSpace(Model.FullNameBride)))
                                 {
-                                    <p class="">Pan Młody & Pani Młoda</p>
+                                    <p class="alert-info">Pan Młody & Pani Młoda</p>
 
                                 }
                                 else if (String.IsNullOrWhiteSpace(Model.FullNameBride))
                                 {
-                                    <p class=""> @Model.FullNameGroom & Pani Młoda </p>
+                                    <p class="alert-info"> @Model.FullNameGroom & Pani Młoda </p>
 
                                 }
                                 else if (String.IsNullOrWhiteSpace(Model.FullNameGroom))
                                 {
 
-                                    <p class="">Pan Młody & @Model.FullNameBride</p>
+                                    <p class="alert-info">Pan Młody & @Model.FullNameBride</p>
 
                                 }
                                 else
                                 {
-                                    <p class="">@Model.FullNameBride & @Model.FullNameGroom</p>
+                                    <p class="alert-info">@Model.FullNameBride & @Model.FullNameGroom</p>
                                 }
                                 @if (!(Model.WeddingDate == "1.1.1"))
                                 {
-                                    <p class="">Data ślubu: @Model.WeddingDate </p>
+                                    <p class="alert-info">Data ślubu: @Model.WeddingDate </p>
 
                                 }
+
 
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="col-lg-6">
-                <div class="row">
-                    <div class="kafelek col-md-4 ">
-                        <p> Ukończone zadania </p>
-                        <p> @Model.EndTasks / @Model.CounterTask </p>
-                    </div>
-                    <div class="kafelek col-md-4">
-                        <p> Porwierdzenie Goście </p>
-                        <p>  @Model.ConfirmGuests / @Model.CounterGuest </p>
-                    </div>
-                    <div class="kafelek col-md-4">
-                        <p> Budżet: </p>
-                        <p> @Model.Budget </p>
-                    </div>
-                </div>
+            <div class="col-lg-7">
+                <h2 >And lastly, this one. </h2>
+                <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
             </div>
         </div>
 
         <hr class="featurette-divider">
+
+
+
+
 
     </div>
 </section>
