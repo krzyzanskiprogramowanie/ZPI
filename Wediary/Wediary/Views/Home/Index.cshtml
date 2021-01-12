@@ -8,37 +8,44 @@
 }
 
 <section>
-    <br />
 
-    <div id="image-slider" class="splide">
-        <div class="splide__track">
-            <ul class="splide__list">
-                <li class="splide__slide">
-                    <img src="~/images/img/obraczki i kwiat.jpg">
-                    <h3>Weddiary</h3>
-                    <div class="splideText">
-                        Zaplanuj swoje wymarzone wesele!
-                    </div>
-                </li>
-                <li class="splide__slide" style="width: 110%">
-                    <img src="~/images/img/img 1600x1200/weddingtables-1600x1200.jpg" />
-                    <h3>Weddiary</h3>
-                    <div class="splideText">
-                        Zaplanuj posadzenie gości i stoły!
-                    </div>
-                </li>
-                <li class="splide__slide" style="width: 110%">
-                    <img src="~/images/img/img 1600x1200/stol weselny.jpg" />
-                    <h3>Weddiary</h3>
-                    <div class="splideText">
-                        Zapanuj nad listą gości!
-                    </div>
-                </li>
-            </ul>
-        </div>
-    </div>
 
     <div class="container-fluid">
+
+        <div class="row">
+            <div class="col-12">
+                <div id="image-slider" class="splide">
+                    <div class="splide__track">
+                        <ul class="splide__list">
+                            <li class="splide__slide">
+                                <div class="overlay">
+                                    <img src="~/images/img/img 1600x500/obraczki i kwiat 1600x500.jpg" />
+                                    <div class="textOverlay">
+                                        Zaplanuj swoje wymarzone wesele!
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="splide__slide">
+                                <div class="overlay">
+                                    <img src="~/images/img/img 1600x500/weddingtables-1600x500.jpg" />
+                                    <div class="textOverlay">
+                                        Zaplanuj miejsca gości i układ sali!
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="splide__slide">
+                                <div class="overlay">
+                                    <img src="~/images/img/img 1600x500/stol weselny 1600x500.jpg" />
+                                    <div class="textOverlay">
+                                        Zapanuj nad listą gości!
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
 
         <div class="row">
             <asaide class="col-12" style="min-height: 25px;"></asaide>
@@ -104,11 +111,12 @@
 <script>
     document.addEventListener('DOMContentLoaded', function () {
         new Splide('#image-slider', {
-            'cover': true,
-            'heightRatio': 0.35,
             type: 'fade',
-            rewind: true
-
+            rewind: true,
+            width: '100vw',
+            perPage: 1,
+            autoplay: true,
+            pauseOnHover: true,
         }).mount();
     });
 </script>
