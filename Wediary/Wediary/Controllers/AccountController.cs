@@ -78,7 +78,7 @@ namespace Wediary.Controllers
                 }
                 else
                 {
-                    ModelState.AddModelError(string.Empty, "Invalid login attempt.");
+                    ModelState.AddModelError(string.Empty, "Niepoprawna próba logowania.");
                     return View(model);
                 }
             }

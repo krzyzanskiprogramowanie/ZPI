@@ -9,14 +9,14 @@ namespace Wediary.Models.AccountViewModels
     public class LoginViewModel
     {
         [Required]
-        [EmailAddress]
+        [EmailAddress(ErrorMessage = "Niepoprawny adres e-mail")]
         public string Email { get; set; }
 
         [Required]
         [DataType(DataType.Password)]
         public string Password { get; set; }
 
-        [Display(Name = "Remember me?")]
+        [Display(Name = "Zapamiętać mnie?")]
         public bool RememberMe { get; set; }
     }
 }

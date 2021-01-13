@@ -10,6 +10,10 @@ namespace Wediary.Data.Models
     {
         [Key]
         public int IdProject { get; set; }
+
+        [Required(ErrorMessage = "{0} jest wymagane.")]
+        [Display(Name = "Nazwa Projektu")]
+        [StringLength(50, ErrorMessage = "Długość znaków {0} {1} {2}", MinimumLength = 1)]
         public string Name { get; set; }
         public string JsonTable { get; set; }
         public string JsonGuest { get; set; }
