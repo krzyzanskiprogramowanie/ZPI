@@ -53,7 +53,6 @@ body {
 .bg-blue {
     background: rgb(255,245,204);
     background: linear-gradient(36deg, rgba(255,245,204,1) 0%, rgba(177,230,249,1) 100%);
-    /* odwrotnie kolorami  background: linear-gradient(36deg, rgba(177,230,249,1) 0%, rgba(255,245,204,1) 100%);*/
 }
 
 
@@ -307,30 +306,3 @@ body {
         background: linear-gradient(36deg, rgba(255,245,204,1) 0%, rgba(177,230,249,1) 100%);
     }
 
-.buttonMenu {
-    border: 1px solid #000;
-    margin-top: 10px;
-    border-radius: 5px 5px;
-    color: #f1f0ea;
-}
-
-    .buttonMenu:hover {
-    background-color: rgb(152, 223, 249);
-
-    }
-
-.buttonMenu2 {
-    border: 1px solid #000;
-    margin-top: 10px;
-    border-radius: 5px 5px;
-    color: #f1f0ea;
-    margin-right: 20px;
-}
-
-    .buttonMenu2:hover {
-        background-color: rgb(152, 223, 249);
-    }
-
-#logOutButton {
-    text-decoration: none !important;
-}

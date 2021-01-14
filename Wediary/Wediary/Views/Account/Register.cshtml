@@ -4,36 +4,36 @@
 }
 
 <div class="row container">
-    <div class="col-md-4">
+    <div class="col-md-5">
         <form asp-route-returnUrl="@ViewData["ReturnUrl"]" method="post">
-            <h4>Tworzenie nowego konta</h4>
-            <hr />
+            <h4 class="headerText">Tworzenie nowego konta</h4>
+            <hr class="divider" />
             <div asp-validation-summary="All" class="text-danger"></div>
             <div class="form-group">
-                <label>Adres e-mail</label>
-                <input asp-for="Email" class="form-control" />
+                <label class="labelText">Adres e-mail</label>
+                <input asp-for="Email" class="form-control inputStyle" />
                 <span asp-validation-for="Email" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label>Hasło</label>
-                <input asp-for="Password" class="form-control" />
+                <label class="labelText">Hasło</label>
+                <input asp-for="Password" class="form-control inputStyle" />
                 <span asp-validation-for="Password" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label>Potwierdź hasło</label>
-                <input asp-for="ConfirmPassword" class="form-control" />
+                <label class="labelText">Potwierdź hasło</label>
+                <input asp-for="ConfirmPassword" class="form-control inputStyle" />
                 <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
             </div>
-            <button type="submit" class="btn btn-default">Stwórz konto</button>
+            <button type="submit" class="btn buttonSize" style="margin-bottom: 30px;" >Zarejestruj</button>
         </form>
     </div>
-    <div class="col-md-6 col-md-offset-2">
+    <div class="col-md-5 col-md-offset-2">
         <section>
-            <h4>Informacje odnośnie rejestracji</h4>
-            <hr />
+            <h4 class="headerText">Informacje odnośnie rejestracji</h4>
+            <hr class="divider"/>
             <div>
                 <p>
-                    Zarejestrój się do serwisu oferującego planer ślubny, który będzie dla ciebie pomocą w zaplanowaniu wymarzonego wesela.
+                    Zarejestruj się do serwisu oferującego planer ślubny, który będzie dla ciebie pomocą w zaplanowaniu wymarzonego wesela.
                     Po zarejestrowaniu potwierdź adres e-mail i zacznij korzystać z serwisu. Cieszymy sie że chcesz do nas dołączyć!
                 </p>
             </div>

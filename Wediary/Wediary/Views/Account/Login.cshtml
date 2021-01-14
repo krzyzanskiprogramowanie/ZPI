@@ -10,38 +10,34 @@
 }
 
 <div class="row container">
-    <div class="col-md-4">
-        <section>
+    <div class="col-md-5">
             <form asp-route-returnurl="@ViewData["ReturnUrl"]" method="post">
-                <h4>Logowanie do aplikacji</h4>
-                <hr />
+                <h4 class="headerText">Logowanie do aplikacji</h4>
+                <hr class="divider"/>
                 <div asp-validation-summary="All" class="text-danger"></div>
                 <div class="form-group">
-                    <label>Adres e-mail</label>
-                    <input asp-for="Email" class="form-control" />
+                    <label class="labelText">Adres e-mail</label>
+                    <input asp-for="Email" class="form-control inputStyle" />
                     <span asp-validation-for="Email" class="text-danger"></span>
                 </div>
                 <div class="form-group">
-                    <label>Hasło</label>
-                    <input asp-for="Password" class="form-control" />
+                    <label class="labelText">Hasło</label>
+                    <input asp-for="Password" class="form-control inputStyle" />
                     <span asp-validation-for="Password" class="text-danger"></span>
                 </div>
                 <div class="form-group">
-                    <button type="submit" class="btn btn-default">Zaloguj się</button>
+                    <button type="submit" class="btn buttonSize">Zaloguj</button>
                 </div>
             </form>
-        </section>
     </div>
-    <div class="col-md-6 col-md-offset-2">
+    <div class="col-md-6 col-md-offset-1">
         <section>
-            <h4>Informacje odnośnie logowania</h4>
-            <hr />
+            <h4 class="headerText">Informacje odnośnie logowania</h4>
+            <hr class="divider"/>
             <div>
                 <p>
-                    Lorem Ipsum jest tekstem stosowanym jako przykładowy wypełniacz w przemyśle poligraficznym. Został po raz pierwszy użyty w XV w. przez nieznanego drukarza do
-                    wypełnienia tekstem próbnej książki. Pięć wieków później zaczął być używany przemyśle elektronicznym, pozostając praktycznie niezmienionym. Spopularyzował się w
-                    latach 60. XX w. wraz z publikacją arkuszy Letrasetu, zawierających fragmenty Lorem Ipsum, a ostatnio z zawierającym różne wersje Lorem Ipsum oprogramowaniem przeznaczonym
-                    do realizacji druków na komputerach osobistych, jak Aldus PageMaker
+                    Zaloguj się do serwisu oferującego planer ślubny, który będzie dla ciebie pomocą w zaplanowaniu wymarzonego wesela.
+                    Po zalogowaniu się zacznij korzystać z serwisu. Cieszymy sie że z nami jesteś!
                 </p>
             </div>
         </section>

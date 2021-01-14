@@ -54,10 +54,10 @@
             <div class="col-lg-5">
                 <!--  <img class="featurette-image img-fluid mx-auto" data-src="holder.js/500x500/auto" alt="500x500" src=""true" style="width: 500px; height: 500px;"> -->
                 <div class="right-part">
-                    <div class="calendarInfo bg-blue">
+                    <div class="calendarInfo blueBox">
                         <div>
                             <h2><img src="~/images/img/kalendarz1.jpg" class="img-fluid" style="width:auto; height: auto;"></h2>
-                            <div class="text-center bg-blue">
+                            <div class="text-center blueBox">
                                 @if ((String.IsNullOrWhiteSpace(Model.FullNameGroom) && String.IsNullOrWhiteSpace(Model.FullNameBride)))
                                 {
                                     <p class="">Pan Młody & Pani Młoda</p>
@@ -91,18 +91,24 @@
             </div>
             <div class="col-lg-6">
                 <div class="row">
-                    <div class="kafelek col-md-4 ">
-                        <p> Ukończone zadania </p>
-                        <p> @Model.EndTasks / @Model.CounterTask </p>
-                    </div>
-                    <div class="kafelek col-md-4">
-                        <p> Porwierdzenie Goście </p>
-                        <p>  @Model.ConfirmGuests / @Model.CounterGuest </p>
-                    </div>
-                    <div class="kafelek col-md-4">
-                        <p> Budżet: </p>
-                        <p> @Model.Budget </p>
-                    </div>
+                    <a asp-area="" asp-controller="Task" asp-action="Index">
+                        <div class="kafelek col-md-4 ">
+                            <p> Ukończone zadania </p>
+                            <p> @Model.EndTasks / @Model.CounterTask </p>
+                        </div>
+                    </a>
+                    <a asp-area="" asp-controller="Guest" asp-action="Index">
+                        <div class="kafelek col-md-4">
+                            <p> Porwierdzenie Goście </p>
+                            <p>  @Model.ConfirmGuests / @Model.CounterGuest </p>
+                        </div>
+                    </a>
+                    <a asp-area="" asp-controller="Home" asp-action="ConfigureProfile">
+                        <div class="kafelek col-md-4">
+                            <p> Budżet: </p>
+                            <p> @Model.Budget </p>
+                        </div>
+                    </a>
                 </div>
             </div>
         </div>

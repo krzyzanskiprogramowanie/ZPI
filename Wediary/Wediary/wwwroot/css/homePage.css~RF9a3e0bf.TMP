@@ -51,9 +51,7 @@ body {
 }
 
 .bg-blue {
-    background: rgb(255,245,204);
-    background: linear-gradient(36deg, rgba(255,245,204,1) 0%, rgba(177,230,249,1) 100%);
-    /* odwrotnie kolorami  background: linear-gradient(36deg, rgba(177,230,249,1) 0%, rgba(255,245,204,1) 100%);*/
+    background-color: #A3C6C6 !important;
 }
 
 
@@ -68,10 +66,6 @@ body {
     padding-top: 20px;
     position:relative;
     margin-bottom: 0;
-}
-
-.blueBox {
-    background-color: #BFDFFE;
 }
 
 .container {
@@ -128,16 +122,14 @@ body {
     margin: 30px;
     width: 230px;
     height: 145px;
-    background-color: #BFDFFE;
+    background-color: #FAE8CC;
     float: left;
     text-align: center;
     padding: 25px;
-    border: 2px solid #5C5200;
-    border-radius: 10px;
 }
 
     .kafelek:hover {
-        background-color: #CFEFFF;
+        background-color: #E9D7bb;
     }
 
 
@@ -151,7 +143,7 @@ body {
 }
 
 .calendarInfo {
-    background-color: #BFDFFE;
+    background-color: #A4961F;
     text-align: center;
     color: #5C5200;
     font-size: 36px;
@@ -232,105 +224,5 @@ body {
 
 .buttonSize {
     width: 100px;
-    color: #f1f0ea;
-    border: 1px solid #A4961F;
-    background: rgb(129,116,60);
-    background: linear-gradient(36deg, rgba(129,116,60,1) 15%, rgba(0,138,185,1) 77%);
-    font-weight: bolder;
 }
 
-    .buttonSize:active {
-        color: #f1f0ea;
-        background: rgb(159,141,63);
-        background: linear-gradient(36deg, rgba(159,141,63,1) 15%, rgba(16,160,209,1) 77%);
-        
-    }
-    .buttonSize:hover {
-        color: #f1f0ea;
-        background: rgb(159,141,63);
-        background: linear-gradient(36deg, rgba(159,141,63,1) 15%, rgba(16,160,209,1) 77%);
-    }
-
-
-.buttonSizeBigger {
-    width: 200px;
-    margin-bottom: 20px;
-    margin-top: 10px;
-    color: #f1f0ea;
-    border: 1px solid #A4961F;
-    background: rgb(129,116,60);
-    background: linear-gradient(36deg, rgba(129,116,60,1) 15%, rgba(0,138,185,1) 77%);
-    font-weight: bolder;
-}
-
-    .buttonSizeBigger:active {
-        color: #f1f0ea;
-        background: rgb(159,141,63);
-        background: linear-gradient(36deg, rgba(159,141,63,1) 15%, rgba(16,160,209,1) 77%);
-        
-    }
-
-    .buttonSizeBigger:hover {
-        color: #f1f0ea;
-        background: rgb(159,141,63);
-        background: linear-gradient(36deg, rgba(159,141,63,1) 15%, rgba(16,160,209,1) 77%);
-    }
-
-.buttonSizeDanger {
-    width: 100px;
-    color: #f1f0ea;
-    border: 1px solid #A4961F;
-    background: rgb(210,62,62);
-    background: linear-gradient(36deg, rgba(210,62,62,1) 0%, rgba(213,176,64,1) 100%);
-    font-weight: bolder;
-}
-
-    .buttonSizeDanger:active {
-        color: #f1f0ea;
-        background: rgb(255,50,50);
-        background: linear-gradient(36deg, rgba(255,50,50,1) 0%, rgba(255,211,79,1) 100%);
-    }
-
-    .buttonSizeDanger:hover {
-        color: #f1f0ea;
-        background: rgb(255,50,50);
-        background: linear-gradient(36deg, rgba(255,50,50,1) 0%, rgba(255,211,79,1) 100%);
-    }
-
-.bg-success {
-    background: rgb(255,252,241);
-    background: linear-gradient(36deg, rgba(255,252,241,1) 0%, rgba(233,249,255,1) 100%);
-}
-
-    .bg-success:hover {
-        background: rgb(255,245,204);
-        background: linear-gradient(36deg, rgba(255,245,204,1) 0%, rgba(177,230,249,1) 100%);
-    }
-
-.buttonMenu {
-    border: 1px solid #000;
-    margin-top: 10px;
-    border-radius: 5px 5px;
-    color: #f1f0ea;
-}
-
-    .buttonMenu:hover {
-    background-color: rgb(152, 223, 249);
-
-    }
-
-.buttonMenu2 {
-    border: 1px solid #000;
-    margin-top: 10px;
-    border-radius: 5px 5px;
-    color: #f1f0ea;
-    margin-right: 20px;
-}
-
-    .buttonMenu2:hover {
-        background-color: rgb(152, 223, 249);
-    }
-
-#logOutButton {
-    text-decoration: none !important;
-}

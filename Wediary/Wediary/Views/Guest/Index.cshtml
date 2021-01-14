@@ -10,29 +10,29 @@
 
 <div class="container">
     <div class="row">
-        <h2 class="col-sm-12">Lista gości weselnych</h2>
+        <h2 class="col-sm-12 headerText" >Lista gości weselnych</h2>
         <!-- Button trigger modal -->
         <div class="col-sm-2">
-            <a asp-area="" asp-controller="Guest" asp-action="AddGuest" class="btn btn-primary">Dodaj gości</a>
+            <a asp-area="" asp-controller="Guest" asp-action="AddGuest" class="btn buttonSizeBigger">Dodaj gości</a>
         </div>
     </div>
 </div>
 <div class="container">
-    <h2>Goście który potwierdzili obecność</h2>
+    <h2 class="headerText">Goście który potwierdzili obecność</h2>
     <div class="col align-self-center">
 
-        <table class="table table-hover table-responsive">
+        <table class=" col-sm-12 table table-hover table-responsive text-center">
             <thead class="thead-dark">
                 <tr>
-                    <th scope="col">Lp</th>
-                    <th scope="col">Imie i Nazwisko</th>
-                    <th scope="col">Rola</th>
-                    <th scope="col">Nocleg</th>
-                    <th scope="col">Poprawiny</th>
-                    <th scope="col">Czy dieta</th>
-                    <th scope="col">Opis diety</th>
-                    <th scope="col">Opcje</th>
-                    <th scope="col">Operacje</th>
+                    <th class="text-center" scope="col">Lp</th>
+                    <th class="text-center" scope="col">Imie i Nazwisko</th>
+                    <th class="text-center" scope="col">Rola</th>
+                    <th class="text-center" scope="col">Nocleg</th>
+                    <th class="text-center" scope="col">Poprawiny</th>
+                    <th class="text-center" scope="col">Czy dieta</th>
+                    <th class="text-center" scope="col">Opis diety</th>
+                    <th class="text-center" scope="col">Opcje</th>
+                    <th class="text-center" scope="col">Operacje</th>
                 </tr>
             </thead>
             <tbody>
@@ -41,7 +41,7 @@
                     if (item.value.InvitationStatus == StatusGuestInvitation.Accept)
                     {
                 <tr>
-                    <th scope="row">@item.i</th>
+                    <th class="text-center" scope="row">@item.i</th>
 
                     <td>@item.value.Name @item.value.Surname</td>
                     @if (item.value.Role == null)
@@ -106,11 +106,11 @@
                     }
                     <td>
                         <form asp-controller="Guest" asp-action="ChangeInvitation" asp-route-id="@item.value.IdGuest" asp-route-state="@StatusGuestInvitation.Unanswered" method="post">
-                            <button type="submit" class="btn btn-danger">Wykreś potwierdzenie</button>
+                            <button type="submit" class="btn buttonSize">Anuluj</button>
                         </form>
                     </td>
                     <td>
-                        <a asp-controller="Guest" asp-action="Delete" asp-route-id="@item.value.IdGuest" class="btn btn-danger">Usuń</a>
+                        <a asp-controller="Guest" asp-action="Delete" asp-route-id="@item.value.IdGuest" class="btn buttonSizeDanger">Usuń</a>
                     </td>
                 </tr>
                     }
@@ -121,21 +121,21 @@
 </div>
 
 <div class="container">
-    <h2>Goście który nie potwierdzili obecność</h2>
+    <h2 class="headerText">Goście który nie potwierdzili obecność</h2>
     <div class="col align-self-center">
 
-        <table class="table table-hover table-responsive">
+        <table class="col-sm-12 table table-hover table-responsive text-center">
             <thead class="thead-dark">
                 <tr>
-                    <th scope="col">Lp</th>
-                    <th scope="col">Imie i Nazwisko</th>
-                    <th scope="col">Rola</th>
-                    <th scope="col">Nocleg</th>
-                    <th scope="col">Poprawiny</th>
-                    <th scope="col">Czy dieta</th>
-                    <th scope="col">Opis diety</th>
-                    <th scope="col">Opcje</th>
-                    <th scope="col">Operacje</th>
+                    <th class="text-center" scope="col">Lp</th>
+                    <th class="text-center" scope="col">Imie i Nazwisko</th>
+                    <th class="text-center" scope="col">Rola</th>
+                    <th class="text-center" scope="col">Nocleg</th>
+                    <th class="text-center" scope="col">Poprawiny</th>
+                    <th class="text-center" scope="col">Czy dieta</th>
+                    <th class="text-center" scope="col">Opis diety</th>
+                    <th class="text-center" scope="col">Opcje</th>
+                    <th class="text-center" scope="col">Operacje</th>
                 </tr>
             </thead>
             <tbody>
@@ -144,7 +144,7 @@
                     if (item.value.InvitationStatus == StatusGuestInvitation.Unanswered)
                     {
                 <tr>
-                    <th scope="row">@item.i</th>
+                    <th class="text-center" scope="row">@item.i</th>
 
                     <td>@item.value.Name @item.value.Surname</td>
                     @if (item.value.Role == null)
@@ -206,11 +206,11 @@
                     }
                     <td>
                         <form asp-controller="Guest" asp-action="ChangeInvitation" asp-route-id="@item.value.IdGuest" asp-route-state="@StatusGuestInvitation.Accept" method="post">
-                            <button type="submit" class="btn btn-info">Potwierdź</button>
+                            <button type="submit" class="btn buttonSize">Potwierdź</button>
                         </form>
                     </td>
                     <td>
-                        <a asp-controller="Guest" asp-action="Delete" asp-route-id="@item.value.IdGuest" class="btn btn-danger">Usuń</a>
+                        <a asp-controller="Guest" asp-action="Delete" asp-route-id="@item.value.IdGuest" class="btn buttonSizeDanger">Usuń</a>
                     </td>
                 </tr>
                     }

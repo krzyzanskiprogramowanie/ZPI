@@ -30,14 +30,14 @@
                             <img src="~/images/img/logo1.png" width="75" height="50" />
                         </a>
                     </li>
-                    <li><a asp-area="" asp-controller="Home" asp-action="Index">Główny panel</a></li>
+                    <li class="buttonMenu"><a  asp-area="" asp-controller="Home" asp-action="Index">Główny panel</a></li>
 
                     @if (SignInManager.IsSignedIn(User))
                     {
-                        <li><a asp-area="" asp-controller="Task" asp-action="Index">Lista Zadań</a></li>
-                        <li><a asp-area="" asp-controller="Guest" asp-action="Index">Lista gości</a></li>
-                        <li><a asp-area="" asp-controller="TableManager" asp-action="Index">Projekty</a></li>
-                        <li><a asp-area="" asp-controller="Home" asp-action="ConfigureProfile">Pan i Pani Młoda</a></li>
+                        <li class="buttonMenu"><a  asp-area="" asp-controller="Task" asp-action="Index">Lista Zadań</a></li>
+                        <li class="buttonMenu"><a  asp-area="" asp-controller="Guest" asp-action="Index">Lista gości</a></li >
+                        <li class="buttonMenu"><a  asp-area="" asp-controller="TableManager" asp-action="Index">Projekty</a></li>
+                        <li class="buttonMenu"><a  asp-area="" asp-controller="Home" asp-action="ConfigureProfile">Pan i Pani Młoda</a></li>
                     }
                 </ul>
                 @await Html.PartialAsync("_LoginPartial")

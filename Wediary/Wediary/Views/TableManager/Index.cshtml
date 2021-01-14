@@ -10,40 +10,40 @@
 
 <div class="container">
     <div class="row">
-        <h2 col-sm-10>Lista projektów sal</h2>
+        <h2 class="col-sm-12 headerText" >Lista projektów sal</h2>
         <div class="col-sm-2">
-            <a asp-area="" asp-controller="TableManager" asp-action="AddProject" class="btn btn-primary">Dodaj projekt</a>
+            <a asp-area="" asp-controller="TableManager" asp-action="AddProject" class="btn buttonSizeBigger">Dodaj projekt</a>
         </div>
     </div>
     <div class="col align-self-center">
 
-        <table class="table table-hover table-responsive">
+        <table class="table table-hover table-responsive text-center">
             <thead class="thead-dark">
                 <tr>
-                    <th scope="col">Lp</th>
-                    <th scope="col">Nazwa projektu</th>
-                    <th scope="col">Data utworzenia</th>
-                    <th scope="col">Operacja</th>
+                    <th class="text-center" scope="col">Lp</th>
+                    <th class="text-center" scope="col">Nazwa projektu</th>
+                    <th class="text-center" scope="col">Data utworzenia</th>
+                    <th class="text-center" scope="col">Operacja</th>
                 </tr>
             </thead>
             <tbody>
                 @foreach (var item in Model.Select((value, i) => new { i = i + 1, value }))
                 {
-                    <tr>
-                        <th scope="row">@item.i</th>
+                    <tr class="bg-success">
+                        <th class="text-center" scope="row">@item.i</th>
 
                         <td>
-                            <div class="the-icons span3" title="Code: 0xf236">
-                                <a  asp-controller="TableManager" asp-action="Manager" asp-route-name="@item.value.Name" asp-route-id="@item.value.IdProject">
+                            <div >
+                                <a class="btn buttonSize" asp-controller="TableManager" asp-action="Manager" asp-route-name="@item.value.Name" asp-route-id="@item.value.IdProject">
                                         @item.value.Name
                                 </a>
                             </div>
                         </td>
                         <td>
-                            <div class="the-icons span3" title="Code: 0xf236"><i class="demo-icon icon-bed">@item.value.CreationDate</i> </div>
+                            <div ><i class="fa fa-calendar iconActive">   @item.value.CreationDate.Day-@item.value.CreationDate.Month-@item.value.CreationDate.Year</i> </div>
                         </td>
                         <td>
-                            <a asp-controller="TableManager" asp-action="Delete" asp-route-id="@item.value.IdProject" class="btn btn-danger">Usuń</a>
+                            <a asp-controller="TableManager" asp-action="Delete" asp-route-id="@item.value.IdProject" class="btn buttonSizeDanger">Usuń</a>
                         </td>
                     </tr>
                 }
