@@ -1,13 +1,13 @@
 ﻿@import url('https://fonts.googleapis.com/css2?family=Andika+New+Basic:ital@1&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Petit+Formal+Script&display=swap');
 body {
     margin: 0px;
     padding-bottom: 0px;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Petit Formal Script', cursive;
     font-size: 17px;
-   // background-image: url("../images/img/xv.png");
-   background-color: #ededed;
+    // background-image: url("../images/img/xv.png");
+    background-color: #ededed;
     min-height: 100%;
 }
 .logo{
@@ -65,14 +65,14 @@ body {
 
 
 .titlename {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Petit Formal Script', cursive;
     color: #a3d6c6;
 }
 
 .footer {
     bottom: 0;
     width: 100%;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Petit Formal Script', cursive;
     color: #8e8d8a;
     padding-top: 20px;
     position: relative;
@@ -88,11 +88,12 @@ body {
     margin-top: 40px;
     margin-left: auto;
     margin-right: auto;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Petit Formal Script', cursive;
     color: #8e8d8a;
     border-radius: 15px;
     background-color: #EAE7DC;
     margin-bottom: 40px;
+    font-size: 14px;
     // border: 5px solid #665E17;
 }
 
@@ -109,13 +110,13 @@ body {
 .simple-text {
     padding: 20px;
     font-size: 17px;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Petit Formal Script', cursive;
 }
 
 .title-text {
     padding: 25px;
     font-size: 45px;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Petit Formal Script', cursive;
     color: #a3d6c6
 }
 
@@ -132,7 +133,7 @@ body {
 
     .right-part p {
         min-height: 25px;
-        font-family: 'Montserrat', sans-serif;
+        font-family: 'Petit Formal Script', cursive;
         font-size: 20px;
         min-width: 50px;
     }
@@ -226,7 +227,7 @@ body {
 
 .divider {
     border-bottom: 1.5px solid #4e6868;
-    ;
+    
 }
 
 .headerText {
@@ -249,11 +250,12 @@ body {
 }
 
 .buttonSize {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Petit Formal Script', cursive;
     width: 100px;
     color: #4e6868;
     // border: 1px solid #A4961F;
     background: #a3d6c6;
+    font-size: 14px;
     // background: linear-gradient(36deg, rgba(129,116,60,1) 15%, rgba(0,138,185,1) 77%);
     font-weight: bolder;
 }
@@ -271,7 +273,9 @@ body {
 
 
 .buttonSizeBigger {
+    font-family: 'Petit Formal Script', cursive;
     width: 200px;
+    font-size: 14px;
     margin-bottom: 20px;
     margin-top: 10px;
     color: #4e6868;
@@ -294,7 +298,9 @@ body {
     }
 
 .buttonSizeDanger {
+    font-family: 'Petit Formal Script', cursive;
     width: 100px;
+    font-size: 14px;
     color: #4e6868;
     background: #a3d6c6;
     //background: linear-gradient(36deg, rgba(210,62,62,1) 0%, rgba(213,176,64,1) 100%);
@@ -314,25 +320,25 @@ body {
     }
 
 .bg-success {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Petit Formal Script', cursive;
     background: #ededed;
     /background: linear-gradient(36deg, rgba(255,252,241,1) 0%, rgba(233,249,255,1) 100%);
 }
 
     .bg-success:hover {
-        font-family: 'Montserrat', sans-serif;
+        font-family: 'Petit Formal Script', cursive;
         background: #ededed;
         // background: linear-gradient(36deg, rgba(255,245,204,1) 0%, rgba(177,230,249,1) 100%);
     }
 
 .btn-warning {
-   
     border: none;
     color: #4e6868;
     // border: 1px solid #A4961F;
     background: #a3d6c6;
     // background: linear-gradient(36deg, rgba(129,116,60,1) 15%, rgba(0,138,185,1) 77%);
     font-weight: bolder;
+    font-size: 14px;
 }
 
     .btn-warning:active {
@@ -351,7 +357,7 @@ body {
         // background: linear-gradient(36deg, rgba(159,141,63,1) 15%, rgba(16,160,209,1) 77%);
     }
 .btn-primary {
-    
+    font-size: 14px;
     border: none;
     color: #4e6868;
     // border: 1px solid #A4961F;
@@ -385,6 +391,7 @@ body {
 
     .buttonMenu:hover {
    // background-color: rgb(152, 223, 249);
+    color: #a3d6c6;
 
     }
 

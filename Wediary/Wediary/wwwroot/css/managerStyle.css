@@ -1,4 +1,4 @@
-﻿
+﻿@import url('https://fonts.googleapis.com/css2?family=Petit+Formal+Script&display=swap');
 #myFlexDiv {
     position: absolute;
     display: -webkit-flex;
@@ -79,7 +79,7 @@
 
 button {
     font-weight: bold;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Petit Formal Script', cursive;
     background-color: #49bdc9;
     border: none;
     padding: 10px 9px;
@@ -93,18 +93,17 @@ button {
     border-radius: 5px;
 }
 .btns {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Petit Formal Script', cursive;
     border: none;
     color: #4e6868;
     // border: 1px solid #A4961F;
     background: #a3d6c6;
     // background: linear-gradient(36deg, rgba(129,116,60,1) 15%, rgba(0,138,185,1) 77%);
     font-weight: bold;
-
 }
 
     .btns:active {
-        font-family: 'Montserrat', sans-serif;
+        font-family: 'Petit Formal Script', cursive;
         border: none;
         color: #f1f0ea;
         background: #a3d6c6;
@@ -112,7 +111,7 @@ button {
     }
 
     .btns:hover {
-        font-family: 'Montserrat', sans-serif;
+        font-family: 'Petit Formal Script', cursive;
         border: none;
         color: #f1f0ea;
         background: #4e6868;
