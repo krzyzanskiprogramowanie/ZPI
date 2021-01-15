@@ -72,7 +72,7 @@ function init() {
             $(go.Shape, "RoundedRectangle", { fill: "#d4c68e", stroke: null }),
             $(go.Panel, "Viewbox",
                 { desiredSize: new go.Size(50, 38) },
-                $(go.TextBlock, { margin: 2, desiredSize: new go.Size(55, NaN), font: "10pt Montserrat, sans-serif", textAlign: "center", stroke: "#fff" },
+                $(go.TextBlock, { margin: 2, desiredSize: new go.Size(55, NaN), font: "10pt Montserrat, sans-serif", textAlign: "center", stroke: "#4e6868" },
                     new go.Binding("text", "", function (data) {
                         var s = data.key;
                         if (data.plus) s += " +" + data.plus.toString();
@@ -94,7 +94,7 @@ function init() {
                 { name: "SEATSHAPE", desiredSize: new go.Size(40, 40), fill: "#e3e6ca", stroke: "transparent", strokeWidth: 2 },
                 new go.Binding("fill")),
             $(go.TextBlock, number.toString(),
-                { font: "10pt Montserrat, sans-serif", stroke: "#fff" },
+                { font: "10pt Montserrat, sans-serif", stroke: "#4e6868" },
                 new go.Binding("angle", "angle", function (n) { return -n; }))
         );
     }
@@ -129,7 +129,7 @@ function init() {
                     { name: "TABLESHAPE", desiredSize: new go.Size(160, 60), fill: "#a3d6c6", stroke: null },
                     new go.Binding("desiredSize", "size", go.Size.parse).makeTwoWay(go.Size.stringify),
                     new go.Binding("fill")),
-                $(go.TextBlock, { editable: true, font: "bold 11pt Montserrat, sans-serif", stroke: "#fff" },
+                $(go.TextBlock, { editable: true, font: "bold 11pt Montserrat, sans-serif", stroke: "#4e6868" },
                     new go.Binding("text", "name").makeTwoWay(),
                     new go.Binding("angle", "angle", function (n) { return -n; }))
             ),
@@ -149,7 +149,7 @@ function init() {
                     { name: "TABLESHAPE", desiredSize: new go.Size(160, 60), fill: "#a3d6c6", stroke: null },
                     new go.Binding("desiredSize", "size", go.Size.parse).makeTwoWay(go.Size.stringify),
                     new go.Binding("fill")),
-                $(go.TextBlock, { editable: true, font: "bold 11pt Montserrat, sans-serif", stroke: "#fff" },
+                $(go.TextBlock, { editable: true, font: "bold 11pt Montserrat, sans-serif", stroke: "#4e6868" },
                     new go.Binding("text", "name").makeTwoWay(),
                     new go.Binding("angle", "angle", function (n) { return -n; }))
             ),
@@ -185,7 +185,7 @@ function init() {
                     { name: "TABLESHAPE", desiredSize: new go.Size(160, 60), fill: "#a3d6c6", stroke: null },
                     new go.Binding("desiredSize", "size", go.Size.parse).makeTwoWay(go.Size.stringify),
                     new go.Binding("fill")),
-                $(go.TextBlock, { editable: true, font: "bold 11pt Montserrat, sans-serif", stroke: "#fff" },
+                $(go.TextBlock, { editable: true, font: "bold 11pt Montserrat, sans-serif", stroke: "#4e6868" },
                     new go.Binding("text", "name").makeTwoWay(),
                     new go.Binding("angle", "angle", function (n) { return -n; }))
             ),
@@ -204,7 +204,7 @@ function init() {
                     { name: "TABLESHAPE", desiredSize: new go.Size(160, 60), fill: "#a3d6c6", stroke: null },
                     new go.Binding("desiredSize", "size", go.Size.parse).makeTwoWay(go.Size.stringify),
                     new go.Binding("fill")),
-                $(go.TextBlock, { editable: true, font: "bold 11pt Montserrat, sans-serif", stroke: "#fff" },
+                $(go.TextBlock, { editable: true, font: "bold 11pt Montserrat, sans-serif", stroke: "#4e6868" },
                     new go.Binding("text", "name").makeTwoWay(),
                     new go.Binding("angle", "angle", function (n) { return -n; }))
             ),
@@ -222,7 +222,7 @@ function init() {
                     { name: "TABLESHAPE", desiredSize: new go.Size(160, 60), fill: "#a3d6c6", stroke: null },
                     new go.Binding("desiredSize", "size", go.Size.parse).makeTwoWay(go.Size.stringify),
                     new go.Binding("fill")),
-                $(go.TextBlock, { editable: true, font: "bold 11pt Montserrat, sans-serif", stroke: "#fff" },
+                $(go.TextBlock, { editable: true, font: "bold 11pt Montserrat, sans-serif", stroke: "#4e6868" },
                     new go.Binding("text", "name").makeTwoWay(),
                     new go.Binding("angle", "angle", function (n) { return -n; }))
             ),
@@ -238,7 +238,7 @@ function init() {
                     { name: "TABLESHAPE", desiredSize: new go.Size(120, 120), fill: "#a3d6c6", stroke: null },
                     new go.Binding("desiredSize", "size", go.Size.parse).makeTwoWay(go.Size.stringify),
                     new go.Binding("fill")),
-                $(go.TextBlock, { editable: true, font: "bold 11pt Montserrat, sans-serif", stroke: "#fff" },
+                $(go.TextBlock, { editable: true, font: "bold 11pt Montserrat, sans-serif", stroke: "#4e6868" },
                     new go.Binding("text", "name").makeTwoWay(),
                     new go.Binding("angle", "angle", function (n) { return -n; }))
             ),

@@ -30,14 +30,18 @@ body {
 }
 
 .navbar-nav {
+    text-decoration: none;
     font-size: 14px;
     font-weight: 500;
     color: #5C5200;
     letter-spacing: 2px;
     margin-left: 10px;
     margin-right: 10px;
+    text-decoration:none;
 }
-
+.navbar-nav {
+    color: #4e6868;
+}
     .navbar-nav > li {
     }
 
@@ -245,8 +249,9 @@ body {
 }
 
 .buttonSize {
+    font-family: 'Montserrat', sans-serif;
     width: 100px;
-    color: #f1f0ea;
+    color: #4e6868;
     // border: 1px solid #A4961F;
     background: #a3d6c6;
     // background: linear-gradient(36deg, rgba(129,116,60,1) 15%, rgba(0,138,185,1) 77%);
@@ -269,8 +274,8 @@ body {
     width: 200px;
     margin-bottom: 20px;
     margin-top: 10px;
-    color: #f1f0ea;
-  //  border: 1px solid #A4961F;
+    color: #4e6868;
+    // border: 1px solid #A4961F;
     background: #a3d6c6;
     // background: linear-gradient(36deg, rgba(129,116,60,1) 15%, rgba(0,138,185,1) 77%);
     font-weight: bolder;
@@ -290,7 +295,7 @@ body {
 
 .buttonSizeDanger {
     width: 100px;
-    color: #f1f0ea;
+    color: #4e6868;
     background: #a3d6c6;
     //background: linear-gradient(36deg, rgba(210,62,62,1) 0%, rgba(213,176,64,1) 100%);
     font-weight: bolder;
@@ -321,9 +326,9 @@ body {
     }
 
 .btn-warning {
-    font-family: 'Montserrat', sans-serif;
+   
     border: none;
-    color: #f1f0ea;
+    color: #4e6868;
     // border: 1px solid #A4961F;
     background: #a3d6c6;
     // background: linear-gradient(36deg, rgba(129,116,60,1) 15%, rgba(0,138,185,1) 77%);
@@ -331,7 +336,7 @@ body {
 }
 
     .btn-warning:active {
-        font-family: 'Montserrat', sans-serif;
+       
         border: none;
         color: #f1f0ea;
         background: #a3d6c6;
@@ -339,16 +344,16 @@ body {
     }
 
     .btn-warning:hover {
-        font-family: 'Montserrat', sans-serif;
+       
         border: none;
         color: #f1f0ea;
         background: #4e6868;
         // background: linear-gradient(36deg, rgba(159,141,63,1) 15%, rgba(16,160,209,1) 77%);
     }
 .btn-primary {
-    font-family: 'Montserrat', sans-serif;
+    
     border: none;
-    color: #f1f0ea;
+    color: #4e6868;
     // border: 1px solid #A4961F;
     background: #a3d6c6;
     // background: linear-gradient(36deg, rgba(129,116,60,1) 15%, rgba(0,138,185,1) 77%);
@@ -356,7 +361,7 @@ body {
 }
 
     .btn-primary:active {
-        font-family: 'Montserrat', sans-serif;
+       
         border: none;
         color: #f1f0ea;
         background: #a3d6c6;
@@ -364,14 +369,14 @@ body {
     }
 
     .btn-primary:hover {
-        font-family: 'Montserrat', sans-serif;
+      
         border: none;
         color: #f1f0ea;
         background: #4e6868;
         // background: linear-gradient(36deg, rgba(159,141,63,1) 15%, rgba(16,160,209,1) 77%);
     }
 .buttonMenu {
-    font-family: 'Montserrat', sans-serif;
+   
     // border: 1px solid #000;
     // margin-top: 10px;
     // border-radius: 5px 5px;
