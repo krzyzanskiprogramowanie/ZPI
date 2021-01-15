@@ -258,6 +258,7 @@ body {
     font-size: 14px;
     // background: linear-gradient(36deg, rgba(129,116,60,1) 15%, rgba(0,138,185,1) 77%);
     font-weight: bolder;
+    border:1px solid #fff;
 }
 
     .buttonSize:active {
