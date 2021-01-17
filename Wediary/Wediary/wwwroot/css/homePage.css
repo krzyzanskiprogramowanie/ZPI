@@ -1,10 +1,10 @@
-﻿@import url('https://fonts.googleapis.com/css2?family=Andika+New+Basic:ital@1&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Petit+Formal+Script&display=swap');
+﻿@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap%27');
+
+
 body {
     margin: 0px;
     padding-bottom: 0px;
-    font-family: 'Petit Formal Script', cursive;
+    font-family: 'Raleway', sans-serif;
     font-size: 17px;
     // background-image: url("../images/img/xv.png");
     background-color: #ededed;
@@ -65,14 +65,14 @@ body {
 
 
 .titlename {
-    font-family: 'Petit Formal Script', cursive;
+    font-family: 'Raleway', sans-serif;
     color: #a3d6c6;
 }
 
 .footer {
     bottom: 0;
     width: 100%;
-    font-family: 'Petit Formal Script', cursive;
+    font-family: 'Raleway', sans-serif;
     color: #8e8d8a;
     padding-top: 20px;
     position: relative;
@@ -88,7 +88,7 @@ body {
     margin-top: 40px;
     margin-left: auto;
     margin-right: auto;
-    font-family: 'Petit Formal Script', cursive;
+    font-family: 'Raleway', sans-serif;
     color: #8e8d8a;
     border-radius: 15px;
     background-color: #EAE7DC;
@@ -110,13 +110,13 @@ body {
 .simple-text {
     padding: 20px;
     font-size: 17px;
-    font-family: 'Petit Formal Script', cursive;
+    font-family: 'Raleway', sans-serif;
 }
 
 .title-text {
     padding: 25px;
     font-size: 45px;
-    font-family: 'Petit Formal Script', cursive;
+    font-family: 'Raleway', sans-serif;
     color: #a3d6c6
 }
 
@@ -133,7 +133,7 @@ body {
 
     .right-part p {
         min-height: 25px;
-        font-family: 'Petit Formal Script', cursive;
+        font-family: 'Raleway', sans-serif;
         font-size: 20px;
         min-width: 50px;
     }
@@ -250,7 +250,7 @@ body {
 }
 
 .buttonSize {
-    font-family: 'Petit Formal Script', cursive;
+    font-family: 'Raleway', sans-serif;
     width: 100px;
     color: #4e6868;
     // border: 1px solid #A4961F;
@@ -258,7 +258,7 @@ body {
     font-size: 14px;
     // background: linear-gradient(36deg, rgba(129,116,60,1) 15%, rgba(0,138,185,1) 77%);
     font-weight: bolder;
-    border:1px solid #fff;
+    border: 1px solid #fff;
 }
 
     .buttonSize:active {
@@ -274,7 +274,7 @@ body {
 
 
 .buttonSizeBigger {
-    font-family: 'Petit Formal Script', cursive;
+    font-family: 'Raleway', sans-serif;
     width: 200px;
     font-size: 14px;
     margin-bottom: 20px;
@@ -299,7 +299,7 @@ body {
     }
 
 .buttonSizeDanger {
-    font-family: 'Petit Formal Script', cursive;
+    font-family: 'Raleway', sans-serif;
     width: 100px;
     font-size: 14px;
     color: #4e6868;
@@ -321,13 +321,13 @@ body {
     }
 
 .bg-success {
-    font-family: 'Petit Formal Script', cursive;
+    font-family: 'Raleway', sans-serif;
     background: #ededed;
     /background: linear-gradient(36deg, rgba(255,252,241,1) 0%, rgba(233,249,255,1) 100%);
 }
 
     .bg-success:hover {
-        font-family: 'Petit Formal Script', cursive;
+        font-family: 'Raleway', sans-serif;
         background: #ededed;
         // background: linear-gradient(36deg, rgba(255,245,204,1) 0%, rgba(177,230,249,1) 100%);
     }
