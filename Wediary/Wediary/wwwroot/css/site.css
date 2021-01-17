@@ -44,3 +44,12 @@
 .iconOff {
     color: #4b4100;
 }
+
+#footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 2.5rem;
+    color: #8e8d8a;
+    background: #EAE7DC;
+}
