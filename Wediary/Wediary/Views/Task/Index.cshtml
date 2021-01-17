@@ -4,6 +4,22 @@
 
 @{
     ViewData["Title"] = "Lista zadań";
+
+    decimal activePrice = 0;
+    decimal endPrice = 0;
+    foreach (var item in Model)
+    {
+        if (item.State == StateTaskModels.Active)
+        {
+            activePrice += item.TotalPrice;
+        }
+        if (item.State == StateTaskModels.End)
+        {
+            endPrice += item.TotalPrice;
+        }
+
+    }
+
 }
 
 <link href="~/css/fontello.css" rel="stylesheet" />
@@ -37,7 +53,7 @@
                 <th class="text-center" scope="col">Jednostka</th>
                 <th class="text-center" scope="col">Cena oczekiwana</th>
                 <th class="text-center" scope="col">Zaliczka</th>
-                <th class="text-center" scope="col">Cena rzeczywista</th>
+                <th class="text-center" scope="col">Pozostało do zapłaty</th>
                 <th class="text-center" scope="col">Data</th>
                 <th class="text-center" scope="col">Wykonawca</th>
                 <th class="text-center" scope="col">Kategoria</th>
@@ -46,21 +62,22 @@
             </tr>
         </thead>
         <tbody>
+
             @foreach (var item in Model)
             {
                 if (item.State == StateTaskModels.Active)
                 {
                     <tr class="bg-success">
-                        <td>@item.Name</td>
-                        <td>@item.Quantity</td>
-                        <td>@item.Unit</td>
-                        <td>@item.ExpectedPrice</td>
-                        <td>@item.Payment</td>
-                        <td>@item.TotalPrice</td>
-                        <td>@item.Date</td>
-                        <td>@item.Contractor</td>
-                        <td>@item.Category</td>
-                        <td>
+                        <td class="text-center">@item.Name</td>
+                        <td class="text-center">@item.Quantity</td>
+                        <td class="text-center">@item.Unit</td>
+                        <td class="text-center">@item.ExpectedPrice</td>
+                        <td class="text-center">@item.Payment</td>
+                        <td class="text-center">@item.TotalPrice</td>
+                        <td class="text-center">@item.Date.ToString(("dd/MM/yyyy"))</td>
+                        <td class="text-center">@item.Contractor</td>
+                        <td class="text-center">@item.Category</td>
+                        <td class="text-center">
                             <form asp-controller="Task" asp-action="ChangeToActive" asp-route-id="@item.IdTask" asp-route-state="@StateTaskModels.End" method="post">
                                 <button type="submit" class="btn buttonSize">Zakończ</button>
                             </form>
@@ -68,15 +85,19 @@
                                 <button type="submit" class="btn buttonSize">Odwołaj</button>
                             </form>
                         </td>
-                        <th>
+                        <td class="text-center">
                             <a asp-controller="Task" asp-action="EditTask" asp-route-id="@item.IdTask" class="btn buttonSize">Modyfikuj</a>
                             <a asp-controller="Task" asp-action="DeleteTask" asp-route-id="@item.IdTask" class="btn buttonSizeDanger">Usuń</a>
-                        </th>
+                        </td>
                     </tr>
                 }
             }
         </tbody>
+
     </table>
+    <div class="totalPrice">
+        <p class="text-center">Razem do zapłaty: @activePrice zł</p>
+    </div>
 </div>
 
 <div class="container">
@@ -89,7 +110,7 @@
                 <th class="text-center" scope="col">Jednostka</th>
                 <th class="text-center" scope="col">Cena oczekiwana</th>
                 <th class="text-center" scope="col">Zaliczka</th>
-                <th class="text-center" scope="col">Cena rzeczywista</th>
+                <th class="text-center" scope="col">Pozostało do zapłaty</th>
                 <th class="text-center" scope="col">Data</th>
                 <th class="text-center" scope="col">Wykonawca</th>
                 <th class="text-center" scope="col">Kategoria</th>
@@ -98,37 +119,42 @@
             </tr>
         </thead>
         <tbody>
+
             @foreach (var item in Model)
             {
                 if (item.State == StateTaskModels.End)
                 {
-            <tr class="bg-success">
-                <td>@item.Name</td>
-                <td>@item.Quantity</td>
-                <td>@item.Unit</td>
-                <td>@item.ExpectedPrice</td>
-                <td>@item.Payment</td>
-                <td>@item.TotalPrice</td>
-                <td>@item.Date</td>
-                <td>@item.Contractor</td>
-                <td>@item.Category</td>
-                <td>
-                    <form asp-controller="Task" asp-action="ChangeToActive" asp-route-id="@item.IdTask" asp-route-state="@StateTaskModels.Active" method="post">
-                        <button type="submit" class="btn buttonSize">Aktywuj</button>
-                    </form>
-                    <form asp-controller="Task" asp-action="ChangeToActive" asp-route-id="@item.IdTask" asp-route-state="@StateTaskModels.Fail" method="post">
-                        <button type="submit" class="btn buttonSize">Odwołaj</button>
-                    </form>
-                </td>
-                <th>
-                    <a asp-controller="Task" asp-action="EditTask" asp-route-id="@item.IdTask" class="btn buttonSize">Modyfikuj</a>
-                    <a asp-controller="Task" asp-action="DeleteTask" asp-route-id="@item.IdTask" class="btn buttonSizeDanger">Usuń</a>
-                </th>
-            </tr>
+                    <tr class="bg-success">
+                        <td class="text-center">@item.Name</td>
+                        <td class="text-center">@item.Quantity</td>
+                        <td class="text-center">@item.Unit</td>
+                        <td class="text-center">@item.ExpectedPrice</td>
+                        <td class="text-center">@item.Payment</td>
+                        <td class="text-center">@item.TotalPrice</td>
+                        <td class="text-center">@item.Date.ToString(("dd/MM/yyyy"))</td>
+                        <td class="text-center">@item.Contractor</td>
+                        <td class="text-center">@item.Category</td>
+                        <td class="text-center">
+                            <form asp-controller="Task" asp-action="ChangeToActive" asp-route-id="@item.IdTask" asp-route-state="@StateTaskModels.Active" method="post">
+                                <button type="submit" class="btn buttonSize">Aktywuj</button>
+                            </form>
+                            <form asp-controller="Task" asp-action="ChangeToActive" asp-route-id="@item.IdTask" asp-route-state="@StateTaskModels.Fail" method="post">
+                                <button type="submit" class="btn buttonSize">Odwołaj</button>
+                            </form>
+                        </td>
+                        <td class="text-center">
+                            <a asp-controller="Task" asp-action="EditTask" asp-route-id="@item.IdTask" class="btn buttonSize">Modyfikuj</a>
+                            <a asp-controller="Task" asp-action="DeleteTask" asp-route-id="@item.IdTask" class="btn buttonSizeDanger">Usuń</a>
+                        </td>
+                    </tr>
                 }
             }
+
         </tbody>
     </table>
+    <div class="totalPrice">
+        <p class="text-center">Razem do zapłaty: @endPrice zł</p>
+    </div>
 </div>
 
 <div class="container">
@@ -141,7 +167,7 @@
                 <th class="text-center" scope="col">Jednostka</th>
                 <th class="text-center" scope="col">Cena oczekiwana</th>
                 <th class="text-center" scope="col">Zaliczka</th>
-                <th class="text-center" scope="col">Cena rzeczywista</th>
+                <th class="text-center" scope="col">Pozostało do zapłaty</th>
                 <th class="text-center" scope="col">Data</th>
                 <th class="text-center" scope="col">Wykonawca</th>
                 <th class="text-center" scope="col">Kategoria</th>
@@ -154,31 +180,32 @@
             {
                 if (item.State == StateTaskModels.Fail)
                 {
-            <tr class="bg-success">
-                <td>@item.Name</td>
-                <td>@item.Quantity</td>
-                <td>@item.Unit</td>
-                <td>@item.ExpectedPrice</td>
-                <td>@item.Payment</td>
-                <td>@item.TotalPrice</td>
-                <td>@item.Date</td>
-                <td>@item.Contractor</td>
-                <td>@item.Category</td>
-                <td>
-                    <form asp-controller="Task" asp-action="ChangeToActive" asp-route-id="@item.IdTask" asp-route-state="@StateTaskModels.End" method="post">
-                        <button type="submit" class="btn buttonSize">Zakończ</button>
-                    </form>
-                    <form asp-controller="Task" asp-action="ChangeToActive" asp-route-id="@item.IdTask" asp-route-state="@StateTaskModels.Active" method="post">
-                        <button type="submit" class="btn buttonSize">Aktywuj</button>
-                    </form>
-                </td>
-                <th>
-                    <a asp-controller="Task" asp-action="EditTask" asp-route-id="@item.IdTask" class="btn buttonSize">Modyfikuj</a>
-                    <a asp-controller="Task" asp-action="DeleteTask" asp-route-id="@item.IdTask" class="btn buttonSizeDanger">Usuń</a>
-                </th>
-            </tr>
+                    <tr class="bg-success">
+                        <td class="text-center">@item.Name</td>
+                        <td class="text-center">@item.Quantity</td>
+                        <td class="text-center">@item.Unit</td>
+                        <td class="text-center">@item.ExpectedPrice</td>
+                        <td class="text-center">@item.Payment</td>
+                        <td class="text-center">@item.TotalPrice</td>
+                        <td class="text-center">@item.Date.ToString(("dd/MM/yyyy"))</td>
+                        <td class="text-center">@item.Contractor</td>
+                        <td class="text-center">@item.Category</td>
+                        <td class="text-center">
+                            <form asp-controller="Task" asp-action="ChangeToActive" asp-route-id="@item.IdTask" asp-route-state="@StateTaskModels.End" method="post">
+                                <button type="submit" class="btn buttonSize">Zakończ</button>
+                            </form>
+                            <form asp-controller="Task" asp-action="ChangeToActive" asp-route-id="@item.IdTask" asp-route-state="@StateTaskModels.Active" method="post">
+                                <button type="submit" class="btn buttonSize">Aktywuj</button>
+                            </form>
+                        </td>
+                        <td class="text-center">
+                            <a asp-controller="Task" asp-action="EditTask" asp-route-id="@item.IdTask" class="btn buttonSize">Modyfikuj</a>
+                            <a asp-controller="Task" asp-action="DeleteTask" asp-route-id="@item.IdTask" class="btn buttonSizeDanger">Usuń</a>
+                        </td>
+                    </tr>
                 }
             }
         </tbody>
     </table>
+
 </div>

@@ -14,6 +14,6 @@ namespace Wediary.Models.HelpModels
         public int ConfirmGuests { get; set; }
         public int CounterGuest { get; set; }
         public int CounterTask { get; set; }
-        public string WeddingDate { get; set; }
+        public DateTime WeddingDate { get; set; }
     }
 }

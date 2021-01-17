@@ -10,5 +10,6 @@ namespace Wediary.Models.HelpModels
         public static string Active = "W trakcie";
         public static string End = "Zakońcozny";
         public static string Fail = "Nie zrealizowany";
+        
     }
 }

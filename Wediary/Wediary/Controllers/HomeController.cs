@@ -67,14 +67,12 @@ namespace Wediary.Controllers
             {
                 Budget = user.Budget,
                 FullNameBride = user.BrideName,
-                FullNameGroom=user.GroomName,
-                CounterGuest=guestCounter,
-                ConfirmGuests=guestInvitationStatus,
-                CounterTask=taskCounter,
-                EndTasks=taskCompleted,
-                WeddingDate=user.WeddingDate.Day.ToString() +"."
-                + user.WeddingDate.Month.ToString() +"." 
-                + user.WeddingDate.Year.ToString()
+                FullNameGroom = user.GroomName,
+                CounterGuest = guestCounter,
+                ConfirmGuests = guestInvitationStatus,
+                CounterTask = taskCounter,
+                EndTasks = taskCompleted,
+                WeddingDate = user.WeddingDate
             };
             return View(model);
         }

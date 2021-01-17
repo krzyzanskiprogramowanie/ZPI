@@ -78,9 +78,14 @@
                                 {
                                     <p class="">@Model.FullNameBride & @Model.FullNameGroom</p>
                                 }
-                                @if (!(Model.WeddingDate == "1.1.1"))
+                                @if (!(Model.WeddingDate.Equals(new DateTime(0001,01,01))))
                                 {
-                                    <p class="">Data ślubu: @Model.WeddingDate </p>
+                                    <p class="">Data ślubu: @Model.WeddingDate.ToString(("dd/MM/yyyy")) </p>
+
+                                }
+                                else
+                                {
+                                    <p class="">Data ślubu: "Brak daty" </p>
 
                                 }
 
